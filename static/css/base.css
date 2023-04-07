@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600;700&family=Henny+Penny&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #e2ebdb;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+}
+
+header {
+    background: #e2ebdb;
+
+}
+.header-container {
+    margin-top: 100px;
+}
+
+.collapse {
+    background-color: #e2ebdb;
+}
+
+a.dropdown-item.active {
+    background: white;
+    color: #212529;
+}
+.navbar {
+    background-color: #e2ebdb;
+}
+
+/* from Bulma via Boutique Aod for Font Awesome icons */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+    color: black;
+}
+
+
+/* Button CSS (taken from Boutique Ado) */
+
+.shop-now-button {
+    background: black;
+    color: white;
+    min-width: 260px;
+}
+
+.btn-black {
+    background: black;
+    color: white;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #222;
+    color: white;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+
+.icon {
+    color: white;
+}
+
+/* Headings */
+
+h1 {
+    font-family: 'Henny Penny';
+    font-size: 32px;
+
+} 
+
+
+/* Footer */
+
+footer {
+    background-color: #e2ebdb;
+    height: 10vh;
+}
+
+/* adjust the height of the footer for smaller screens */
+@media screen and (max-width: 768px) {
+    footer {
+      height: 15vh; 
+    }
+  }
+  
