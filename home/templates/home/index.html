@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container" id="hero">
+  <div class="row justify-content-center">
+    <div class="col-lg-4 d-flex align-items-center justify-content-center">
+      <div class="text-center">
+        <h2>Add a little whimsy</h2>
+        <div>
+          <h4>
+            <a href="#" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Go shop!</a>
+          </h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <div class="main-wrapper">
+        <div class="main">
+          <div class="container">
+            <div class="hexagon">
+              <a href="#">
+                <div class="img-wrapper" style="background-image: url('/media/leafy_mask2.jpg');"></div>
+                <div class="hexagon-text">Masks</div>
+              </a>
+            </div>
+            <div class="hexagon">
+              <a href="#">
+                <div class="img-wrapper" style="background-image: url('/media/florence2.jpg');"></div>
+                <div class="hexagon-text">Learn</div>
+              </a>
+            </div>
+            <div class="hexagon">
+              <a href="#">
+                <div class="img-wrapper" style="background-image: url('/media/flower-ball.png');"></div>
+                <div class="hexagon-text">Shop All</div>
+              </a>
+            </div>
+            <div class="hexagon">
+              <a href="#">
+                <div class="img-wrapper" style="background-image: url('/media/skull_halloween_pirate.JPG');"></div>
+                <div class="hexagon-text">Children</div>
+              </a>
+            </div>
+            <div class="hexagon">
+              <a href="#">
+                <div class="img-wrapper" style="background-image: url('/media/Lookout.jpg');"></div>
+                <div class="hexagon-text">Figurines</div>
+              </a>
+            </div>
+            <div class="hexagon">
+              <a href="#">
+                <div class="img-wrapper" style="background-image: url('/media/abstract-ink.PNG');"></div>
+                <div class="hexagon-text">Prints & Paintings</div>
+              </a>
+            </div>
+            <div class="hexagon">
+              <a href="#">
+                <div class="img-wrapper" style="background-image: url('/media/penguin_hallway.JPG');"></div>
+                <div class="hexagon-text">Animals</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
