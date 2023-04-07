@@ -69,18 +69,18 @@
                         <a class="nav-link" href="#">Learn</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="{% url 'products' %}" role="button" data-toggle="dropdown"
                             aria-expanded="false">
                             Shop
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">All Artwork</a>
-                            <a class="dropdown-item" href="#">Animals</a>
-                            <a class="dropdown-item" href="#">Children</a>
-                            <a class="dropdown-item" href="#">Figurines</a>
-                            <a class="dropdown-item" href="#">Masks</a>
-                            <a class="dropdown-item" href="#">Prints & Paintings</a>
-                        </div>
+                            <a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">All Artwork</a>
+                            <a class="dropdown-item" href="{% url 'products' %}?category=animals">Animals</a>
+                            <a class="dropdown-item" href="{% url 'products' %}?category=children">Children</a>
+                            <a class="dropdown-item" href="{% url 'products' %}?category=figurines">Figurines</a>
+                            <a class="dropdown-item" href="{% url 'products' %}?category=masks">Masks</a>
+                            <a class="dropdown-item" href="{% url 'products' %}?category=prints&paintings">Prints & Paintings</a>
+                          </div>
                     </li>
                 </ul>
                 <div class="w-100 col-12 col-lg-6 my-auto ml-auto py-1 py-lg-0">
@@ -94,7 +94,7 @@
                                 </div>
                             </a>
                             <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="search field">
-                                <form class="form" method="GET" action=""></form>
+                                <form class="form" method="GET" action="{% url 'products' %}"></form>
                                 <div class="input-group w-100">
                                     <input class="form-control border border-black rounded-0" type="text" name="q"
                                         placeholder="Search our site">
