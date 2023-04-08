@@ -1,0 +1,20 @@
+body{
+    background-color: #e2ebdb;
+}
+
+.icon {
+    color: white; !important
+}  
+
+.footer-background{
+    background-color: rgb(204, 199, 199);
+}
+
+
+
+@media only screen and (max-width: 991px) {
+    .bag-header {
+      display: none;
+    }
+  }
+  
