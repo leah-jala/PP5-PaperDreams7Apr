@@ -76,7 +76,7 @@
               <a class="dropdown-item" href="{% url 'products' %}?category=children">Children</a>
               <a class="dropdown-item" href="{% url 'products' %}?category=figurines">Figurines</a>
               <a class="dropdown-item" href="{% url 'products' %}?category=masks">Masks</a>
-              <a class="dropdown-item" href="{% url 'products' %}?category=prints">Prints & Paintings</a>
+              <a class="dropdown-item" href="{% url 'products' %}?category=prints&paintings">Prints & Paintings</a>
             </div>
           </li>
         </ul>
@@ -124,7 +124,6 @@
                 {% endif %}
             </div>
         </li>
-        {% comment %}
             <li class="list-inline-item">
               <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link d-block" href="{% url 'view_bag' %}">
                   <div class="text-center">
@@ -139,7 +138,6 @@
                   </div>
               </a>
           </li>
-        {% endcomment %}
           </ul>
         </div>
         
