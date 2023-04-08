@@ -50,10 +50,24 @@ a.dropdown-item.active {
     min-width: 260px;
 }
 
+
 .btn-black {
     background: black;
     color: white;
 }
+  
+.btn-outline-black {
+    background: white;
+    color: black !important; /* use important to override link colors for <a> elements */
+    border: 1px solid black;
+  }
+  
+  .btn-outline-black:hover,
+  .btn-outline-black:active,
+  .btn-outline-black:focus {
+    background: black;
+    color: white !important;
+  }
 
 .shop-now-button:hover,
 .shop-now-button:active,
@@ -65,6 +79,10 @@ a.dropdown-item.active {
     color: white;
 }
 
+.btn-outline-black:hover .icon i {
+    color: white;
+  }
+  
 .text-black {
     color: #000 !important;
 }
@@ -73,9 +91,6 @@ a.dropdown-item.active {
     border: 1px solid black !important;
 }
 
-.icon {
-    color: white;
-}
 
 /* Headings */
 
