@@ -37,8 +37,8 @@
                         class="btn btn-outline-secondary mx-2 my-1">Figurines</a>
                     <a href="{% url 'products' %}?category=masks" class="btn btn-outline-secondary mx-2 my-1"
                         data-category="masks">Masks</a>
-                    <a href="{% url 'products' %}?category=prints"
-                        class="btn btn-outline-secondary mx-2 my-1">Prints & Paintings</a>
+                    <a href="{% url 'products' %}?category=prints" class="btn btn-outline-secondary mx-2 my-1">Prints &
+                        Paintings</a>
                 </div>
             </div>
             <hr class="w-50 mb-1">
@@ -87,11 +87,11 @@
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
                 <div class="card h-100 border-0 image-container">
                     {% if product.image %}
-                    <a href="#">
+                    <a href="{% url 'product_detail' product.id %}">
                         <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                     </a>
                     {% else %}
-                    <a href="#">
+                    <a href="{% url 'product_detail' product.id %}">
                         <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                     </a>
                     {% endif %}
@@ -122,7 +122,6 @@
         </div>
     </div>
 </div>
-</div>
 <a href="#top" class="back-to-top" style="display: none;">
     <i class="fas fa-chevron-up"></i>
 </a>
@@ -132,7 +131,7 @@
 {% block postloadjs %}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-$(document).ready(function () {
+    $(document).ready(function () {
         // Set active category link 
         let urlParams = new URLSearchParams(window.location.search);
         let categoryParam = urlParams.get('category');
