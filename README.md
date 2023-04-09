@@ -14,5 +14,6 @@ Together these commits relate to comments 1-59 in the first repo [NEW-paperdream
 
 
 
-
+# Credits
+[Shopping bag Bootstrap/Html](https://mdbootstrap.com/docs/standard/extended/shopping-carts/) adapted from MDB
 

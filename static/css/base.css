@@ -68,6 +68,12 @@ a.dropdown-item.active {
     color: white !important;
   }
 
+  .btt-link, 
+  .update-link,
+  .reomve-item {
+    cursor: pointer;
+  }
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
