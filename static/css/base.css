@@ -6,6 +6,8 @@ html {
 }
 
 body {
+    max-width: 1600px;
+    margin: 0 auto;
     background-color: #e2ebdb;
     font-family: 'Roboto', sans-serif;
     color: black;
@@ -28,6 +30,7 @@ a.dropdown-item.active {
     color: #212529;
 }
 .navbar {
+    max-width: 1600px;
     background-color: #e2ebdb;
 }
 
@@ -68,7 +71,6 @@ a.dropdown-item.active {
     color: white !important;
   }
 
-  .btt-link, 
   .update-link,
   .reomve-item {
     cursor: pointer;
