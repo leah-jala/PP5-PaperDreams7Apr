@@ -1,12 +1,10 @@
 <script type="text/javascript">
-
-    // Disable +/- buttons outside 1-99 range
-    function handleEnableDisable(itemId) {
+    function handleEnableDisableBag(itemId) {
         var qtyInput = $(`#id_qty_${itemId}`);
         var currentValue = parseInt(qtyInput.val());
         var availableQty = parseInt(qtyInput.data('available_qty'));
-        var qtyInBag = parseInt(qtyInput.data('qty_in_bag')) || 0;
-        var maxQuantity = availableQty - qtyInBag;
+        // No need for qtyInBag calculation here
+        var maxQuantity = availableQty; // Update this line
 
         var minusDisabled = currentValue < 2;
         var plusDisabled = currentValue >= maxQuantity;
@@ -15,43 +13,41 @@
     }
 
     // Ensure proper enabling/disabling of all inputs on page load
-    var allQtyInputs = $('.qty_input');
-    for(var i = 0; i < allQtyInputs.length; i++){
-        var itemId = $(allQtyInputs[i]).data('item_id');
-        handleEnableDisable(itemId);
+    var allQtyInputsBag = $('.qty_input');
+    for (var i = 0; i < allQtyInputsBag.length; i++) {
+        var itemId = $(allQtyInputsBag[i]).data('item_id');
+        handleEnableDisableBag(itemId);
     }
 
     // Check enable/disable every time the input is changed
-    $('.qty_input').change(function() {
+    $('.qty_input').change(function () {
         var itemId = $(this).data('item_id');
-        handleEnableDisable(itemId);
+        handleEnableDisableBag(itemId);
     });
 
     // Increment quantity
-    $('.increment-qty').click(function(e) {
+    $('.increment-qty').click(function (e) {
         e.preventDefault();
         var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
         var currentValue = parseInt($(closestInput).val());
         var availableQty = parseInt($(closestInput).data('available_qty'));
-        var qtyInBag = parseInt($(closestInput).data('qty_in_bag')) || 0;
-        var maxQuantity = availableQty - qtyInBag;
+        var maxQuantity = availableQty; // Update this line
 
         if (currentValue < maxQuantity) {
             $(closestInput).val(currentValue + 1);
             var itemId = $(this).data('item_id');
-            handleEnableDisable(itemId);
+            handleEnableDisableBag(itemId);
         }
     });
 
-
     // Decrement quantity
-    $('.decrement-qty').click(function(e) {
-
-       e.preventDefault();
-       var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
-       var currentValue = parseInt($(closestInput).val());
-       $(closestInput).val(currentValue - 1);
-       var itemId = $(this).data('item_id');
-       handleEnableDisable(itemId);
+    $('.decrement-qty').click(function (e) {
+        e.preventDefault();
+        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+        var currentValue = parseInt($(closestInput).val());
+        $(closestInput).val(currentValue - 1);
+        var itemId = $(this).data('item_id');
+        handleEnableDisableBag(itemId);
     });
+
 </script>

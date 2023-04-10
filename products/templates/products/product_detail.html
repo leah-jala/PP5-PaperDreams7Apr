@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
@@ -55,7 +56,9 @@
                                         </div>
                                         <input class="form-control qty_input text-center" type="number"
                                             name="quantity" value="1" min="1" max="99"
-                                            data-item_id="{{ product.id }}"
+                                            data-item_id="{{ product.id }}" 
+                                            data-available_qty="{{ product.quantity }}"
+                                            data-qty_in_bag="{{ request.session.bag|get_item_qty:product.id }}"
                                             id="id_qty_{{ product.id }}">
                                         <div class="input-group-append">
                                             <button class="increment-qty btn btn-black rounded-0"
@@ -68,6 +71,15 @@
                                     </div>
                                 </div>
                             </div>
+                            {% if messages %}
+                                <div class="messages-container">
+                                {% for message in messages %}
+                                    <div class="alert alert-{{ message.tags }}">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                                </div>
+                            {% endif %}
 
                             <div class="col-12">
                                 <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">

@@ -6,8 +6,22 @@ from products.models import Product
 # Create your views here.
 def view_bag(request):
     """ A view to return the shopping bag page """
+    bag = request.session.get('bag', {})
+    bag_items = []
 
-    return render(request, 'bag/bag.html')
+    for item_id, quantity in bag.items():
+        product = get_object_or_404(Product, pk=item_id)
+        bag_items.append({
+            'item_id': item_id,
+            'quantity': quantity,
+            'product': product,
+        })
+
+    context = {
+        'bag_items': bag_items,
+    }
+
+    return render(request, 'bag/bag.html', context)
 
 
 def add_to_bag(request, item_id):
@@ -15,19 +29,23 @@ def add_to_bag(request, item_id):
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
+    available_qty = product.quantity
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
 
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
-        messages.success(
-            request, f'Updated {product.name} quantity to {bag[item_id]}')
+        if bag[item_id] > available_qty:
+            bag[item_id] = available_qty
+            messages.error(request, f"Only {available_qty} items are available for {product.name}.")
     else:
         bag[item_id] = quantity
-        messages.success(request, f'Added {product.name} to your bag')
+        if bag[item_id] > available_qty:
+            bag[item_id] = available_qty
+            messages.error(request, f"Only {available_qty} items are available for {product.name}.")
 
     request.session['bag'] = bag
-    return redirect(redirect_url)
+    return redirect(request.POST.get('redirect_url'))
 
 
 def adjust_bag(request, item_id):
