@@ -95,8 +95,9 @@
                                         <p class="my-0">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
                                     </div>
                                 </div>
-
-
+                                <div class="col-12 mt-2 text-right">
+                                    <p class="text-muted"><small>Available: {{ item.product.quantity }} {% if request.session.bag %}({{ request.session.bag|get_item_qty:item.product.id }} in bag){% endif %}</small></p>
+                                </div>
                                 <hr class="my-4">
                                 {% endfor %}
                             </div>

@@ -69,18 +69,12 @@
                                             </button>
                                         </div>
                                     </div>
+                                    <div class="mt-2">
+                                        <p><small>Available: {{ product.quantity }} {% if request.session.bag %}({{ request.session.bag|get_item_qty:product.id }} in bag){% endif %}</small></p>
+                                    </div>
+                                    
                                 </div>
                             </div>
-                            {% if messages %}
-                                <div class="messages-container">
-                                {% for message in messages %}
-                                    <div class="alert alert-{{ message.tags }}">
-                                        {{ message }}
-                                    </div>
-                                {% endfor %}
-                                </div>
-                            {% endif %}
-
                             <div class="col-12">
                                 <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
                                     <span class="icon">
