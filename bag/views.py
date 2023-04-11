@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
-from django.urls import reverse_lazy
 from django.contrib import messages
 from products.models import Product
 
@@ -31,21 +30,23 @@ def add_to_bag(request, item_id):
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     available_qty = product.quantity
+    redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
+
 
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
         if bag[item_id] > available_qty:
             bag[item_id] = available_qty
             messages.error(request, f"Only {available_qty} items are available for {product.name}.")
+        else:
+            messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
     else:
         bag[item_id] = quantity
-        if bag[item_id] > available_qty:
-            bag[item_id] = available_qty
-            messages.error(request, f"Only {available_qty} items are available for {product.name}.")
+        messages.success(request, f'Added {product.name} to your bag')
 
     request.session['bag'] = bag
-    return redirect(reverse_lazy('products'))
+    return redirect(redirect_url)
 
 
 def adjust_bag(request, item_id):

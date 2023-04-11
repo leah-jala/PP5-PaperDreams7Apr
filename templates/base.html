@@ -211,14 +211,7 @@
   </script>
 
 <script type="text/javascript">
-  $(document).ready(function () {
-    console.log("Toasts script loaded");
-    $('.toast').each(function () {
-      var toast = $(this);
-      console.log("Showing toast:", toast.attr('id'));
-      toast.toast('show');
-    });
-  });
+  $('.toast').toast('show');
 </script>
 
   
