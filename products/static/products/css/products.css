@@ -28,6 +28,9 @@ h4 {
       color: #e96c74;
   }
 
+  .card {
+    max-width: 250px;
+}
   
   /* Add margin so products aren't behind sticky footer */
   .product-container {
