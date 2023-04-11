@@ -148,13 +148,19 @@
 </div>
 </div>
 {% else %}
-<p class="lead mb-5">Your bag is empty.</p>
-<a href="{% url 'products' %}" class="m-4 btn btn-outline-black rounded-0 btn-lg">
-    <span class="bag-icons">
-        <i class="fas fa-chevron-left"></i>
-    </span>
-    <span class="text-uppercase">Keep Shopping</span>
-</a>
+<div class="container mt-md-5 pt-md-5">
+    <div class="row">
+        <div class="col">
+            <p class="lead">Your bag is empty.</p>
+            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                <span class="bag-icons">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">Keep Shopping</span>
+            </a>
+        </div>
+    </div>
+</div>
 {% endif %}
 {% endblock %}
 

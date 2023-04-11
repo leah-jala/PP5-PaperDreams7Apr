@@ -35,6 +35,8 @@ def add_to_bag(request, item_id):
 
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
+        messages.success(
+            request, f'Updated {product.name} quantity to {bag[item_id]}')
         if bag[item_id] > available_qty:
             bag[item_id] = available_qty
             messages.error(
