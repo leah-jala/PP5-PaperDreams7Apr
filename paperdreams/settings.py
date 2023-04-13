@@ -44,12 +44,13 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    # Custom models
+    # Custom apps
     'home',
     'products',
     'bag',
     'checkout',
     'contact',
+    'pages',
 
     # Other
     'crispy_forms',
