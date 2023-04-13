@@ -19,7 +19,7 @@
 {% endblock %}
 
 {% block content %}
-<section class="section gray-bg mb-4" id="contactus">
+<section class="section gray-bg" id="contactus">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -51,7 +51,12 @@
                         <div class="form-group">
                             {{ form.newsletter|as_crispy_field }}
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button id="submit-button" class="btn btn-black rounded-0">
+							<span class="font-weight-bold">Submit</span>
+							<span class="icon">
+								<i class="fas fa-paper-plane"></i>
+							</span>
+						</button>
                     </form>                  
                 </div>
             </div>
@@ -70,8 +75,8 @@
                 </div>
                 <div class="contact-name">
                     <h5>Make it bespoke</h5>
-                    <p>Get in touch with your great ideas if you'd like to commmission an artwrok, 
-                        or have a mask made to fit with a face casting.
+                    <p>Get in touch with your great ideas for commissioning an artwork. You can 
+                        also have a mask made to fit with a face-casting.
                     </p>
                 </div>
                 <div class="social-share nav">

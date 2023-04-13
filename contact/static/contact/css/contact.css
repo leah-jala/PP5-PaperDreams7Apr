@@ -36,7 +36,7 @@ body{
 }
 .social-share .dribbble {
   box-shadow: 0 8px 30px -4px rgba(234, 76, 137, 0.5);
-  background-color: #ea4c89;
+  background-color: #e96c74;
 }
 .social-share .behance {
   box-shadow: 0 8px 30px -4px rgba(0, 103, 255, 0.5);
@@ -75,7 +75,7 @@ body{
     color: black;
     font-size: 45px;
     margin: 0 0 15px;
-    border-left: 5px solid #c94c43;
+    border-left: 5px solid #e96c74;
     padding-left: 15px;
 }
 .section-title {
