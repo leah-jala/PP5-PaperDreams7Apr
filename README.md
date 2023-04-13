@@ -20,6 +20,7 @@ Together these commits relate to comments 1-59 in the first repo [NEW-paperdream
 [Contact Page](https://www.bootdey.com/snippets/view/contact-page-section#html)
 Django Documentation
 - [Understanding Widgets](https://docs.djangoproject.com/en/4.2/ref/forms/widgets/)
+- [Privacy Policy Generator](https://www.privacypolicygenerator.info/)
 
 # Notes
 

@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% load crispy_forms_tags %}
 
 {% block extra_css %}
 {% endblock %}
@@ -10,12 +9,37 @@
 
 {% block page_header %}
 <div class="container header-container">
-  <div class="row">
-    <div class="col"></div>
-  </div>
+    <div class="row">
+        <div class="col"></div>
+    </div>
 </div>
+
 {% endblock %}
 
 {% block content %}
-<h2>About page</h2>
+
+
+<div class="container mt-5 style="max-width: 1000px; margin: 0 auto;"">
+    <div class="row">
+      <!-- Image on the left -->
+      <div class="col-md-6">
+        <img src="{{ MEDIA_URL }}leah-with-figure.JPG" alt="Artist with a papier mache figure" class="img-fluid">
+      </div>
+      <!-- Text and button on the right -->
+      <div class="col-md-6 d-flex flex-column justify-content-center">
+        <h2>About Paper Dreams</h2>
+        <p>
+          When my daughters were 2, I made a papier mache pumpkin to the Halloween candy we'd hand out. I didn't expect much, 
+          but when it was done I was wowed by it. I started Googling for ideas for papier mache, and I was suprised to discover 
+          that the famous Commedia dell'arte masks were made in this way. This sent me down a path of discovery. I taught myself the basic 
+          skills, and eventually went to Florence to work with a master mask-maker. In between, I attended some
+          courses at local universities and adult colleges to hone skills in drawing, sculpture, painting and mould-making. 
+          After a lot of encouragement I started selling my masks and other objects and the rest is history! I hope my 
+          site will inspire you to give a try. Keep an eye on my blog for upcoming tutorials.
+        </p>
+        <a href="#" class="btn btn-black">Learn More</a>
+      </div>
+    </div>
+  </div>
+  
 {% endblock %}

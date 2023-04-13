@@ -63,6 +63,9 @@
             <a class="nav-link active" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
+            <a class="nav-link active" href="{% url 'about' %}">About <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'contact' %}">Contact</a>
           </li>
           <li class="nav-item">
@@ -180,9 +183,9 @@
   {% endblock %}
   <footer class="mt-4">
     <ul class="nav justify-content-center border-bottom pb-3">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Shipping & Returns</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Privacy</a></li>
+      <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link px-2 text-muted">Contact</a></li>
+      <li class="nav-item"><a href="{% url 'shipping_returns' %}" class="nav-link px-2 text-muted">Delivery & Returns</a></li>
+      <li class="nav-item"><a href="{% url 'privacy' %}" class="nav-link px-2 text-muted">Privacy</a></li>
       <li class="nav-item"><a href="https://www.facebook.com/" class="nav-link px-2 text-muted" target="_blank"
           rel="noopener" aria-label="Visit our Facebook page (opens in a new tab)">
           <i class="fa-brands fa-facebook"></i></a>
