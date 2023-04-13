@@ -17,6 +17,7 @@ Together these commits relate to comments 1-59 in the first repo [NEW-paperdream
 # Credits
 [Shopping bag Bootstrap/Html](https://mdbootstrap.com/docs/standard/extended/shopping-carts/) adapted from MDB
 [Bootstrap Toasts](https://getbootstrap.com/docs/4.3/components/toasts/) - reviewed this but used the Boutique Ado html.  The tutorial had taken the toast html direct from Bootstrap and added some extra styling. For the sake of speed I have borrowed this.
+[Contact Page](https://www.bootdey.com/snippets/view/contact-page-section#html)
 
 # Notes
 
