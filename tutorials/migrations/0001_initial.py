@@ -39,7 +39,7 @@ class Migration(migrations.Migration):
                 ('image', django_resized.forms.ResizedImageField(crop=None, force_format='WEBP', keep_meta=True, quality=75, scale=None, size=[400, None], upload_to='tutorials/')),
                 ('image_alt', models.CharField(max_length=100)),
                 ('created_date', models.DateTimeField(auto_now=True)),
-                ('category', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='learn.tutorialcategory')),
+                ('category', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='tutorials.tutorialcategory')),
                 ('instructor', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='tutorials', to=settings.AUTH_USER_MODEL)),
             ],
             options={
@@ -57,7 +57,7 @@ class Migration(migrations.Migration):
                 ('image_alt', models.CharField(max_length=100)),
                 ('posted_date', models.DateTimeField(auto_now=True)),
                 ('instructor', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='tutorial_posts', to=settings.AUTH_USER_MODEL)),
-                ('tutorial', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='posts', to='learn.tutorial')),
+                ('tutorial', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='posts', to='tutorials.tutorial')),
             ],
             options={
                 'ordering': ['week_number'],
