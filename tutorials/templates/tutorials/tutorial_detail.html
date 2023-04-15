@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}
+
+{% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<h2>Tutorials</h2>
+
+<div class="container">
+  <!-- First row -->
+  <div class="container d-flex flex-row flex-wrap justify-content-center">
+    <div class="col-md-12 card mb-4 mt-3 tutorial">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="{{ object.image.url }}" class="card-img-top py-4" alt="{{ object.image_alt }}">
+        </div>
+        <div class="col-md-9 card-body">
+          <h3>{{ object.title }}</h3>
+          <h4>Instructor: {{ object.instructor }}</h4>
+          <p><small>Category: {{ object.category.get_friendly_name }}</small></p>
+          <p></p>
+          <p>Duration: {{ object.duration }}</p>
+          <p class="text-capitalize">Difficulty: {{ tutorial.difficulty_level }}</p>
+          <p>Summary: {{ object.summary }}</p>
+          <div class="d-flex flex-wrap tutorial-links-container">
+            {% for post in tutorial_posts %}
+            <a href="#" class="tutorial-post-link mr-2 mb-2" data-week="{{ post.week_number }}">Week {{ post.week_number }} - {{ post.title }}</a>
+            {% if not forloop.last %}<span class="separator">|&nbsp</span>{% endif %}
+            {% endfor %}
+          </div>                
+        </div>
+      </div>
+      <!-- Second row -->
+      <div class="row">
+        <div class="col-md-3">
+          <h5><strong>Equipment List</strong></h5>
+          {{ object.equipment_list | safe }}
+        </div>
+        <div class="col-md-9">
+          <!-- Tutorial posts -->
+          <div id="card-body tutorial-posts">
+            {% for post in tutorial_posts %}
+              <div id="week-{{ post.week_number }}" class="week-post" style="display: none;">
+                <h4>Week: {{ post.week_number }} | {{ post.title }}</h4>
+                <p>{{ post.instructions | safe }}</p>
+              </div>
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const postLinks = document.querySelectorAll(".tutorial-post-link");
+    const weekPosts = document.querySelectorAll(".week-post");
+
+    // Show the first week by default
+    if (weekPosts.length > 0) {
+      weekPosts[0].style.display = "block";
+    }
+
+    postLinks.forEach(link => {
+      link.addEventListener("click", event => {
+        event.preventDefault();
+        const weekNumber = link.dataset.week;
+
+        weekPosts.forEach(post => {
+          if (post.id === `week-${weekNumber}`) {
+            post.style.display = "block";
+          } else {
+            post.style.display = "none";
+          }
+        });
+      });
+    });
+  });
+</script>
+{% endblock %}

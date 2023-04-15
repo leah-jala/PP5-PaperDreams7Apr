@@ -27,7 +27,7 @@
                     <img src="{{ tutorial.image.url }}" class="card-img-top py-4" alt="{{ tutorial.image_alt }}">
                 </div>
                 <div class="col-md-9 card-body">
-                    <h3><a href="#">{{ tutorial.title }}</a></h3>
+                    <h3><a href="{% url 'tutorial_detail' tutorial.pk %}">{{ tutorial.title }}</a></h3>
                     <h4>Instructor: {{ tutorial.instructor }}</h4>
                     <p><small>Category: {{ tutorial.category.get_friendly_name }}</small></p>
                     <p></p>

@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.views.generic import CreateView
+from django.shortcuts import render, get_object_or_404
+from django.views.generic import CreateView, DetailView
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -27,3 +27,21 @@ def tutorial_list(request):
     """ A view to return the main tutorials page """
     tutorials = Tutorial.objects.all()
     return render(request, 'tutorials/tutorial_list.html', {'tutorials': tutorials})
+
+
+class TutorialDetailView(DetailView):
+    """
+    Renders a view to display the tutorial details and 
+    its related tutorial posts
+    """
+    model = Tutorial
+    template_name = 'tutorials/tutorial_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        tutorial = self.get_object()
+        tutorial_posts = TutorialPost.objects.filter(tutorial=tutorial)
+        context['tutorial_posts'] = tutorial_posts
+        return context
+
+
