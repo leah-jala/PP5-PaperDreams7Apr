@@ -55,7 +55,7 @@
                                             </button>
                                         </div>
                                         <input class="form-control qty_input text-center" type="number"
-                                            name="quantity" value="1" min="1" max="99"
+                                            name="quantity" value="1" min="1" max="{{ product.quantity}}"
                                             data-item_id="{{ product.id }}" 
                                             data-available_qty="{{ product.quantity }}"
                                             data-qty_in_bag="{{ request.session.bag|get_item_qty:product.id|default:0 }}"
