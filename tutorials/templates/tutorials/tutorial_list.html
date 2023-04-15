@@ -10,23 +10,36 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col">New tutorials page</div>
+        <div class="col"></div>
     </div>
 </div>
 
 {% endblock %}
 
 {% block content %}
-<div class="container mt-5 style=" max-width: 1000px; margin: 0 auto;>
-    <div class="row">
-        <h2>Make your own Paper Dreams!</h2>
-    </div>
-    
-    <div>
-        <h2>Tutorials</h2>
-        
-    </div>
+    <h2>Tutorials</h2>
 
-</div>
-
+    <div class="container d-flex flex-row flex-wrap justify-content-center">
+        {% for tutorial in tutorials %}
+        <div class="col-md-12 card mb-4 mt-3 tutorial">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="{{ tutorial.image.url }}" class="card-img-top py-4" alt="{{ tutorial.image_alt }}">
+                </div>
+                <div class="col-md-9 card-body">
+                    <h3><a href="#">{{ tutorial.title }}</a></h3>
+                    <h4>Instructor: {{ tutorial.instructor }}</h4>
+                    <p><small>Category: {{ tutorial.category.get_friendly_name }}</small></p>
+                    <p></p>
+                    <p>Duration: {{ tutorial.duration }}</p>
+                    <p class="text-capitalize">Difficulty: {{ tutorial.difficulty_level }}</p>
+                    <p>Summary: {{ tutorial.summary }}</p>
+                </div>
+            </div>        
+        </div>
+        {% empty %}
+            <p>No tutorials available.</p>
+        {% endfor %}
+    </div>
 {% endblock %}
+

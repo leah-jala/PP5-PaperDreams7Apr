@@ -25,5 +25,5 @@ class CreateTutorialView(CreateView):
 
 def tutorial_list(request):
     """ A view to return the main tutorials page """
-
-    return render(request, 'tutorials/tutorial_list.html')
+    tutorials = Tutorial.objects.all()
+    return render(request, 'tutorials/tutorial_list.html', {'tutorials': tutorials})
