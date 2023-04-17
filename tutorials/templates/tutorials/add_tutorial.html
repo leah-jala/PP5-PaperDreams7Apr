@@ -15,7 +15,8 @@
         {{ form.media }} 
         {{ form|crispy }}
         <div class="text-center">
-            <button type="submit" class="btn btn-primary mt-2">Create Course</button>
+            <button type="submit" class="btn btn-success mt-2">Create Course</button>
+            <a href="{% url 'user_tutorials' %}" class="btn btn-secondary mt-2">Cancel</a>
         </div>
     </form>
 </div>

@@ -1,9 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_css %}
-{% endblock %}
-
 {% block extra_js %}
 {% endblock %}
 
@@ -17,8 +14,8 @@
 {% endblock %}
 
 {% block content %}
+<div class="container">
     <h2>Tutorials</h2>
-
     <div class="container d-flex flex-row flex-wrap justify-content-center">
         {% for tutorial in tutorials %}
         <div class="col-md-12 card mb-4 mt-3 tutorial">
@@ -27,19 +24,24 @@
                     <img src="{{ tutorial.image.url }}" class="card-img-top py-4" alt="{{ tutorial.image_alt }}">
                 </div>
                 <div class="col-md-9 card-body">
-                    <h3><a href="{% url 'tutorial_detail' tutorial.pk %}">{{ tutorial.title }}</a></h3>
-                    <h4>Instructor: {{ tutorial.instructor }}</h4>
-                    <p><small>Category: {{ tutorial.category.get_friendly_name }}</small></p>
-                    <p></p>
-                    <p>Duration: {{ tutorial.duration }}</p>
-                    <p class="text-capitalize">Difficulty: {{ tutorial.difficulty_level }}</p>
-                    <p>Summary: {{ tutorial.summary }}</p>
+                    
+                        <h3>{{ tutorial.title }}</h3>
+                        <h4>Instructor: {{ tutorial.instructor }}</h4>
+                        <p><small><strong>Category: {{ tutorial.category.get_friendly_name }}</strong></small></p>
+                        <p></p>
+                        <p><strong>Duration:</strong> {{ tutorial.duration }}</p>
+                        <p class="text-capitalize"><strong>Difficulty:</strong> {{ tutorial.difficulty_level }}</p>
+                        <p><strong>Summary:</strong> {{ tutorial.summary }}</p>
+                        <a href="{% url 'tutorial_detail' tutorial.pk %}" class="btn btn-outline-black rounded-0">View Tutorial</a>
                 </div>
-            </div>        
+            </div>
         </div>
+
         {% empty %}
-            <p>No tutorials available.</p>
+        <p>No tutorials available.</p>
         {% endfor %}
     </div>
-{% endblock %}
+    {% endblock %}
 
+
+</div>
