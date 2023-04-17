@@ -44,7 +44,7 @@ class CreateTutorialView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
 
 class UpdateTutorialView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-    """ 
+    """
     A view to edit tutorial details
     """
     model = Tutorial
@@ -59,7 +59,7 @@ class UpdateTutorialView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return redirect(reverse_lazy('account_login'))
 
     def get_success_url(self):
-        return reverse_lazy('tutorials:tutorial_detail', args=[self.object.pk])
+        return reverse_lazy('tutorials/user_tutorials')
 
 
 class CreateTutorialPostView(LoginRequiredMixin, UserPassesTestMixin, CreateView):

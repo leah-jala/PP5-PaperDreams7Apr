@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import CreateTutorialView, tutorial_list, TutorialDetailView, CreateTutorialPostView, UserTutorialsView
+from .views import CreateTutorialView, tutorial_list, TutorialDetailView, CreateTutorialPostView, UserTutorialsView, UpdateTutorialView
 
 
 urlpatterns = [
@@ -24,4 +24,8 @@ urlpatterns = [
         'user_tutorials/',
         UserTutorialsView.as_view(),
         name='user_tutorials'),
+    path(
+        'edit_tutorials/<int:pk>/',
+        UpdateTutorialView.as_view(),
+        name='edit_tutorial'),
 ]

@@ -4,16 +4,12 @@
 <div class="container" style="margin-top: 100px;">
     <h2>Your Tutorials</h2>
     {% for tutorial_with_posts in tutorials_with_posts %}
-      <div>
-        <h3>{{ tutorial_with_posts.tutorial.title }}</h3>
-        <p>{{ tutorial_with_posts.tutorial.description }}</p>
-        <ul>
-          {% for post in tutorial_with_posts.posts %}
-            <li>{{ post.title }}</li>
-          {% endfor %}
-        </ul>
-        <a href="{% url 'add_tutorial_post' tutorial_with_posts.tutorial.pk %}">Add Post</a>
-      </div>
-    {% endfor %}
+    <h2>{{ tutorial_with_posts.tutorial.title }}</h2>
+    <!-- Add an Edit link for the tutorial title -->
+    <a href="{% url 'edit_tutorial' tutorial_with_posts.tutorial.pk %}">Edit Tutorial Content</a>
+    <ul>
+        
+    </ul>
+{% endfor %}
 </div>
 {% endblock %}
