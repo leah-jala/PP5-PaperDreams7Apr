@@ -10,7 +10,7 @@ from .forms import TutorialForm
 
 class CreateTutorialView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     """
-    Renders a view to allow a superuser to create a 
+    Renders a view to allow a superuser to create a
     tutorial
     """
     template_name = 'tutorials/add_tutorial.html'
@@ -24,31 +24,72 @@ class CreateTutorialView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         """
         form.instance.instructor = self.request.user
         return super(CreateTutorialView, self).form_valid(form)
-    
+
     def test_func(self):
         """
         Checks if the current user is a superuser
         """
         return self.request.user.is_superuser
-    
+
     def handle_no_permission(self):
         """
-        Redirects users who fail the test_func (non-superusers) to 
+        Redirects users who fail the test_func (non-superusers) to
         the login page.
         """
         return redirect(reverse_lazy('account_login'))
 
 
+class CreateTutorialPostView(
+        LoginRequiredMixin,
+        UserPassesTestMixin,
+        CreateView):
+    """
+    Renders a view to allow a superuser to create a
+    tutorial post
+    """
+    template_name = 'tutorials/add_tutorial_post.html'
+    model = TutorialPost
+    form_class = TutorialPostForm
+
+    def form_valid(self, form):
+        """
+        Set's the tutorial post's instructor as the current user and associates it with the tutorial.
+        """
+        form.instance.instructor = self.request.user
+        form.instance.tutorial = get_object_or_404(
+            Tutorial, pk=self.kwargs['tutorial_pk'])
+        return super(CreateTutorialPostView, self).form_valid(form)
+
+    def test_func(self):
+        """
+        Checks if the current user is a superuser
+        """
+        return self.request.user.is_superuser
+
+    def handle_no_permission(self):
+        """
+        Redirects users who fail the test_func (non-superusers) to
+        the login page.
+        """
+        return redirect(reverse_lazy('account_login'))
+
+    def get_success_url(self):
+        return reverse_lazy(
+            'tutorials:detail', kwargs={
+                'pk': self.kwargs['tutorial_pk']})
+
 
 def tutorial_list(request):
     """ A view to return the main tutorials page """
     tutorials = Tutorial.objects.all()
-    return render(request, 'tutorials/tutorial_list.html', {'tutorials': tutorials})
+    return render(request,
+                  'tutorials/tutorial_list.html',
+                  {'tutorials': tutorials})
 
 
 class TutorialDetailView(DetailView):
     """
-    Renders a view to display the tutorial details and 
+    Renders a view to display the tutorial details and
     its related tutorial posts
     """
     model = Tutorial
@@ -60,5 +101,3 @@ class TutorialDetailView(DetailView):
         tutorial_posts = TutorialPost.objects.filter(tutorial=tutorial)
         context['tutorial_posts'] = tutorial_posts
         return context
-
-

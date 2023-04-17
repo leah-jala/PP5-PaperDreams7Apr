@@ -36,4 +36,30 @@ class TutorialForm(forms.ModelForm):
             'image_alt': "Describe the uploaded image"
         }
 
+class TutorialPostForm(form.ModelForm):
 
+    """
+    Form to create a step in a Tutorial
+    """
+
+    class Meta:
+        model = TutorialPost
+        fields = [
+            'week_number',
+            'title',
+            'instructions',
+            'image',
+            'image_alt',
+        ]
+    
+        widget = {
+                "instructions": forms.Textarea(attrs={"rows": 5}),
+            }
+        
+        labels = {
+            'week_number': 'Week Number',
+            'title' : 'Title',
+            'instructions': 'Instructions',
+            'image': 'Upload an image related to a step',
+            'image_alt': "Describe the uploaded image.",
+        }
