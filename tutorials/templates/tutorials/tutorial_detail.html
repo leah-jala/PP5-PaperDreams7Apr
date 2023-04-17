@@ -2,7 +2,18 @@
 {% load static %}
 
 {% block extra_css %}
+<style>
+  .tutorial-post-link {
+    color: black;
+    text-decoration: none;
+  }
+  .tutorial-post-link.active {
+    color: green;
+    font-weight: bold;
+  }
+</style>
 {% endblock %}
+
 
 {% block extra_js %}
 {% endblock %}
@@ -77,10 +88,21 @@
       weekPosts[0].style.display = "block";
     }
 
+    // Add the 'active' class to the first link by default
+    if (postLinks.length > 0) {
+      postLinks[0].classList.add("active");
+    }
+
     postLinks.forEach(link => {
       link.addEventListener("click", event => {
         event.preventDefault();
         const weekNumber = link.dataset.week;
+
+        // Remove the 'active' class from all the links
+        postLinks.forEach(link => link.classList.remove("active"));
+
+        // Add the 'active' class to the clicked link
+        event.target.classList.add("active");
 
         weekPosts.forEach(post => {
           if (post.id === `week-${weekNumber}`) {
