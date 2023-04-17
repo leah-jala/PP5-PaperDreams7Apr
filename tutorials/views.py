@@ -106,6 +106,25 @@ class CreateTutorialPostView(LoginRequiredMixin, UserPassesTestMixin, CreateView
         return reverse_lazy('tutorials:tutorial_detail', args=[tutorial_pk])
 
 
+class UpdateTutorialPostView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """
+    A view to edit tutorial details
+    """
+    model = TutorialPost
+    template_name = 'tutorials/edit_tutorial_post.html'
+    form_class = TutorialPostForm
+
+    def test_func(self):
+        tutorial_post = self.get_object()
+        return self.request.user == tutorial_post.instructor
+
+    def handle_no_permission(self):
+        return redirect(reverse_lazy('account_login'))
+
+    def get_success_url(self):
+        return reverse_lazy('tutorials/user_tutorials')
+
+
 class UserTutorialsView(LoginRequiredMixin, ListView):
     """
     Renders a view to display a list of tutorials for the current user.

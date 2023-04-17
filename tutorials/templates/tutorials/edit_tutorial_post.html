@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+  <h2>Edit Tutorial Post</h2>
+  <form method="post" enctype="multipart/form-data" class="p-2 form">
+    {% csrf_token %}
+    {{ form.media }} 
+    {{ form|crispy }}
+    <button type="submit">Save Changes</button>
+  </form>
+  <a href="{% url 'user_tutorials' %}">Back to My Tutorials</a>
+{% endblock %}
