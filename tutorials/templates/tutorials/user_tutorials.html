@@ -1,21 +1,83 @@
 {% extends 'base.html' %}
 
+{% block extra_css %}
+<style>
+.spacer {
+    margin-top: 150px;
+}
+</style>
+
+{% endblock %}
+
 {% block content %}
-<div class="container" style="margin-top: 100px;">
-    <h2>Your Tutorials</h2>
-    {% for tutorial_with_posts in tutorials_with_posts %}
-    <h2>{{ tutorial_with_posts.tutorial.title }}</h2>
-    <a href="{% url 'edit_tutorial' tutorial_with_posts.tutorial.pk %}">Edit Tutorial Content</a>
-    <a href="{% url 'delete_tutorial' tutorial_with_posts.tutorial.pk %}">Delete Tutorial</a>
 
-    <ul>
-        {% for post in tutorial_with_posts.posts %}
-            <li>{{ post.title }}</li>
-            <a href="{% url 'edit_tutorial_post' post.pk %}">Edit Post</a>
-            <a href="{% url 'delete_tutorial_post' post.pk %}">Delete Week</a>
+<div class="container spacer">
+    <h2 class="mb-4">Manage Tutorials</h2>
+    <p class="mb-4">You can add a new tutorial by clicking the button below. When you add a tutorial, you will provide 
+        basic information about your course that is relevant for all posts: a title, a category, a difficulty level, 
+        the time needed to complete the whole tutorial, a brief description of its goals, and equipment list and an image.<br><br>
+        Once you create your course, you will see as summary of it below. The buttons under the course summary allow you to view 
+        the published course and make changes to the overall description. Please note, if you use the delete button, it will 
+        delete the course information as well as any posts related to it. Any posts you have add to the tutorial are listed and
+        they can be edited or deleted with the buttons. Here the delete button will only affect the individual post. If you have not yet added
+        any posts, you can use the "Add a Post" button to do so.
+    </p>
+    <a href="{% url 'add_tutorial' %}" class="btn btn-success mb-4">Add a New Tutorial</a>
+    <div class="container">
+        {% if tutorials_with_posts %}
+        <div class="row">
+            {% for tutorial_with_posts in tutorials_with_posts %}
+            <div class="col-md-12 mb-4">
+                <div class="row align-items-center bg-light p-3">
+                    <div class="col-md-3 text-center">
+                        <img class="img-fluid rounded" src="{{ tutorial_with_posts.tutorial.image.url }}"
+                            alt="{{ tutorial_with_posts.tutorial.image_alt }}">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ tutorial_with_posts.tutorial.title }}</h5>
+                                <p class="card-text">{{ tutorial_with_posts.tutorial.summary }}</p>
 
-        {% endfor %}
-    </ul>
-{% endfor %}
+                                <a href="{% url 'tutorial_detail' tutorial_with_posts.tutorial.pk %}"
+                                    class="btn btn-sm btn-outline-secondary mr-2">View</a>
+                                <a href="{% url 'edit_tutorial' tutorial_with_posts.tutorial.pk %}"
+                                    class="btn btn-sm btn-outline-secondary mr-2">Edit</a>
+                                <a href="{% url 'delete_tutorial' tutorial_with_posts.tutorial.pk %}"
+                                    class="btn btn-sm btn-outline-danger">Delete</a>
+
+                                <div class="col pt-3 mt-2">
+                                    {% if tutorial_with_posts.posts %}
+                                    <h5 class="mb-3">Post Titles</h5>
+                                    {% for post in tutorial_with_posts.posts %}
+                                    <div class="row my-2">
+                                        <div class="col">Week {{ post.week_number }} - {{ post.title }}</div>
+                                        <div class="col">
+                                            <a href="{% url 'edit_tutorial_post' post.pk %}"
+                                                class="btn btn-sm btn-outline-secondary mr-2">Edit Post</a>
+                                            <a href="{% url 'delete_tutorial_post' post.pk %}"
+                                                class="btn btn-sm btn-outline-danger">Delete Post</a>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+
+                                    {% else %}
+                                    <p>No posts added yet.</p>
+                                    <a href="{% url 'add_tutorial_post' tutorial_with_posts.tutorial.pk %}"
+                                        class="btn btn-sm btn-success">Add a Post</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p>No tutorials yet.</p>
+        {% endif %}
+    </div>
 </div>
+
 {% endblock %}

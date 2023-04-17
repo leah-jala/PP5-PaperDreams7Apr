@@ -41,11 +41,11 @@
         <div class="col-md-9 card-body">
           <h3>{{ object.title }}</h3>
           <h4>Instructor: {{ object.instructor }}</h4>
-          <p><small>Category: {{ object.category.get_friendly_name }}</small></p>
+          <p><small><strong>Category: {{ object.category.get_friendly_name }}</strong></small></p>
           <p></p>
-          <p>Duration: {{ object.duration }}</p>
-          <p class="text-capitalize">Difficulty: {{ tutorial.difficulty_level }}</p>
-          <p>Summary: {{ object.summary }}</p>
+          <p><strong>Duration:</strong> {{ object.duration }}</p>
+          <p class="text-capitalize"><strong>Difficulty:</strong> {{ tutorial.difficulty_level }}</p>
+          <p><strong>Summary:</strong> {{ object.summary }}</p>
           <div class="d-flex flex-wrap tutorial-links-container">
             {% for post in tutorial_posts %}
             <a href="#" class="tutorial-post-link mr-2 mb-2" data-week="{{ post.week_number }}">Week {{ post.week_number }} - {{ post.title }}</a>
