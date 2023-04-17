@@ -1,6 +1,6 @@
 from django import forms
 from djrichtextfield.widgets import RichTextWidget
-from .models import Tutorial
+from .models import Tutorial, TutorialPost
 
 class TutorialForm(forms.ModelForm):
     """
@@ -36,8 +36,7 @@ class TutorialForm(forms.ModelForm):
             'image_alt': "Describe the uploaded image"
         }
 
-class TutorialPostForm(form.ModelForm):
-
+class TutorialPostForm(forms.ModelForm):
     """
     Form to create a step in a Tutorial
     """
@@ -45,6 +44,7 @@ class TutorialPostForm(form.ModelForm):
     class Meta:
         model = TutorialPost
         fields = [
+            'tutorial',
             'week_number',
             'title',
             'instructions',
@@ -52,9 +52,9 @@ class TutorialPostForm(form.ModelForm):
             'image_alt',
         ]
     
-        widget = {
-                "instructions": forms.Textarea(attrs={"rows": 5}),
-            }
+        widgets = {
+            "instructions": forms.Textarea(attrs={"rows": 5}),
+        }
         
         labels = {
             'week_number': 'Week Number',
@@ -63,3 +63,9 @@ class TutorialPostForm(form.ModelForm):
             'image': 'Upload an image related to a step',
             'image_alt': "Describe the uploaded image.",
         }
+    
+    def __init__(self, *args, **kwargs):
+        tutorial_pk = kwargs.pop('tutorial_pk', None)
+        super(TutorialPostForm, self).__init__(*args, **kwargs)
+        if tutorial_pk:
+            self.fields['tutorial'].initial = tutorial_pk

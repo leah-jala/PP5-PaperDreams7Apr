@@ -5,7 +5,7 @@ from django.views.generic import CreateView, DetailView
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import TutorialCategory, Tutorial, TutorialPost
-from .forms import TutorialForm
+from .forms import TutorialForm, TutorialPostForm
 
 
 class CreateTutorialView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
@@ -14,16 +14,17 @@ class CreateTutorialView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     tutorial
     """
     template_name = 'tutorials/add_tutorial.html'
-    model: Tutorial
+    model = Tutorial
     form_class = TutorialForm
-    success_url = '/tutorials/'
 
     def form_valid(self, form):
         """
         Set's the tutorial's user as the current user
         """
         form.instance.instructor = self.request.user
-        return super(CreateTutorialView, self).form_valid(form)
+        response = super(CreateTutorialView, self).form_valid(form)
+        messages.success(self.request, f'Tutorial "{self.object.title}" created successfully. Now, add tutorial posts.')
+        return response
 
     def test_func(self):
         """
@@ -37,28 +38,36 @@ class CreateTutorialView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         the login page.
         """
         return redirect(reverse_lazy('account_login'))
+    
+    def get_success_url(self):
+        return reverse_lazy('add_tutorial_post', kwargs={'tutorial_pk': self.object.pk})
 
 
-class CreateTutorialPostView(
-        LoginRequiredMixin,
-        UserPassesTestMixin,
-        CreateView):
+class CreateTutorialPostView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     """
-    Renders a view to allow a superuser to create a
-    tutorial post
+    Renders a view to allow a superuser to create a tutorial post
     """
     template_name = 'tutorials/add_tutorial_post.html'
     model = TutorialPost
     form_class = TutorialPostForm
 
+    def get_form_kwargs(self):
+        kwargs = super(CreateTutorialPostView, self).get_form_kwargs()
+        tutorial_pk = self.kwargs.get('tutorial_pk')
+        kwargs['tutorial_pk'] = tutorial_pk
+        return kwargs
+
     def form_valid(self, form):
         """
-        Set's the tutorial post's instructor as the current user and associates it with the tutorial.
+        Sets the tutorial post's instructor as the current user and associates it with the tutorial.
         """
         form.instance.instructor = self.request.user
-        form.instance.tutorial = get_object_or_404(
-            Tutorial, pk=self.kwargs['tutorial_pk'])
-        return super(CreateTutorialPostView, self).form_valid(form)
+        tutorial_pk = self.kwargs.get('tutorial_pk')
+        tutorial = get_object_or_404(Tutorial, pk=tutorial_pk)
+        form.instance.tutorial = tutorial
+        response = super(CreateTutorialPostView, self).form_valid(form)
+        messages.success(self.request, f'Tutorial post "{self.object.title}" created successfully.')
+        return response
 
     def test_func(self):
         """
@@ -72,11 +81,10 @@ class CreateTutorialPostView(
         the login page.
         """
         return redirect(reverse_lazy('account_login'))
-
+    
     def get_success_url(self):
-        return reverse_lazy(
-            'tutorials:detail', kwargs={
-                'pk': self.kwargs['tutorial_pk']})
+        tutorial_pk = self.kwargs['tutorial_pk']
+        return reverse_lazy('tutorials:tutorial_detail', args=[tutorial_pk])
 
 
 def tutorial_list(request):

@@ -1,11 +1,9 @@
 from django.urls import path
-from .views import CreateTutorialView, tutorial_list, TutorialDetailView
+from .views import CreateTutorialView, tutorial_list, TutorialDetailView, CreateTutorialPostView
+
 
 urlpatterns = [
-    path(
-        '',
-        tutorial_list,
-        name='tutorial_list_base'),
+    
     path(
         'add_tutorial/',
         CreateTutorialView.as_view(),
@@ -19,7 +17,7 @@ urlpatterns = [
         TutorialDetailView.as_view(),
         name='tutorial_detail'),
     path(
-        'tutorials/<int:tutorial_pk>/add_post/',
+        'tutorials/<int:tutorial_pk>/add_tutorial_post/',
         CreateTutorialPostView.as_view(),
         name='add_tutorial_post'),
 ]
