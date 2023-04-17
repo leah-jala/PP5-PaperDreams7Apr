@@ -1,7 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, DetailView, ListView, UpdateView
+from django.views.generic import CreateView, DetailView, ListView, UpdateView, DeleteView
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .models import TutorialCategory, Tutorial, TutorialPost
@@ -59,7 +59,22 @@ class UpdateTutorialView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return redirect(reverse_lazy('account_login'))
 
     def get_success_url(self):
-        return reverse_lazy('tutorials/user_tutorials')
+        return reverse_lazy('user_tutorials')
+
+
+class DeleteTutorialView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Tutorial
+    template_name = 'tutorials/delete_tutorial.html'
+
+    def test_func(self):
+        tutorial = self.get_object()
+        return self.request.user == tutorial.instructor
+
+    def handle_no_permission(self):
+        return redirect(reverse_lazy('account_login'))
+
+    def get_success_url(self):
+        return reverse_lazy('user_tutorials')
 
 
 class CreateTutorialPostView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
@@ -102,8 +117,7 @@ class CreateTutorialPostView(LoginRequiredMixin, UserPassesTestMixin, CreateView
         return redirect(reverse_lazy('account_login'))
     
     def get_success_url(self):
-        tutorial_pk = self.kwargs['tutorial_pk']
-        return reverse_lazy('tutorials:tutorial_detail', args=[tutorial_pk])
+        return reverse_lazy('user_tutorials')
 
 
 class UpdateTutorialPostView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -122,12 +136,28 @@ class UpdateTutorialPostView(LoginRequiredMixin, UserPassesTestMixin, UpdateView
         return redirect(reverse_lazy('account_login'))
 
     def get_success_url(self):
-        return reverse_lazy('tutorials/user_tutorials')
+        return reverse_lazy('user_tutorials')
+
+
+class DeleteTutorialPostView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = TutorialPost
+    template_name = 'tutorials/delete_tutorial_post.html'
+
+    def test_func(self):
+        tutorial_post = self.get_object()
+        return self.request.user == tutorial_post.instructor
+
+    def handle_no_permission(self):
+        return redirect(reverse_lazy('account_login'))
+
+    def get_success_url(self):
+        return reverse_lazy('user_tutorials')
 
 
 class UserTutorialsView(LoginRequiredMixin, ListView):
     """
-    Renders a view to display a list of tutorials for the current user.
+    Renders a view to display a list of tutorials created
+    by the current user.
     """
     template_name = 'tutorials/user_tutorials.html'
     context_object_name = 'tutorials'

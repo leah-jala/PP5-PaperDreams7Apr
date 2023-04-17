@@ -6,10 +6,14 @@
     {% for tutorial_with_posts in tutorials_with_posts %}
     <h2>{{ tutorial_with_posts.tutorial.title }}</h2>
     <a href="{% url 'edit_tutorial' tutorial_with_posts.tutorial.pk %}">Edit Tutorial Content</a>
+    <a href="{% url 'delete_tutorial' tutorial_with_posts.tutorial.pk %}">Delete Tutorial</a>
+
     <ul>
         {% for post in tutorial_with_posts.posts %}
             <li>{{ post.title }}</li>
             <a href="{% url 'edit_tutorial_post' post.pk %}">Edit Post</a>
+            <a href="{% url 'delete_tutorial_post' post.pk %}">Delete Week</a>
+
         {% endfor %}
     </ul>
 {% endfor %}
