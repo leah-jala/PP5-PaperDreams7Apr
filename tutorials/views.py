@@ -1,16 +1,16 @@
-from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-
 from .models import TutorialCategory, Tutorial, TutorialPost
 from .forms import TutorialForm
 
 
-class CreateTutorialView(CreateView):
+class CreateTutorialView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     """
-    Renders a view to allow a superuse to create a 
+    Renders a view to allow a superuser to create a 
     tutorial
     """
     template_name = 'tutorials/add_tutorial.html'
@@ -19,8 +19,25 @@ class CreateTutorialView(CreateView):
     success_url = '/tutorials/'
 
     def form_valid(self, form):
-        form.instance.user = self.request.user
+        """
+        Set's the tutorial's user as the current user
+        """
+        form.instance.instructor = self.request.user
         return super(CreateTutorialView, self).form_valid(form)
+    
+    def test_func(self):
+        """
+        Checks if the current user is a superuser
+        """
+        return self.request.user.is_superuser
+    
+    def handle_no_permission(self):
+        """
+        Redirects users who fail the test_func (non-superusers) to 
+        the login page.
+        """
+        return redirect(reverse_lazy('account_login'))
+
 
 
 def tutorial_list(request):

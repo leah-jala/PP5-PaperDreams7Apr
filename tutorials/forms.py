@@ -35,3 +35,5 @@ class TutorialForm(forms.ModelForm):
             'image': "Upload an image of the finished artwork",
             'image_alt': "Describe the uploaded image"
         }
+
+

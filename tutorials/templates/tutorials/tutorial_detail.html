@@ -19,11 +19,11 @@
 {% block content %}
 <h2>Tutorials</h2>
 
-<div class="container">
+<div class="container p-4">
   <!-- First row -->
   <div class="container d-flex flex-row flex-wrap justify-content-center">
     <div class="col-md-12 card mb-4 mt-3 tutorial">
-      <div class="row">
+      <div class="row px-2">
         <div class="col-md-3">
           <img src="{{ object.image.url }}" class="card-img-top py-4" alt="{{ object.image_alt }}">
         </div>
@@ -44,7 +44,7 @@
         </div>
       </div>
       <!-- Second row -->
-      <div class="row">
+      <div class="row px-2">
         <div class="col-md-3">
           <h5><strong>Equipment List</strong></h5>
           {{ object.equipment_list | safe }}
