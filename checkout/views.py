@@ -60,6 +60,10 @@ def checkout(request):
                     )
                     order_line_item.save()
 
+                    # Deduct the quantity from the product stock
+                    product.quantity -= item_data
+                    product.save()
+
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your bag wasn't found in our database. "
