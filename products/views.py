@@ -64,6 +64,9 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
+    if product.quantity == 0:
+        messages.warning(request, "Sorry, currently out of stock")
+
     context = {
         'product': product,
     }
