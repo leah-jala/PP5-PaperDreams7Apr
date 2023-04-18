@@ -11,16 +11,15 @@
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
-        <div class="col"></div>
+        <div class="col text-center">
+            <h2>About Paper Dreams</h2>
+        </div>
     </div>
 </div>
-
 {% endblock %}
 
 {% block content %}
-
-
-<div class="container mt-5 style="max-width: 1000px; margin: 0 auto;"">
+<div class="container mt-5" style="max-width: 1000px; margin: 0 auto;">
     <div class="row">
       <!-- Image on the left -->
       <div class="col-md-6">
@@ -28,18 +27,16 @@
       </div>
       <!-- Text and button on the right -->
       <div class="col-md-6 d-flex flex-column justify-content-center">
-        <h2>About Paper Dreams</h2>
         <p>
-          When my daughters were 2, I made a papier mache pumpkin to the Halloween candy we'd hand out. I didn't expect much, 
-          but when it was done I was wowed by it. I started Googling for ideas for papier mache, and I was suprised to discover 
-          that the famous Commedia dell'arte masks were made in this way. This sent me down a path of discovery. I taught myself the basic 
-          skills, and eventually went to Florence to work with a master mask-maker. In between, I attended some
-          courses at local universities and adult colleges to hone skills in drawing, sculpture, painting and mould-making. 
-          After a lot of encouragement I started selling my masks and other objects and the rest is history! I hope my 
-          site will inspire you to give a try. Keep an eye on my blog for upcoming tutorials.
+          <h3>It started with a pumpkin!</h3>
+          When my daughters were 2, I made a papier mache pumpkin for Halloween candy. I was wowed by it, and again
+          with the medium when I learned that the famous Commedia dell'arte masks were made in this way. This 
+          sent me down a path of discovery. I taught myself the basic skills, and eventually went to Florence 
+          to work with a master mask-maker. After a lot of encouragement I started selling my masks and other 
+          objects and the rest is history! I hope my site will inspire you to give a try.
         </p>
+        <a href="{% url 'tutorial_list' %}" class="btn btn-black rounded-0">Learn how to do it!</a>
       </div>
     </div>
   </div>
-  
 {% endblock %}
