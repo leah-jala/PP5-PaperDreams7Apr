@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import date
 
+
 class ContactForm(models.Model):
     first_name = models.CharField(max_length=50, verbose_name="First Name*")
     last_name = models.CharField(max_length=50, blank=True, null=True, verbose_name="Last Name")
