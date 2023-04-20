@@ -1,10 +1,12 @@
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group, User
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, DetailView, ListView, UpdateView, DeleteView
-from django.contrib.auth.models import User
-from django.contrib import messages
+from django.views.generic import (
+    CreateView, DetailView, ListView,
+    UpdateView, DeleteView
+)
 from .models import TutorialCategory, Tutorial, TutorialPost
 from .forms import TutorialForm, TutorialPostForm
 
@@ -24,16 +26,17 @@ class CreateTutorialView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         """
         form.instance.instructor = self.request.user
         response = super(CreateTutorialView, self).form_valid(form)
-        messages.success(
-            self.request,
-            f'Tutorial "{self.object.title}" created successfully. Now, add tutorial posts.')
+        message = f'''Tutorial "{self.object.title}" created successfully.
+                    Now, add tutorial posts.'''
+        messages.success(self.request, message)
         return response
 
     def test_func(self):
         """
         Checks if the current user is a staff member
         """
-        return self.request.user.is_authenticated and self.request.user.is_staff
+        return (self.request.user.is_authenticated
+                and self.request.user.is_staff)
 
     def handle_no_permission(self):
         """
@@ -65,7 +68,8 @@ class UpdateTutorialView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def handle_no_permission(self):
         """
-        Redirect the user to the login page if they don't have the required permission.
+        Redirect the user to the login page if
+        they don't have the required permission.
         """
         return redirect(reverse_lazy('account_login'))
 
@@ -90,7 +94,8 @@ class DeleteTutorialView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def handle_no_permission(self):
         """
-        Redirect the user to the login page if they don't have the required permission.
+        Redirect the user to the login page if
+        they don't have the required permission.
         """
         return redirect(reverse_lazy('account_login'))
 
@@ -117,7 +122,8 @@ class CreateTutorialPostView(
         """
         Get the keyword arguments to pass to the form instance.
 
-        Adds the 'tutorial_pk' from the URL parameters to the form keyword arguments.
+        Adds the 'tutorial_pk' from the URL parameters to
+        the form keyword arguments.
 
         Returns:
             dict: The keyword arguments to pass to the form instance.
@@ -129,7 +135,8 @@ class CreateTutorialPostView(
 
     def form_valid(self, form):
         """
-        Sets the tutorial post's instructor as the current user and associates it with the tutorial.
+        Sets the tutorial post's instructor as the
+        current user and associates it with the tutorial.
         """
         form.instance.instructor = self.request.user
         tutorial_pk = self.kwargs.get('tutorial_pk')
@@ -148,7 +155,6 @@ class CreateTutorialPostView(
         tutorial_pk = self.kwargs.get('tutorial_pk')
         tutorial = get_object_or_404(Tutorial, pk=tutorial_pk)
         return self.request.user == tutorial.instructor
-
 
     def handle_no_permission(self):
         """
@@ -181,7 +187,8 @@ class UpdateTutorialPostView(
 
     def handle_no_permission(self):
         """
-        Redirect the user to the login page if they don't have the required permission.
+        Redirect the user to the login page if
+        they don't have the required permission.
         """
         return redirect(reverse_lazy('account_login'))
 
