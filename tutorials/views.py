@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.models import Group
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, ListView, UpdateView, DeleteView
@@ -30,13 +31,13 @@ class CreateTutorialView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
     def test_func(self):
         """
-        Checks if the current user is a superuser
+        Checks if the current user is a staff member
         """
-        return self.request.user.is_superuser
+        return self.request.user.is_authenticated and self.request.user.is_staff
 
     def handle_no_permission(self):
         """
-        Redirects users who fail the test_func (non-superusers) to
+        Redirects users who fail the test_func to
         the login page.
         """
         return redirect(reverse_lazy('account_login'))
@@ -106,7 +107,7 @@ class CreateTutorialPostView(
         UserPassesTestMixin,
         CreateView):
     """
-    Renders a view to allow a superuser to create a tutorial post
+    Renders a view to allow staff to create a tutorial post
     """
     template_name = 'tutorials/add_tutorial_post.html'
     model = TutorialPost
@@ -142,9 +143,10 @@ class CreateTutorialPostView(
 
     def test_func(self):
         """
-        Checks if the current user is a superuser
+        Check if the current user is the instructor of the tutorial post.
         """
-        return self.request.user.is_superuser
+        tutorial = self.get_object()
+        return self.request.user == tutorial.instructor
 
     def handle_no_permission(self):
         """
