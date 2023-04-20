@@ -5,10 +5,11 @@ class Category(models.Model):
     """
     Represents product categories in the store.
 
-    Each category has a name and a friendly_name. 
-    The friendly_name is used for display purposes, 
+    Each category has a name and a friendly_name.
+    The friendly_name is used for display purposes,
     while the name is used internally.
     """
+
     class Meta:
         verbose_name_plural = 'Categories'
 
@@ -23,7 +24,14 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    """ Product description fields """
+    """
+    Represents products in the store.
+
+    Each product belongs to a category and has a unique name,
+    description, price, and quantity. Products can also have
+    an optional SKU, image URL, and image file.
+    """
+
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)

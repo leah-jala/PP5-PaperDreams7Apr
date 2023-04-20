@@ -18,9 +18,15 @@ class TutorialCategory(models.Model):
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
     def __str__(self):
+        """
+        Returns the name of the category.
+        """
         return self.name
 
     def get_friendly_name(self):
+        """
+        Returns the friendly name of the category.
+        """
         return self.friendly_name
 
 
@@ -70,6 +76,9 @@ class Tutorial(models.Model):
         ordering = ['title']
 
     def __str__(self):
+        """
+        Returns the title of the tutorial.
+        """
         return self.title
 
 

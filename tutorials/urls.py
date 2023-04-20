@@ -1,17 +1,17 @@
 from django.urls import path
 from .views import (
-    CreateTutorialView, tutorial_list, TutorialDetailView, 
-    CreateTutorialPostView, UserTutorialsView, UpdateTutorialView, 
+    CreateTutorialView, tutorial_list, TutorialDetailView,
+    CreateTutorialPostView, UserTutorialsView, UpdateTutorialView,
     UpdateTutorialPostView, DeleteTutorialPostView, DeleteTutorialView
 )
 
 urlpatterns = [
-    
+
     path(
         'add_tutorial/',
         CreateTutorialView.as_view(),
         name='add_tutorial'),
-     path(
+    path(
         'add_tutorial_post/',
         CreateTutorialView.as_view(),
         name='add_tutorial_post'),

@@ -23,7 +23,9 @@ class CreateTutorialView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         """
         form.instance.instructor = self.request.user
         response = super(CreateTutorialView, self).form_valid(form)
-        messages.success(self.request, f'Tutorial "{self.object.title}" created successfully. Now, add tutorial posts.')
+        messages.success(
+            self.request,
+            f'Tutorial "{self.object.title}" created successfully. Now, add tutorial posts.')
         return response
 
     def test_func(self):
@@ -38,9 +40,11 @@ class CreateTutorialView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         the login page.
         """
         return redirect(reverse_lazy('account_login'))
-    
+
     def get_success_url(self):
-        return reverse_lazy('add_tutorial_post', kwargs={'tutorial_pk': self.object.pk})
+        return reverse_lazy(
+            'add_tutorial_post', kwargs={
+                'tutorial_pk': self.object.pk})
 
 
 class UpdateTutorialView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -52,13 +56,23 @@ class UpdateTutorialView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     form_class = TutorialForm
 
     def test_func(self):
+        """
+        Check if the current user is the instructor of the tutorial post.
+        """
         tutorial = self.get_object()
         return self.request.user == tutorial.instructor
 
     def handle_no_permission(self):
+        """
+        Redirect the user to the login page if they don't have the required permission.
+        """
         return redirect(reverse_lazy('account_login'))
 
     def get_success_url(self):
+        """
+        Determines the URL to redirect to after
+        the post has been deleted.
+        """
         return reverse_lazy('user_tutorials')
 
 
@@ -67,17 +81,30 @@ class DeleteTutorialView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     template_name = 'tutorials/delete_tutorial.html'
 
     def test_func(self):
+        """
+        Check if the current user is the instructor of the tutorial post.
+        """
         tutorial = self.get_object()
         return self.request.user == tutorial.instructor
 
     def handle_no_permission(self):
+        """
+        Redirect the user to the login page if they don't have the required permission.
+        """
         return redirect(reverse_lazy('account_login'))
 
     def get_success_url(self):
+        """
+        Determines the URL to redirect to after
+        the post has been deleted.
+        """
         return reverse_lazy('user_tutorials')
 
 
-class CreateTutorialPostView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
+class CreateTutorialPostView(
+        LoginRequiredMixin,
+        UserPassesTestMixin,
+        CreateView):
     """
     Renders a view to allow a superuser to create a tutorial post
     """
@@ -86,6 +113,14 @@ class CreateTutorialPostView(LoginRequiredMixin, UserPassesTestMixin, CreateView
     form_class = TutorialPostForm
 
     def get_form_kwargs(self):
+        """
+        Get the keyword arguments to pass to the form instance.
+
+        Adds the 'tutorial_pk' from the URL parameters to the form keyword arguments.
+
+        Returns:
+            dict: The keyword arguments to pass to the form instance.
+        """
         kwargs = super(CreateTutorialPostView, self).get_form_kwargs()
         tutorial_pk = self.kwargs.get('tutorial_pk')
         kwargs['tutorial_pk'] = tutorial_pk
@@ -100,7 +135,9 @@ class CreateTutorialPostView(LoginRequiredMixin, UserPassesTestMixin, CreateView
         tutorial = get_object_or_404(Tutorial, pk=tutorial_pk)
         form.instance.tutorial = tutorial
         response = super(CreateTutorialPostView, self).form_valid(form)
-        messages.success(self.request, f'Tutorial post "{self.object.title}" created successfully.')
+        messages.success(
+            self.request,
+            f'Tutorial post "{self.object.title}" created successfully.')
         return response
 
     def test_func(self):
@@ -115,12 +152,15 @@ class CreateTutorialPostView(LoginRequiredMixin, UserPassesTestMixin, CreateView
         the login page.
         """
         return redirect(reverse_lazy('account_login'))
-    
+
     def get_success_url(self):
         return reverse_lazy('user_tutorials')
 
 
-class UpdateTutorialPostView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class UpdateTutorialPostView(
+        LoginRequiredMixin,
+        UserPassesTestMixin,
+        UpdateView):
     """
     A view to edit tutorial details
     """
@@ -129,28 +169,56 @@ class UpdateTutorialPostView(LoginRequiredMixin, UserPassesTestMixin, UpdateView
     form_class = TutorialPostForm
 
     def test_func(self):
+        """
+        Check if the current user is the instructor of the tutorial post.
+        """
         tutorial_post = self.get_object()
         return self.request.user == tutorial_post.instructor
 
     def handle_no_permission(self):
+        """
+        Redirect the user to the login page if they don't have the required permission.
+        """
         return redirect(reverse_lazy('account_login'))
 
     def get_success_url(self):
+        """
+        Get the URL to redirect to after a successful operation.
+        """
         return reverse_lazy('user_tutorials')
 
 
-class DeleteTutorialPostView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class DeleteTutorialPostView(
+        LoginRequiredMixin,
+        UserPassesTestMixin,
+        DeleteView):
+    """
+    Handles the deletion of a TutorialPost object.
+    """
+
     model = TutorialPost
     template_name = 'tutorials/delete_tutorial_post.html'
 
     def test_func(self):
+        """
+        Determines whether the user is the instructor
+        of the TutorialPost.
+        """
         tutorial_post = self.get_object()
         return self.request.user == tutorial_post.instructor
 
     def handle_no_permission(self):
+        """
+        Handles the case where the user does not
+        have permission to delete the post.
+        """
         return redirect(reverse_lazy('account_login'))
 
     def get_success_url(self):
+        """
+        Determines the URL to redirect to after
+        the post has been deleted.
+        """
         return reverse_lazy('user_tutorials')
 
 
@@ -173,10 +241,10 @@ class UserTutorialsView(LoginRequiredMixin, ListView):
         tutorials_with_posts = []
         for tutorial in context['tutorials']:
             tutorial_posts = TutorialPost.objects.filter(tutorial=tutorial)
-            tutorials_with_posts.append({'tutorial': tutorial, 'posts': tutorial_posts})
+            tutorials_with_posts.append(
+                {'tutorial': tutorial, 'posts': tutorial_posts})
         context['tutorials_with_posts'] = tutorials_with_posts
         return context
-
 
 
 def tutorial_list(request):
