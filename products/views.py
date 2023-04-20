@@ -137,12 +137,18 @@ def edit_product(request, product_id):
 @login_required
 def delete_product(request, product_id):
     """ Delete a product from the store """
-    product = get_object_or_404(Product, pk=product_id)
-    template = 'products/delete_product_confirm.html'
 
     if not request.user.is_superuser:
         messages.error(request, 'Only store owners have access to this page.')
         return redirect(reverse('home'))
+
+    try:
+        product = get_object_or_404(Product, pk=product_id)
+    except Product.DoesNotExist:
+        messages.error(request, f'Product with ID {product_id} not found.')
+        return redirect(reverse('products'))
+
+    template = 'products/delete_product_confirm.html'
 
     if request.method == "POST":
         product.delete()
@@ -150,3 +156,4 @@ def delete_product(request, product_id):
         return redirect(reverse('products'))
     else:
         return render(request, template, {'product': product})
+
