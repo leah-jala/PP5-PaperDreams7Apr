@@ -11,6 +11,22 @@
     color: green;
     font-weight: bold;
   }
+  .image-responsive {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .week-post {
+    padding: 0;
+    margin: 0;
+  }
+
+  .week-post img {
+    width: calc(100% - 20px); /* Adjust width as needed */
+    margin: 0 10px; /* Adjust margins as needed */
+  }
+}
 </style>
 {% endblock %}
 
@@ -64,11 +80,12 @@
           <!-- Tutorial posts -->
           <div id="card-body tutorial-posts">
             {% for post in tutorial_posts %}
-              <div id="week-{{ post.week_number }}" class="week-post" style="display: none;">
-                <h4>Week: {{ post.week_number }} | {{ post.title }}</h4>
-                <p>{{ post.instructions | safe }}</p>
-              </div>
-              {% endfor %}
+              <div id="week-{{ post.week_number }}" class="pb-3 week-post row" style="display: none;">
+                  <h4>{{ post.title }}</h4>
+                  <img src="{{ post.image.url }}" alt="{{ post.image_alt }}" class="p-4 rounded float-right image-responsive">
+                  <p>{{ post.instructions | safe }}</p>
+              </div>            
+            {% endfor %}
           </div>
         </div>
       </div>

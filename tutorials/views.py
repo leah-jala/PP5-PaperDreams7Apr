@@ -143,10 +143,12 @@ class CreateTutorialPostView(
 
     def test_func(self):
         """
-        Check if the current user is the instructor of the tutorial post.
+        Check if the current user is the instructor of the tutorial.
         """
-        tutorial = self.get_object()
+        tutorial_pk = self.kwargs.get('tutorial_pk')
+        tutorial = get_object_or_404(Tutorial, pk=tutorial_pk)
         return self.request.user == tutorial.instructor
+
 
     def handle_no_permission(self):
         """
