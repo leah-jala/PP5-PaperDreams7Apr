@@ -19,6 +19,7 @@ if os.path.isfile('env.py'):
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+HEROKU_API_KEY = os.environ.get('HEROKU_API_KEY')
 
 
 # Quick-start development settings - unsuitable for production
@@ -204,6 +205,7 @@ if 'USE_AWS' in os.environ:
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
     }
+
     # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'paper-dreams-uk'
     AWS_S3_REGION_NAME = 'eu-west-2'
