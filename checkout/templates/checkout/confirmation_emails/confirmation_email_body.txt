@@ -17,9 +17,7 @@ You have requested your order to be delivered to:
 
 You've listed your phone number as: {{ order.phone_number }}.
 
-If you have any questions, feel free to contact us at {{ contact_email }}, 
-or by phone at <a href="tel:+447777123456">+44 7777 123 456</a>.
-
+If you have any questions, feel free to contact us at {{ contact_email }}.
 Thank you for your order!
 
 Sincerely,
