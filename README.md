@@ -20,6 +20,7 @@ Together these commits relate to comments 1-59 in the first repo [NEW-paperdream
 [Shopping bag Bootstrap/Html](https://mdbootstrap.com/docs/standard/extended/shopping-carts/) adapted from MDB
 [Bootstrap Toasts](https://getbootstrap.com/docs/4.3/components/toasts/) - reviewed this but used the Boutique Ado html.  The tutorial had taken the toast html direct from Bootstrap and added some extra styling. For the sake of speed I have borrowed this.
 [Contact Page](https://www.bootdey.com/snippets/view/contact-page-section#html)
+Adapted [MailChimp Signup Form - Horizontal](https://gist.github.com/avadhootkulkarni/dabbc679abb89791db1059e3e8212c97)
 Django Documentation
 - [Understanding Widgets](https://docs.djangoproject.com/en/4.2/ref/forms/widgets/)
 - [Privacy Policy Generator](https://www.privacypolicygenerator.info/)
