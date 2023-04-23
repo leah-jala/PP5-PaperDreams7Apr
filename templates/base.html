@@ -40,12 +40,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
   </script>
-  <script id="mcjs">
-    ! function (c, h, i, m, p) {
-      m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p)
-    }(document, "script",
-      "https://chimpstatic.com/mcjs-connected/js/users/27bcd50aeaa3247d1e2fcdabf/a0c43a400ff39bb977af66d14.js");
-  </script>
 
   <!-- Stripe -->
   <script src="https://js.stripe.com/v3/"></script>
@@ -209,11 +203,41 @@
           rel="noopener nofollow" aria-label="Visit our Instagram page (opens in a new tab)">
           <i class="fa-brands fa-instagram-square"></i></a>
       </li>
+
     </ul>
+    <!-- Begin Mailchimp Signup Form -->
+    <div class="d-flex justify-content-center">
+      <form
+        action="https://yahoo.us14.list-manage.com/subscribe/post?u=27bcd50aeaa3247d1e2fcdabf&amp;id=9d4cc23133&amp;f_id=000285e0f0"
+        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
+        novalidate>
+        <div id="mc_embed_signup_scroll">
+
+          <!-- Text Input Field and Button -->
+          <div class="mc-field-group mc-field-group--with-response d-flex flex-md-row flex-column">
+            <input id="mce-EMAIL" class="required email form-control mb-2 mb-md-0 mr-md-2 flex-grow-1" name="EMAIL"
+                type="email" placeholder="Enter your email" />
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                <input type="text" name="b_27bcd50aeaa3247d1e2fcdabf_9d4cc23133" tabindex="-1" value="">
+            </div>
+            <input id="mc-embedded-subscribe" class="btn" style="font-family: roboto;" name="subscribe" type="submit"
+                value="Subscribe to Newsletter" />
+            <div id="mce-success-response" class="response" style="display:none"></div>
+        </div>
+        
+
+          <!-- /Submit Button -->
+          <!-- Response Messages -->
+
+        </div>
+
+      </form>
+
+    </div>
+    </div>
+    <!--End mc_embed_signup-->
     <p class="text-center text-muted">© 2023 Paper Dreams</p>
   </footer>
-
-
 
 
   {% block postloadjs %}
@@ -234,7 +258,27 @@
   <script type="text/javascript">
     $('.toast').toast('show');
   </script>
-
+  <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+  <script type='text/javascript'>
+    (function ($) {
+      window.fnames = new Array();
+      window.ftypes = new Array();
+      fnames[0] = 'EMAIL';
+      ftypes[0] = 'email';
+      fnames[1] = 'FNAME';
+      ftypes[1] = 'text';
+      fnames[2] = 'LNAME';
+      ftypes[2] = 'text';
+      fnames[3] = 'ADDRESS';
+      ftypes[3] = 'address';
+      fnames[4] = 'PHONE';
+      ftypes[4] = 'phone';
+      fnames[5] = 'BIRTHDAY';
+      ftypes[5] = 'birthday';
+    }(jQuery));
+    var $mcj = jQuery.noConflict(true);
+  </script>
+  <!--End mc_embed_signup-->
 </body>
 
 </html>

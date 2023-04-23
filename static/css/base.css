@@ -179,8 +179,26 @@ a.dropdown-item.active {
 /* Footer */
 
 footer {
-    background-color: #e2ebdb;
+    background: #e2ebdb;
     height: 10vh;
+}
+
+#mce-EMAIL {
+    max-width: 300px;
+}
+
+#mc-embedded-subscribe {
+    background-color: #6c757d;
+}
+
+button {
+    outline: #6c757d !important;
+}
+
+input[type="email"], 
+input[type="text"], 
+textarea {
+  color: #000;
 }
 
 
