@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="{% static 'bag/css/bag.css' %}">
 {% endblock %}
 
+{% block extra_title%}Shopping Bag{% endblock %}
+
 {% block content %}
 {% if bag_items %}
 <div class="container py-5 h-100">

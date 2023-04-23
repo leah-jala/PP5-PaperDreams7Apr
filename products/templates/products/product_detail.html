@@ -2,6 +2,8 @@
 {% load static %}
 {% load bag_tools %}
 
+{% block extra_title%}{{product.name}}{% endblock %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
 {% endblock %}
