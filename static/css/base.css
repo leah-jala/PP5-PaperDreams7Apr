@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600;700&family=Henny+Penny&family=Roboto:wght@100;300;400;500;700&display=swap');
 
 html {
@@ -22,7 +21,7 @@ h1 {
     font-family: 'Henny Penny';
     font-size: 32px;
 
-} 
+}
 
 .collapse {
     background-color: #e2ebdb;
@@ -32,6 +31,7 @@ a.dropdown-item.active {
     background: white;
     color: #212529;
 }
+
 .navbar {
     max-width: 1600px;
     background-color: #e2ebdb;
@@ -47,9 +47,9 @@ a.dropdown-item.active {
     width: 1.5rem;
 }
 
-.logo-font {	
-    text-transform: uppercase;	
-}	
+.logo-font {
+    text-transform: uppercase;
+}
 
 /* Button CSS (taken from Boutique Ado) */
 
@@ -64,13 +64,13 @@ a.dropdown-item.active {
     background: black;
     color: white;
 }
-  
+
 .btn-outline-black {
     background: white;
     color: black !important;
     border: 1px solid black;
 }
-  
+
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
@@ -95,8 +95,8 @@ a.dropdown-item.active {
 
 .btn-outline-black:hover .icon i {
     color: white;
-  }
-  
+}
+
 .text-black {
     color: #000 !important;
 }
@@ -126,10 +126,10 @@ a.dropdown-item.active {
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 4px solid transparent;
-    border-right: 4px solid transparent; 
+    border-right: 4px solid transparent;
     border-bottom: 10px solid black;
     position: absolute;
     top: -10px;
@@ -188,26 +188,36 @@ footer {
 }
 
 #mc-embedded-subscribe {
-    background-color: #6c757d;
-    color:#fff
+    background-color: #6c757d !important;
+    color: #fff important!;
 }
 
 button {
     outline: #6c757d !important;
 }
 
-input[type="email"], 
-input[type="text"], 
+input[type="email"],
+input[type="text"],
 textarea {
-  color: #000;
+    color: #000;
 }
 
+.smaller-btn-logo {
+    height: 40px;
+    /* adjust the height as needed */
+    width: auto;
+    /* set width to auto to maintain aspect ratio */
+}
 
+.brandingLogo {
+}
 /* Allauth form formatting from Boutique Ado */
 
 .allauth-form-inner-content p {
-    margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
+    margin-top: 1.5rem;
+    /* mt-4 */
+    color: #6c757d;
+    /* text-secondary */
 }
 
 .allauth-form-inner-content input {
@@ -225,8 +235,8 @@ textarea {
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
-	/* btn */
-	display: inline-block;
+    /* btn */
+    display: inline-block;
     font-weight: 400;
     color: #fff;
     text-align: center;
@@ -243,18 +253,19 @@ textarea {
     border-radius: 0;
 
     /* standard bootstrap btn transitions */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
-	color: #fff;
+.allauth-form-inner-content input[type='submit']:hover {
+    color: #fff;
     background-color: #222;
     border-color: #222;
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+    color: #17a2b8;
+    /* text-info */
 }
 
 /* Product Form */
@@ -289,7 +300,6 @@ textarea {
 /* adjust the height of the footer for smaller screens */
 @media screen and (max-width: 768px) {
     footer {
-      height: 15vh; 
+        height: 15vh;
     }
-  }
-  
+}
