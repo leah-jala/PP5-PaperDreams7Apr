@@ -189,6 +189,7 @@ footer {
 
 #mc-embedded-subscribe {
     background-color: #6c757d;
+    color:#fff
 }
 
 button {
@@ -200,7 +201,6 @@ input[type="text"],
 textarea {
   color: #000;
 }
-
 
 
 /* Allauth form formatting from Boutique Ado */

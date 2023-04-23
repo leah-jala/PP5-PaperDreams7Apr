@@ -188,7 +188,7 @@
   {% block content %}
   {% endblock %}
   <footer class="mt-4">
-    <ul class="nav justify-content-center border-bottom pb-3">
+    <ul class="nav justify-content-center border-bottom pb-2">
       <li class="nav-item"><a href="{% url 'contact' %}" rel="noopener nofollow"
           class="nav-link px-2 text-muted">Contact</a></li>
       <li class="nav-item"><a href="{% url 'shipping_returns' %}" rel="noopener nofollow"
@@ -203,38 +203,31 @@
           rel="noopener nofollow" aria-label="Visit our Instagram page (opens in a new tab)">
           <i class="fa-brands fa-instagram-square"></i></a>
       </li>
-
     </ul>
-    <!-- Begin Mailchimp Signup Form -->
-    <div class="d-flex justify-content-center">
-      <form
-        action="https://yahoo.us14.list-manage.com/subscribe/post?u=27bcd50aeaa3247d1e2fcdabf&amp;id=9d4cc23133&amp;f_id=000285e0f0"
-        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
-        novalidate>
-        <div id="mc_embed_signup_scroll">
+      <!-- Begin Mailchimp Signup Form -->
+      <div class="d-flex justify-content-center">
+        <form
+          action="https://yahoo.us14.list-manage.com/subscribe/post?u=27bcd50aeaa3247d1e2fcdabf&amp;id=9d4cc23133&amp;f_id=000285e0f0"
+          method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
+          novalidate>
+          <div id="mc_embed_signup_scroll">
 
-          <!-- Text Input Field and Button -->
-          <div class="mc-field-group mc-field-group--with-response d-flex flex-md-row flex-column">
-            <input id="mce-EMAIL" class="required email form-control mb-2 mb-md-0 mr-md-2 flex-grow-1" name="EMAIL"
+            <!-- Text Input Field and Button -->
+            <div class="mc-field-group mc-field-group--with-response d-flex flex-md-row flex-column pb-2">
+              <input id="mce-EMAIL" class="required email form-control mb-2 mb-md-0 mr-md-2 flex-grow-1" name="EMAIL"
                 type="email" placeholder="Enter your email" />
-            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <div style="position: absolute; left: -5000px;" aria-hidden="true">
                 <input type="text" name="b_27bcd50aeaa3247d1e2fcdabf_9d4cc23133" tabindex="-1" value="">
-            </div>
-            <input id="mc-embedded-subscribe" class="btn" style="font-family: roboto;" name="subscribe" type="submit"
+              </div>
+               <!-- /Submit Button -->
+              <input id="mc-embedded-subscribe" class="button btn" style="font-family: roboto;" name="subscribe" type="submit"
                 value="Subscribe to Newsletter" />
-            <div id="mce-success-response" class="response" style="display:none"></div>
-        </div>
-        
-
-          <!-- /Submit Button -->
-          <!-- Response Messages -->
-
-        </div>
-
-      </form>
-
-    </div>
-    </div>
+              <!-- Response Messages -->
+              <div id="mce-success-response" class="response" style="display:none"></div>
+            </div>
+          </div>
+        </form>
+      </div>
     <!--End mc_embed_signup-->
     <p class="text-center text-muted">© 2023 Paper Dreams</p>
   </footer>
