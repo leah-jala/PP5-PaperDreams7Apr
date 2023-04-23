@@ -65,6 +65,7 @@ a.dropdown-item.active {
     color: white;
 }
 
+
 .btn-outline-black {
     background: white;
     color: black !important;
@@ -89,8 +90,9 @@ a.dropdown-item.active {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
-    color: white;
+    background: #fff;
+    color: black;
+    border: 2px solid black;
 }
 
 .btn-outline-black:hover .icon i {
@@ -187,30 +189,12 @@ footer {
     max-width: 300px;
 }
 
-#mc-embedded-subscribe {
-    background-color: #6c757d !important;
-    color: #fff important!;
-}
-
-button {
-    outline: #6c757d !important;
-}
-
-input[type="email"],
+input[type="email"] {}
 input[type="text"],
 textarea {
     color: #000;
 }
 
-.smaller-btn-logo {
-    height: 40px;
-    /* adjust the height as needed */
-    width: auto;
-    /* set width to auto to maintain aspect ratio */
-}
-
-.brandingLogo {
-}
 /* Allauth form formatting from Boutique Ado */
 
 .allauth-form-inner-content p {
