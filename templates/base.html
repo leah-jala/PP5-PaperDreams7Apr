@@ -36,10 +36,12 @@
 
   <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"> -->
-    <script src="https://code.jquery.com/jquery-3.6.3.js"
-    integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous">
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
@@ -106,10 +108,10 @@
                   <p class="my-0">Search</p>
                 </div>
               </a>
-              <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="search field">
+              <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="search-field">
                 <form class="form" method="GET" action="{% url 'products' %}">
                   <div class="input-group w-100">
-                    <input class="form-control border border-black rounded-0" type="text" name="q"
+                    <input class="form-control border border-black rounded-0" id="search-field" type="text" name="q"
                       placeholder="Search our site">
                     <div class="input-group-append">
                       <button class="form-control form-control btn btn-black border border-black rounded-0"
@@ -218,15 +220,17 @@
 
           <!-- Text Input Field and Button -->
           <div class="mc-field-group mc-field-group--with-response d-flex flex-md-row flex-column pb-2">
-            <input id="mce-EMAIL" class="required email form-control mb-2 mb-md-0 mr-md-2" name="EMAIL"
-              type="email" placeholder="Enter your email" />
+            <input id="mce-EMAIL" class="required email form-control mb-2 mb-md-0 mr-md-2" name="EMAIL" type="email"
+              placeholder="Enter your email">
             <div style="position: absolute; left: -5000px;" aria-hidden="true">
               <input type="text" name="b_27bcd50aeaa3247d1e2fcdabf_9d4cc23133" tabindex="-1" value="">
             </div>
             <!-- /Submit Button -->
-            <input id="mc-embedded-subscribe" class="btn btn-black" name="subscribe"
-              type="submit" value="Subscribe to Newsletter" />
-              <p class="brandingLogo mb-2 mb-md-0 ml-md-2"><a href="http://eepurl.com/imqxWQ" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+            <input id="mc-embedded-subscribe" class="btn btn-black" name="subscribe" type="submit"
+              value="Subscribe to Newsletter">
+            <p class="brandingLogo mb-2 mb-md-0 ml-md-2"><a href="http://eepurl.com/imqxWQ"
+                title="Mailchimp - email marketing made easy and fun"><img
+                  src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg" alt="Mailchimp logo"></a></p>
             <!-- Response Messages -->
             <div id="mce-success-response" class="response" style="display:none"></div>
             <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
@@ -248,7 +252,7 @@
 
   <!-- Font awesome -->
   <script src="https://kit.fontawesome.com/ad363e4e3e.js" crossorigin="anonymous"></script>
-  <script type="text/javascript">
+  <script>
     $(document).ready(function () {
       var path = window.location.pathname;
       $(".navbar-nav li a").removeClass("active").filter(function () {
@@ -256,12 +260,12 @@
       }).addClass("active");
     });
   </script>
-  <script type="text/javascript">
+  <script>
     $('.toast').toast('show');
   </script>
-    <!-- mc_embed_signup-->
-  <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-  <script type='text/javascript'>
+  <!-- mc_embed_signup-->
+  <script src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+  <script>
     (function ($) {
       window.fnames = new Array();
       window.ftypes = new Array();
