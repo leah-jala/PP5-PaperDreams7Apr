@@ -2,9 +2,9 @@
 
 {% block extra_css %}
 <style>
-.spacer {
-    margin-top: 150px;
-}
+    .spacer {
+        margin-top: 150px;
+    }
 </style>
 
 {% endblock %}
@@ -16,13 +16,18 @@
 
 <div class="container spacer">
     <h2 class="mb-4">Manage Tutorials</h2>
-    <p class="mb-4">You can add a new tutorial by clicking the button below. When you add a tutorial, you will provide 
-        basic information about your course that is relevant for all posts: a title, a category, a difficulty level, 
-        the time needed to complete the whole tutorial, a brief description of its goals, and equipment list and an image.<br><br>
-        Once you create your course, you will see as summary of it below. The buttons under the course summary allow you to view 
-        the published course and make changes to the overall description. Please note, if you use the delete button, it will 
-        delete the course information as well as any posts related to it. Any posts you have add to the tutorial are listed and
-        they can be edited or deleted with the buttons. Here the delete button will only affect the individual post. If you have not yet added
+    <p class="mb-4">You can add a new tutorial by clicking the button below. When you add a tutorial, you will provide
+        basic information about your course that is relevant for all posts: a title, a category, a difficulty level,
+        the time needed to complete the whole tutorial, a brief description of its goals, and equipment list and an
+        image.<br><br>
+        Once you create your course, you will see as summary of it below. The buttons under the course summary allow you
+        to view
+        the published course and make changes to the overall description. Please note, if you use the delete button, it
+        will
+        delete the course information as well as any posts related to it. Any posts you have add to the tutorial are
+        listed and
+        they can be edited or deleted with the buttons. Here the delete button will only affect the individual post. If
+        you have not yet added
         any posts, you can use the "Add a Post" button to do so.
     </p>
     <a href="{% url 'add_tutorial' %}" class="btn btn-black rounded-0 mb-5 mr-2">Add a New Tutorial</a>
@@ -65,8 +70,8 @@
                                     <div class="row my-2">
                                         <div class="col">
                                             <a href="{% url 'add_tutorial_post' tutorial_with_posts.tutorial.pk %}"
-                                            class="btn btn-sm btn-outline-secondary mr-2">Add another Post</a>
-                                        </div> 
+                                                class="btn btn-sm btn-outline-secondary mr-2">Add another Post</a>
+                                        </div>
                                     </div>
                                     {% endfor %}
 

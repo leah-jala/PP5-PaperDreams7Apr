@@ -7,34 +7,8 @@
 {% endblock %}
 
 {% block extra_css %}
-<style>
-  .tutorial-post-link {
-    color: black;
-    text-decoration: none;
-  }
-  .tutorial-post-link.active {
-    color: green;
-    font-weight: bold;
-  }
-  .image-responsive {
-    max-width: 100%;
-    height: auto;
-  }
-
-  @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .week-post {
-    padding: 0;
-    margin: 0;
-  }
-
-  .week-post img {
-    width: calc(100% - 20px); /* Adjust width as needed */
-    margin: 0 10px; /* Adjust margins as needed */
-  }
-}
-</style>
+    <link rel="stylesheet" href="{% static 'tutorials/css/tutorials.css' %}">
 {% endblock %}
-
 
 {% block extra_js %}
 {% endblock %}
@@ -106,41 +80,5 @@
 {% endblock %}
 
 {% block postloadjs %}
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const postLinks = document.querySelectorAll(".tutorial-post-link");
-    const weekPosts = document.querySelectorAll(".week-post");
-
-    // Show the first week by default
-    if (weekPosts.length > 0) {
-      weekPosts[0].style.display = "block";
-    }
-
-    // Add the 'active' class to the first link by default
-    if (postLinks.length > 0) {
-      postLinks[0].classList.add("active");
-    }
-
-    postLinks.forEach(link => {
-      link.addEventListener("click", event => {
-        event.preventDefault();
-        const weekNumber = link.dataset.week;
-
-        // Remove the 'active' class from all the links
-        postLinks.forEach(link => link.classList.remove("active"));
-
-        // Add the 'active' class to the clicked link
-        event.target.classList.add("active");
-
-        weekPosts.forEach(post => {
-          if (post.id === `week-${weekNumber}`) {
-            post.style.display = "block";
-          } else {
-            post.style.display = "none";
-          }
-        });
-      });
-    });
-  });
-</script>
+<script src="{% static 'tutorials/js/tutorials.js' %}"></script>
 {% endblock %}
