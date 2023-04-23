@@ -62,6 +62,12 @@
                                                 class="btn btn-sm btn-outline-danger">Delete Post</a>
                                         </div>
                                     </div>
+                                    <div class="row my-2">
+                                        <div class="col">
+                                            <a href="{% url 'add_tutorial_post' tutorial_with_posts.tutorial.pk %}"
+                                            class="btn btn-sm btn-outline-secondary mr-2">Add another Post</a>
+                                        </div> 
+                                    </div>
                                     {% endfor %}
 
                                     {% else %}
@@ -82,5 +88,4 @@
         {% endif %}
     </div>
 </div>
-
 {% endblock %}

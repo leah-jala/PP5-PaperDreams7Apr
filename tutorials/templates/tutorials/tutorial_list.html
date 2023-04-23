@@ -17,7 +17,6 @@
         <div class="col"></div>
     </div>
 </div>
-
 {% endblock %}
 
 {% block content %}
@@ -31,24 +30,24 @@
                     <img src="{{ tutorial.image.url }}" class="card-img-top py-4" alt="{{ tutorial.image_alt }}">
                 </div>
                 <div class="col-md-9 card-body">
-                    
-                        <h3>{{ tutorial.title }}</h3>
-                        <h4>Instructor: {{ tutorial.instructor }}</h4>
-                        <p><small><strong>Category: {{ tutorial.category.get_friendly_name }}</strong></small></p>
-                        <p></p>
-                        <p><strong>Duration:</strong> {{ tutorial.duration }}</p>
-                        <p class="text-capitalize"><strong>Difficulty:</strong> {{ tutorial.difficulty_level }}</p>
-                        <p><strong>Summary:</strong> {{ tutorial.summary }}</p>
-                        <a href="{% url 'tutorial_detail' tutorial.pk %}" class="btn btn-outline-black rounded-0">View Tutorial</a>
+                    <h3>{{ tutorial.title }}</h3>
+                    <h4>Instructor: {{ tutorial.instructor.first_name }} {{ tutorial.instructor.last_name }}</h4>
+                    <p><small><strong>Category: {{ tutorial.category.get_friendly_name }}</strong></small></p>
+                    <p></p>
+                    <p><strong>Duration:</strong> {{ tutorial.duration }}</p>
+                    <p class="text-capitalize"><strong>Difficulty:</strong> {{ tutorial.difficulty_level }}</p>
+                    <p><strong>Summary:</strong> {{ tutorial.summary }}</p>
+                    <a href="{% url 'tutorial_detail' tutorial.pk %}" class="btn btn-black rounded-0">View
+                        Tutorial</a>
+                        {% if request.user.is_staff %}
+                        <a href="{% url 'user_tutorials' %}" class="btn btn-outline-black rounded-0">Tutorials Management</a>
+                        {% endif %}
                 </div>
             </div>
         </div>
-
         {% empty %}
         <p>No tutorials available.</p>
         {% endfor %}
     </div>
     {% endblock %}
-
-
 </div>

@@ -10,7 +10,8 @@
     {% csrf_token %}
     {{ form.media }} 
     {{ form|crispy }}
-    <button type="submit">Save Changes</button>
+    <button class="btn btn-sm btn-black mr-2 mr-2" type="submit">Save Changes</button>
+    <a href="{% url 'user_tutorials' %}" class="btn btn-sm btn-secondary">Cancel</a>
   </form>
   <a href="{% url 'user_tutorials' %}">Back to My Tutorials</a>
 {% endblock %}

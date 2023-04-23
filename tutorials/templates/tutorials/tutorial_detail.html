@@ -63,7 +63,11 @@
         </div>
         <div class="col-md-9 card-body">
           <h3>{{ object.title }}</h3>
+
           <h4>Instructor: {{ object.instructor }}</h4>
+          {% if request.user.is_staff %}
+          <a href="{% url 'user_tutorials' %}" class="btn btn-sm btn-outline-secondary mb-1">Manage Tutorial</a>
+          {% endif %}
           <p><small><strong>Category: {{ object.category.get_friendly_name }}</strong></small></p>
           <p></p>
           <p><strong>Duration:</strong> {{ object.duration }}</p>
