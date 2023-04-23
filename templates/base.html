@@ -10,13 +10,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Discover unique, handmade art and decor at our online shop. Shop for papier-mache masks, original paintings, and more. ">
+  <meta name="description"
+    content="Discover unique, handmade art and decor at our online shop. Shop for papier-mache masks, original paintings, and more. ">
   <meta name="robots" content="nofollow">
 
   {% endblock %}
 
   {% block extra_meta %}
-  
+
   {% endblock %}
 
   {% block corecss %}
@@ -27,6 +28,7 @@
   {% endblock %}
 
   {% block extra_css %}
+
   {% endblock %}
 
   {% block corejs %}
@@ -38,10 +40,16 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
   </script>
+  <script id="mcjs">
+    ! function (c, h, i, m, p) {
+      m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p)
+    }(document, "script",
+      "https://chimpstatic.com/mcjs-connected/js/users/27bcd50aeaa3247d1e2fcdabf/a0c43a400ff39bb977af66d14.js");
+  </script>
 
   <!-- Stripe -->
   <script src="https://js.stripe.com/v3/"></script>
-  
+
   {% endblock %}
 
   {% block extra_js %}
@@ -127,11 +135,11 @@
               </a>
               <div class="dropdown-menu border-0" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}
-                  {% if request.user.is_superuser %}
-                    <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-                  {% endif %}
-                  {% if request.user.is_staff %}
-                    <a href="{% url 'user_tutorials' %}" class="dropdown-item">Tutorials Management</a>
+                {% if request.user.is_superuser %}
+                <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                {% endif %}
+                {% if request.user.is_staff %}
+                <a href="{% url 'user_tutorials' %}" class="dropdown-item">Tutorials Management</a>
                 {% endif %}
                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
@@ -165,17 +173,17 @@
   {% if messages %}
   <div class="message-container">
     {% for message in messages %}
-      {% with message.level as level %}
-        {% if level == 40 %}
-          {% include 'includes/toasts/toast_error.html' %}
-        {% elif level == 30 %}
-          {% include 'includes/toasts/toast_warning.html' %}
-        {% elif level == 25 %}
-          {% include 'includes/toasts/toast_success.html' %}
-        {% else %}
-          {% include 'includes/toasts/toast_info.html' %}
-        {% endif %}
-      {% endwith %}
+    {% with message.level as level %}
+    {% if level == 40 %}
+    {% include 'includes/toasts/toast_error.html' %}
+    {% elif level == 30 %}
+    {% include 'includes/toasts/toast_warning.html' %}
+    {% elif level == 25 %}
+    {% include 'includes/toasts/toast_success.html' %}
+    {% else %}
+    {% include 'includes/toasts/toast_info.html' %}
+    {% endif %}
+    {% endwith %}
     {% endfor %}
   </div>
   {% endif %}
@@ -187,9 +195,12 @@
   {% endblock %}
   <footer class="mt-4">
     <ul class="nav justify-content-center border-bottom pb-3">
-      <li class="nav-item"><a href="{% url 'contact' %}" rel="noopener nofollow" class="nav-link px-2 text-muted">Contact</a></li>
-      <li class="nav-item"><a href="{% url 'shipping_returns' %}" rel="noopener nofollow"class="nav-link px-2 text-muted">Delivery & Returns</a></li>
-      <li class="nav-item"><a href="{% url 'privacy' %}" rel="noopener nofollow"class="nav-link px-2 text-muted">Privacy</a></li>
+      <li class="nav-item"><a href="{% url 'contact' %}" rel="noopener nofollow"
+          class="nav-link px-2 text-muted">Contact</a></li>
+      <li class="nav-item"><a href="{% url 'shipping_returns' %}" rel="noopener nofollow"
+          class="nav-link px-2 text-muted">Delivery & Returns</a></li>
+      <li class="nav-item"><a href="{% url 'privacy' %}" rel="noopener nofollow"
+          class="nav-link px-2 text-muted">Privacy</a></li>
       <li class="nav-item"><a href="https://www.facebook.com/" class="nav-link px-2 text-muted" target="_blank"
           rel="noopener nofollow" aria-label="Visit our Facebook page (opens in a new tab)">
           <i class="fa-brands fa-facebook"></i></a>
@@ -222,7 +233,8 @@
   </script>
   <script type="text/javascript">
     $('.toast').toast('show');
-  </script>  
+  </script>
+
 </body>
 
 </html>
