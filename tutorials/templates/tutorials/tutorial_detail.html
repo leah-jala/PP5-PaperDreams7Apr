@@ -1,11 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_meta %}
-<meta name="description" content="Learn how to make a bespoke mask with our expert guidance. 
-    Get inspired by beginner to advanced projects. Start your papier-mache journey today!">
-{% endblock %}
-
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'tutorials/css/tutorials.css' %}">
 {% endblock %}
@@ -43,7 +38,6 @@
           <a href="{% url 'user_tutorials' %}" class="btn btn-sm btn-outline-secondary mb-1">Manage Tutorial</a>
           {% endif %}
           <p><small><strong>Category: {{ object.category.get_friendly_name }}</strong></small></p>
-          <p></p>
           <p><strong>Duration:</strong> {{ object.duration }}</p>
           <p class="text-capitalize"><strong>Difficulty:</strong> {{ tutorial.difficulty_level }}</p>
           <p><strong>Summary:</strong> {{ object.summary }}</p>
@@ -63,7 +57,7 @@
         </div>
         <div class="col-md-9">
           <!-- Tutorial posts -->
-          <div id="card-body tutorial-posts">
+          <div class="card-body tutorial-posts">
             {% for post in tutorial_posts %}
               <div id="week-{{ post.week_number }}" class="pb-3 week-post row" style="display: none;">
                   <h4>{{ post.title }}</h4>
