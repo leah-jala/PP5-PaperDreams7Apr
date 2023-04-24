@@ -3,6 +3,9 @@
 
 {% block extra_css %}
 <style>
+.container {
+  max-width: 800px;
+}
 .img-thumbnail {
   max-height: 200px !important;
 }
@@ -38,12 +41,13 @@ h2 {
       <div class="col-md-2">
         <img src="{{ product.image.url }}" class="img-thumbnail" alt="{{ product.name }}">
       </div>
-      <div class="col-md-6">
+      <div class="col-md-4">
         <h5 class="card-title">{{ product.name }}</h5>
         <p class="card-text">{{ product.description|truncatewords:20 }}</p>
-        <a href="{% url 'product_detail' product_id=product.id %}">View Details</a>
+        <p class="card-text">£{{ product.price }}</p>
+        <a href="{% url 'product_detail' product_id=product.id %}">View Details & Add to Bag</a>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-2">
         <p class="card-text">
           {% if product.quantity > 0 %}
             <span class="font-weight-bold">In stock</span>
