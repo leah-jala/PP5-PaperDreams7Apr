@@ -12,6 +12,14 @@
     height: auto;
   }
 
+  .other-links {
+    color: black;
+    font-weight: bold;
+  }
+  .other-links:hover {
+    text-decoration: underline;
+  }
+
   .spacer {
     margin-top: 150px;
   }
