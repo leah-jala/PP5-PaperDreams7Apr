@@ -1,3 +1,4 @@
+
 .tutorial-post-link {
     color: black;
     text-decoration: none;
@@ -9,6 +10,10 @@
   .image-responsive {
     max-width: 100%;
     height: auto;
+  }
+
+  .spacer {
+    margin-top: 150px;
   }
 
   @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -23,6 +28,11 @@
   }
 }
 
-.spacer {
-  margin-top: 150px;
+.tutorial-heading {
+  font-weight: 700;
+  color: black;
+  font-size: 45px;
+  margin: 20px 0 30px 0;
+  border-left: 5px solid #e96c74;
+  padding-left: 15px;
 }

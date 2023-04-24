@@ -1,24 +1,22 @@
-body{
+body {
     background-color: #e2ebdb;
 }
 
 .icon {
-    color: white; !important
-}  
-
-.bag-icons {
-    color:black;
+    color: white;
+     !important
 }
 
-.footer-background{
+.bag-icons {
+    color: black;
+}
+
+.footer-background {
     background-color: rgb(204, 199, 199);
 }
 
-
-
 @media only screen and (max-width: 991px) {
     .bag-header {
-      display: none;
+        display: none;
     }
-  }
-  
+}

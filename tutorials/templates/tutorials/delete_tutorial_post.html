@@ -1,15 +1,25 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'tutorials/css/tutorials.css' %}">
+{% endblock %}
 
 {% block extra_title%}Delete Post{% endblock %}
 
 
 {% block content %}
-    <h2>Delete Tutorial Post</h2>
-    <p>Are you sure you want to delete the tutorial post "{{ object.title }}"?</p>
-
+<div class="container">
+    <div>
+        <h2 class="tutorial-heading">Delete Tutorial Post</h2>
+        <p>Are you sure you want to delete the tutorial post "{{ object.title }}"?
+            This action can not be undone.
+        </p>
+    </div>
     <form method="post">
         {% csrf_token %}
         <button type="submit" class="btn btn-danger">Delete</button>
         <a href="{% url 'user_tutorials' %}" class="btn btn-secondary">Cancel</a>
     </form>
+</div>
 {% endblock %}

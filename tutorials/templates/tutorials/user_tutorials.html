@@ -1,12 +1,8 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load static %}
 
 {% block extra_css %}
-<style>
-    .spacer {
-        margin-top: 150px;
-    }
-</style>
-
+    <link rel="stylesheet" href="{% static 'tutorials/css/tutorials.css' %}">
 {% endblock %}
 
 {% block extra_title%}Manage Tutorials{% endblock %}
@@ -14,8 +10,9 @@
 
 {% block content %}
 
-<div class="container spacer">
-    <h2 class="mb-4">Manage Tutorials</h2>
+<div class="container">
+    <div>
+        <h2 class="tutorial-heading mb-4">Manage Tutorials</h2>
     <p class="mb-4">You can add a new tutorial by clicking the button below. When you add a tutorial, you will provide
         basic information about your course that is relevant for all posts: a title, a category, a difficulty level,
         the time needed to complete the whole tutorial, a brief description of its goals, and equipment list and an
@@ -31,6 +28,9 @@
         any posts, you can use the "Add a Post" button to do so.
     </p>
     <a href="{% url 'add_tutorial' %}" class="btn btn-black rounded-0 mb-5 mr-2">Add a New Tutorial</a>
+
+    </div>
+    
     <div class="container">
         {% if tutorials_with_posts %}
         <div class="row">

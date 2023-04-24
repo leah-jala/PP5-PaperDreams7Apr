@@ -10,20 +10,17 @@
 
 {% block extra_title%}Tutorials{% endblock %}
 
-{% block page_header %}
-<div class="container header-container">
-  <div class="row">
-    <div class="col"></div>
-  </div>
-</div>
-
-{% endblock %}
-
 {% block content %}
-<h2>Tutorials</h2>
-
-<div class="container p-4">
-  <!-- First row -->
+<div class="container">
+  <div class="px-3">
+    <h2 class="tutorial-heading">Tutorial Instructions</h2>
+    <p>Detailed instructions for "{{ object.title }}" are below. Some tutorials are 
+      presented over several weeks. If you are returning to this tutorial, you can use
+      the green links under the summary to jump to the week you are on, or simply look
+      ahead. We hope you enjoy this tutorial and that you will post photos of your work
+      along the way on our <a href="https://www.facebook.com/profile.php?id=100091661127883">Facebook Page</a>. 
+    </p>
+  </div>
   <div class="container d-flex flex-row flex-wrap justify-content-center">
     <div class="col-md-12 card mb-4 mt-3 tutorial">
       <div class="row px-2">
