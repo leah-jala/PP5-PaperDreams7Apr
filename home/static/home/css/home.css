@@ -1,6 +1,7 @@
   .row {
     margin-top: 75px;
   }
+
   .main-wrapper {
     display: flex;
     justify-content: center;
@@ -9,17 +10,20 @@
 
   .main {
     display: flex;
-    --s: 200px; /* size */
-    --m: 4px; /* margin */
+    --s: 200px;
+    /* size */
+    --m: 4px;
+    /* margin */
     --f: calc(1.732 * var(--s) + 4 * var(--m) - 1px);
     max-width: calc(4 * (var(--s) + 2 * var(--m)));
   }
-  
+
   .container {
-    font-size: 0; /*disable white space between inline block element */
+    font-size: 0;
+    /*disable white space between inline block element */
     margin-bottom: 50px;
   }
-  
+
   .hexagon {
     position: relative;
     width: var(--s);
@@ -32,37 +36,39 @@
     margin-bottom: calc(var(--m) - var(--s) * 0.2885);
     overflow: hidden;
   }
-  
+
   .empty {
     display: none
   }
+
   .hexagon:nth-child(odd) {
     background: #bdcebe;
   }
-  
+
   .container::before {
     content: "";
     width: calc(var(--s) / 2 + var(--m));
     float: left;
     height: 120%;
-    shape-outside: repeating-linear-gradient(     
-                    #0000 0 calc(var(--f) - 3px),      
-                    #000 0 var(--f));
+    shape-outside: repeating-linear-gradient(
+                  45deg,
+                  #0000 0 calc(var(--f) - 3px),
+                  #000 0 var(--f));
   }
-  
+
   .hexagon a {
     display: block;
     text-decoration: none;
   }
-  
+
   .img-wrapper img {
     max-height: 200px;
     width: 100%;
     object-fit: cover;
     object-position: center;
   }
-  
-  
+
+
   .img-wrapper {
     position: absolute;
     top: 0;
@@ -74,7 +80,7 @@
     background-position: center top;
     transition: opacity 0.3s;
   }
-  
+
   .hexagon-text {
     position: absolute;
     top: 0;
@@ -94,7 +100,7 @@
   }
 
 
-  
+
   @media (max-width: 492px) {
     .container {
       margin: 0 auto;
@@ -102,66 +108,68 @@
       margin-bottom: 50px;
 
     }
+
     .hexagon {
       clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
       margin-bottom: calc(var(--m) * 0.5);
       height: calc(var(--s) * 1);
     }
-  
+
     .hexagon:nth-child(even) {
       margin-left: calc(var(--m) * 0.5);
       margin-right: calc(var(--m) * 0.5);
     }
-  
+
     .container::before {
       width: auto;
       height: 100%;
-      shape-outside: none;
+      shape-outside: initial;
     }
   }
 
-  
+
   @media (max-width: 428px) {
     .hexagon {
-      display:flex;
+      display: flex;
     }
-  
+
   }
 
   @media (min-width: 493px) and (max-width: 767px) {
     .container {
-          margin-bottom: 150px;
+      margin-bottom: 150px;
     }
   }
-  
+
   /* Devices that can hover */
   @media (hover:hover) {
     .hexagon:hover .img-wrapper {
       opacity: 0.19;
     }
-    
+
     .hexagon:hover .hexagon-text {
       opacity: 1;
     }
-    }
-    
+  }
+
   /* Devices that can't hover */
   @media (hover:none) {
-  .img-wrapper {
-    opacity: 1;
+    .img-wrapper {
+      opacity: 1;
+    }
+
+    .hexagon-text {
+      background-color: rgba(0, 0, 0, 0.3);
+      transition: none;
+      z-index: 2;
+      /* Bring the hexagon-text in front of the img-wrapper */
+    }
+
+    .hexagon .hexagon-text {
+      opacity: 1;
+    }
+
+    .hexagon:hover .hexagon-text {
+      opacity: 0;
+    }
   }
-  
-  .hexagon-text {
-    background-color: rgba(0, 0, 0, 0.3);
-    transition: none;
-    z-index: 2; /* Bring the hexagon-text in front of the img-wrapper */
-  }
-  .hexagon .hexagon-text {
-    opacity: 1;
-  }
-  
-  .hexagon:hover .hexagon-text {
-    opacity: 0;
-  }
-  }
-  
