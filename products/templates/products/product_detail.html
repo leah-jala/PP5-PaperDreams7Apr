@@ -75,58 +75,63 @@
                                                 {% if request.session.bag %}({{ request.session.bag|get_item_qty:product.id }}
                                                 in bag){% endif %}</small></p>
                                         {% if user.is_authenticated %}
-                                        <div>
-                                        {% if product in wishlist.products.all %}
-                                        <i class="fas fa-heart text-danger"></i>
-                                        <a href="{% url 'view_wishlist' %}"
-                                            class="text-decoration-none text-dark small">
-                                            On your wishlist
-                                        </a>
+                                        <div class="mb-2">
+                                            {% if product in wishlist.products.all %}
+                                                <i class="fas fa-heart text-danger"></i>
+                                                <a href="{% url 'view_wishlist' %}"
+                                                    class="text-decoration-none text-dark small">
+                                                    On your wishlist
+                                                </a>
+                                            {% else %}
+                                                <form id="add_to_wishlist_{{ product.id }}"
+                                                    action="{% url 'add_to_wishlist' product.id %}" method="POST"
+                                                    style="display: inline;">
+                                                    {% csrf_token %}
+                                                    <a href="#"
+                                                        onclick="document.getElementById('add_to_wishlist_{{ product.id }}').submit();"
+                                                        class="small">
+                                                        <i class="far fa-heart text-danger"></i>
+                                                        <span class="small">Add to wishlist</span>
+                                                    </a>
+                                                </form>
+                                            {% endif %}
                                         {% else %}
-                                        <form id="add_to_wishlist_{{ product.id }}"
-                                            action="{% url 'add_to_wishlist' product.id %}" method="POST"
-                                            style="display: inline;">
-                                            {% csrf_token %}
-                                            <a href="#"
-                                                onclick="document.getElementById('add_to_wishlist_{{ product.id }}').submit();"
-                                                class="small">
+                                            <a href="{% url 'account_login' %}?next={{ request.path }}" class="small">
                                                 <i class="far fa-heart text-danger"></i>
-                                                <span class="small">Add to wishlist</span>
+                                                <span class="small">Login/Register to add to wishlist</span>
                                             </a>
-                                        </form>
-                                        {% endif %}
-                                        {% else %}
-                                        <a href="{% url 'account_login' %}?next={{ request.path }}" class="small">
-                                            <i class="far fa-heart text-danger"></i>
-                                            <span class="small">Login/Register to add to wishlist</span>
-                                        </a>
                                         {% endif %}
                                         </div>
-                                    {% if request.user.is_superuser %}
-                                    <small class="ml-3">
-                                        <a href="{% url 'edit_product' product.id %}">Edit</a>
-                                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                    </small>
-                                    {% endif %}
+                                    </div>
                                 </div>
                             </div>
+                            <div>
+                                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0">
+                                    <span class="icon">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="text-uppercase">Keep Shopping</span>
+                                </a>
+                                <input type="submit" class="btn btn-black rounded-0 text-uppercase" value="Add to Bag">
+                            </div>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
-                        <div>
-                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0">
-                                <span class="icon">
-                                    <i class="fas fa-chevron-left"></i>
-                                </span>
-                                <span class="text-uppercase">Keep Shopping</span>
-                            </a>
-                            <input type="submit" class="btn btn-black rounded-0 text-uppercase" value="Add to Bag">
-                        </div>
-                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    </form>
+                    {% if request.user.is_superuser %}
+                    <div class="mt-3">
+                        <span class="small font-weight-bold">
+                            Manage Products:
+                        </span><br>
+                        <small>
+                            <a class="mr-2" href="{% url 'edit_product' product.id %}">Edit</a>
+                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                        </small>
                     </div>
-                </form>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}
 
 {% block postloadjs %}

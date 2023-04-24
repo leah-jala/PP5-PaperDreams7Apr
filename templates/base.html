@@ -126,6 +126,25 @@
                 </form>
               </div>
             </li>
+            {% if user.is_authenticated and wishlist.products.exists %}
+            <li class="list-inline-item">
+              <a href="{% url 'view_wishlist' %}">
+                <div class="text-center">
+                  <div><i class="fas fa-heart text-danger"></i></div>
+                  <p class="my-0 text-dark">Wishlist</p>
+                </div>
+              </a>
+            </li>
+          {% else %}
+            <li class="list-inline-item">
+              <div class="text-center">
+                <div><i class="far fa-heart"></i></div>
+                <p class="my-0">Wishlist</p>
+              </div>
+            </li>
+          {% endif %}
+          
+          
             <li class="list-inline-item dropdown">
               <a class="text-black nav-link d-block" href="#" id="user-options" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
@@ -172,7 +191,6 @@
             </li>
           </ul>
         </div>
-
       </div>
     </nav>
   </header>
