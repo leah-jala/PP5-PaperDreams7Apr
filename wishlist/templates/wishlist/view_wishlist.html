@@ -6,6 +6,16 @@
 .img-thumbnail {
   height: 150px !important;
 }
+h2 {
+  font-weight: 700;
+  color: black;
+  font-size: min(10vw, 40px);
+  margin: 20px 0 30px 0;
+  border-left: 5px solid #e96c74;
+  padding-left: 15px;
+  text-transform: uppercase;
+  width: fit-content;
+}
 </style>
 {% endblock %}
 
@@ -15,7 +25,7 @@
   <div class="row">
     <div class="col-12">
       {% if request.user.is_authenticated %}
-        <h2 class="my-4">{{ request.user.first_name }}'s Wishlist</h2>
+        <h2 class="my-5">{{ request.user.first_name }}'s Wishlist</h2>
       {% else %}
         <h2 class="my-4">Wishlist</h2>
         <p>You need to register or login to save things to a wishlist.</p>

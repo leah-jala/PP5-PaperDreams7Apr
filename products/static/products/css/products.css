@@ -1,3 +1,7 @@
+.wishlist-link {
+  text-decoration: none;
+  font: black;
+}
 .products-heading {
   font-weight: 700;
   color: black;
@@ -43,11 +47,7 @@ h4 {
     max-width: 250px;
 }
   
-  /* Add margin so products aren't behind sticky footer */
-  .product-container {
-      margin-bottom: 10vh; 
-    }
-  
+ 
   /* Adjust the products container margin for smaller screens */
     
     @media screen and (max-width: 768px) {

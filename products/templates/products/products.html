@@ -112,11 +112,41 @@
                                     </a>
                                 </p>
                                 {% endif %}
+                                <div class="my-2">
+                                    {% if user.is_authenticated %}
+                                        {% if product in wishlist.products.all %}
+                                        <i class="fas fa-heart text-danger"></i>
+                                        <a href="{% url 'view_wishlist' %}" class="text-decoration-none text-dark small">
+                                            On your wishlist
+                                        </a>
+                                        {% else %}
+                                            <form id="add_to_wishlist_{{ product.id }}" action="{% url 'add_to_wishlist' product.id %}" method="POST" style="display: inline;">
+                                                {% csrf_token %}
+                                                <a href="#" onclick="document.getElementById('add_to_wishlist_{{ product.id }}').submit();" class="small">
+                                                    <i class="far fa-heart text-danger"></i>
+                                                    <span class="small">Add to wishlist</span>
+                                                </a>
+                                            </form>
+                                        {% endif %}
+                                    {% else %}
+                                        <a href="{% url 'account_login' %}?next={{ request.path }}" class="small">
+                                            <i class="far fa-heart text-danger"></i>
+                                            <span class="small">Login/Register to add to wishlist</span>
+                                        </a>
+                                    {% endif %}
+                                </div>
                                 {% if request.user.is_superuser %}
-                                <small class="ml-3">
-                                    <a href="{% url 'edit_product' product.id %}">Edit</a>
-                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                </small>
+                                <div>
+                                    <span class="small font-weight-bold">
+                                        Manage Products:
+                                    </span><br>
+                                    <small>
+                                        <a class="mr-2" href="{% url 'edit_product' product.id %}">Edit</a>
+                                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                    </small>
+
+                                </div>
+
                                 {% endif %}
                             </div>
                         </div>
