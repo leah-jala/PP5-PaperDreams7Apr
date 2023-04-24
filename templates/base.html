@@ -138,10 +138,12 @@
               </li>
             {% else %}
               <li class="list-inline-item">
-                <div class="text-center">
-                  <div><i class="far fa-heart"></i></div>
-                  <p class="my-0">Wishlist</p>
+                <a href="{% url 'view_wishlist' %}">
+                  <div class="text-center text-dark">
+                    <div><i class="far fa-heart"></i></div>
+                    <p class="my-0 ">Wishlist</p>
                 </div>
+                </a>
               </li>
             {% endif %}
           {% endif %}
