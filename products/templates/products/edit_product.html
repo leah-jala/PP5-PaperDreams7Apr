@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
+
 {% block extra_title%}Edit{% endblock %}
 
 {% block page_header %}
@@ -16,7 +21,7 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <hr>
-                <h2 class="logo-font mb-4">Product Management</h2>
+                <h2 class="products-heading">Product Management</h2>
                 <h5 class="text-muted">Edit a Product</h5>
                 <hr>
             </div>

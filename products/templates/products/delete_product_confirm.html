@@ -1,12 +1,26 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
 
 {% block extra_title%}Delete{% endblock %}
 
 {% block content %}
-    <h2>Are you sure you want to delete {{ product.name }}?</h2>
+<div class="container">
+    <div>
+        <h2 class="products-heading">Delete</h2>
+        <p>Are you sure you want to delete "{{ product.name }}"? This action
+            can not be undone.
+        </p>
+    </div>
     <form method="POST" action="{% url 'delete_product' product.id %}">
         {% csrf_token %}
-        <button class="btn btn-black rounded-0" type="submit">Yes, delete</button>
-        <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">No, go back</a>
+        <button class="btn btn-black rounded-0" type="submit">Delete</button>
+        <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
     </form>
+</div>
+    
+    
 {% endblock %}
