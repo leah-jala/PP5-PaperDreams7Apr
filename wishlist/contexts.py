@@ -1,5 +1,6 @@
 from .models import Wishlist
 
+
 def wishlist(request):
     """ Add the wishlist to the context if the user is authenticated """
     wishlist = None

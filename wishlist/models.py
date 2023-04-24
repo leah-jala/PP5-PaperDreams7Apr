@@ -4,7 +4,9 @@ from products.models import Product
 
 
 class Wishlist(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE)
     products = models.ManyToManyField(Product)
     date_added = models.DateTimeField(auto_now_add=True)
 
