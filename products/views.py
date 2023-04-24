@@ -156,4 +156,3 @@ def delete_product(request, product_id):
         return redirect(reverse('products'))
     else:
         return render(request, template, {'product': product})
-

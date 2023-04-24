@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex flex-column align-items-center">
+    <h1>Internal Error</h1>
+    <p>500 Error</p>
+
+    <a href="{% url 'home' %}" class="btn btn-black rounded-0 my-2">Home</a>
+</div>
+{% endblock %}
