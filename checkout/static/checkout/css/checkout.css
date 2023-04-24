@@ -1,3 +1,5 @@
+
+
 .checkout-content {
   padding-bottom: 200px;
 }
@@ -67,4 +69,14 @@ select option[value=""] {
     justify-content: center;
     margin: 0;
     height: 100%;
+}
+
+.tutorial-heading {
+  font-weight: 700;
+  color: black;
+  font-size: 45px;
+  margin: 20px 0 30px 0;
+  border-left: 5px solid #e96c74;
+  padding-left: 15px;
+  text-transform: uppercase;
 }
