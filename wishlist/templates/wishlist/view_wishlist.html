@@ -25,7 +25,7 @@ h2 {
   <div class="row">
     <div class="col-12">
       {% if request.user.is_authenticated %}
-        <h2 class="my-5">{{ request.user.get_short_name }}'s Wishlist</h2>
+        <h2 class="my-5">{{ request.user.get_short_name() }}'s Wishlist</h2>
       {% else %}
         <h2 class="my-4">Wishlist</h2>
         <p>You need to register or login to save things to a wishlist.</p>
