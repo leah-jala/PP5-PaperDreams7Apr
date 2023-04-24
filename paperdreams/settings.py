@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django_summernote',
     'djrichtextfield',
+    'wishlist',
 
     # Custom apps
     'home',

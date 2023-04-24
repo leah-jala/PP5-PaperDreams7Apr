@@ -30,7 +30,7 @@
         <div class="col-md-9 card-body">
           <h3>{{ object.title }}</h3>
 
-          <h4>Instructor: {{ object.instructor }}</h4>
+          <h4>Instructor: {{ request.user.get_full_name }}</h4>
           {% if request.user.is_staff %}
           <a href="{% url 'user_tutorials' %}" class="btn btn-sm btn-outline-secondary mb-1">Manage Tutorial</a>
           {% endif %}
