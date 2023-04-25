@@ -1,49 +1,93 @@
 # Paper Dreams
 
-This is a website for a fiction company called, "Paper Dreams," Code Institute Portfolio Project 5. The artwork presented on the site has been created by Leah Janss Lafond and Vivi Janss, with all rights reserved.
+This is a website for a fiction company called, "Paper Dreams," Code Institute Portfolio Project 5. The artwork presented on the site has been created by Leah Janss Lafond, with all rights reserved.
+
+Paper Dreams is an ecommerce website for a paper-mache artist to sell a small collection of ever-changing masks, figurines and animal objects, paintings and prints and more. Customers can register with the site, which allows them to maintain an order history, a profile and a wishlist.
+
+![Am I responsive](docs/website/amiresponsive.JPG)
+
+
+View the live site [here.](https://paper-dreams-uk.herokuapp.com/)
 
 ## Table of Contents
+---
+- [Purpose and Goals](#purpose-and-goals)
+- [E-commerce Business Model](#e-commerce-business-model)
+- [Marketing Goals](#marketing-goals)
 
-### Marketing Strategy
+
+
+# Purpose and Goals
+This purpose of this website is to all the site owner to sell her artwork online. The artist would like to build a community of followers, which she aims to do by making tutorials available online and creating a complimentary space on Facebook.
+## The audience
+Paper Dreams' audience is matches the Etsy Community whose audience is described as largely females between the ages of 18-35. Etsy estimates 86% of their buyers are female. Like Etsy, the site owner expects the audience to be young, female and interested in unique, original items with vibrant colour palettes. Etsy describes the buyer's behaviour and trends of which the following apply to Paper Dreams:
+
+They want to support small businesses. They use the hashtag #StandWithSmall. The site could also make use of this hashtag. Statusbrew lists some top trending small business hashtags. Top-Hashtags offers some useful ideas, moving away from the specific art scene to other interest areas of potential customers, such as #womanownedbusiness, #newbusiness, #supportsmallshops, #handcraftedgifts, #handmadecrafts, and #handcrafted"add item".
+
+They want to make their homes more stylish with unique bright items.
+
+The are interested in projects they can do from home. (Relates to tutorials/learn page)
+
+The are looking for unique gifts for various occasions.
+
+For the purpose of this marketing strategy, we want to think about our customer in narrow terms in order to be able to create useful keywords for the site and and overall marketing strategy.
+
+- Age: broadly 20-35
+- Gender: identifying as female
+- Online hangouts: 
+    - Most likely Instagram and Facebook users
+    - Likey to check accounts through the day, but most likely present in the evenings
+- Interests: 
+    - Social responsibility
+    - Sustainability
+    - Enjoys browsing and shopping online
+    - Listens to podcasts related to fashion, exercise, entrepreneurship, freelancing, cookery, health, lifestyle, goal-setting, mindfulness, and general well being
+    - Reads blogs
+    - Spending power
+        - Likely to rent 
+        - Decent income, but need to save and pay back loans
+        - Likely to have a social life (no kids yet)
+        - Up and coming in their careers, but will suffer if they become mothers.
+    - Frustrations
+        - Getting on the housing ladder
+        - Progressing in career
+        - Burnout at  work/instability in careers.
+        - Lack of childcare options, if mothers
+        - 
+## Broad User Goals
+- To find an browse available art.
+- To buy papier mache art
+- To learn the techniqes of mask-making and papier mache generally
+
+## Broad Site Owner Goals
+- To have an online point of sale for her artwork.
+- To be able to display her work online
+- To create a community of people interested in papier mache
+
+
+## E-commerce Business Model
+The site owner sells to individuals, making her business a Business-to-Customer (B2C) model. The customer makes a single payment and there are no subscriptions or regular fees. The business sells directly to the customer, without the involvement of any outside parties.
+
+Given the above, and the target audience, the website should
+- Cater to individuals, and impulse buys by making purchases easy with a smooth, quick checkout process
+- The site should build customer confidence:
+	- The customer should get confirmation that all is well by receiving a confirmation page and email. 
+	- Customers who log in should be able to see their order history
+	- Customers should not be obliged to create a profile. Many customers don't want to save their details.
+	- The customer should easily be able to find shipping and returns information. 
+	- The customer should easily be able to find a privacy policy.
+	- The customer should easily be able to find contact information.
+- Photos should be attractive, but they should also make
+ clear these are handmade items by an individual.
+- While the artist won't initially have much to display, the site should allow for product filtering by category.
+- The site should have a search field so returning customers can find something they've seen before.
+- The site should have a wishlist so customers can save items they are interested in and return to review them at a later time.
+- The site owner wants the customer feel like they can get involved by trying a tutorial, or showing how they are displaying their artwork in their home.
+
+## Marketing Strategy
 The site owner is not interested in joining Etsy as she feels the platform is too crowded, and there is some suggestion it has declined. [TechPenny blames Etsy's algorithms](https://techpenny.com/typical-etsy-demographics-stats/) and the amount of time customers must spend on the platform only to get frustrated and leave after they don't find what they are looking form. By contrast, [Statista.com](https://www.statista.com/statistics/409375/etsy-active-buyers/) reported an 18% increase in sales. Reuter's reports Etsy has suffered related to [SVBs collapse with resulting delays processing sellers' payments](https://www.reuters.com/markets/etsy-other-e-commerce-companies-feel-squeeze-svb-collapse-2023-03-13/), with some sellers complaining Etsy lacked transparency. Notwithstanding these reports on the Etsy platform itself, there is a clear interest by consumers in handcrafted items created by small businesses. 
 
-#### Understanding the audience
-
-Paper Dreams' audience is matches the Etsy Community whose audience is described as largely females between the ages of 18-35. Etsy estimates 86% of their buyers are female. Like Etsy, the site owner expects the audience to be young, female and interested in unique, original items with vibrant colour palettes. [Etsy describes the buyer's behaviour and trends](https://www.etsy.com/seller-handbook/article/marketplace-insights-emerging-etsy-buyer/811544572163) of which the following apply to Paper Dreams:
-
-1. They want to support small businesses. They use the hashtag #StandWithSmall. The site could also make use of this hashtag. [Statusbrew](https://statusbrew.com/insights/small-business-hashtags/) lists some top trending small business hashtags.  [Top-Hashtags](https://top-hashtags.com/hashtag/smallbusiness/) offers  some useful ideas, moving away from the specific art scene to other interest areas of potential customers, such as #womanownedbusiness, #newbusiness, #supportsmallshops, #handcraftedgifts, #handmadecrafts, and  #handcrafted"add item". 
-
-2. They want to make their homes more stylish with unique bright items. 
-
-3. The are interested in projects they can do from home. (Relates to tutorials/learn page)
-
-4. The are looking for unique gifts for various occasions. 
-
-For the purpose of this marketing strategy, we want to think about our customer in narrow terms in order to be able to create useful keywords for the site and and overall marketing strategy. 
-
-    - Age: broadly 20-35
-    - Gender: identifying as female
-    - Online hangouts: 
-        - Most likely Instagram users
-        - Likey to check accounts through the day, but most likely present in the evenings
-    - Interests: 
-        - Social responsibility
-        - Sustainability
-        - Enjoys browsing and shopping online
-        - Listens to podcasts related to fashion, exercise, entrepreneurship, freelancing, cookery, health, lifestyle, goal-setting, mindfulness, and general well being
-        - Reads blogs
-        - Spending power
-            - Likely to rent 
-            - Decent income, but need to save and pay back loans
-            - Likely to have a social life (no kids yet)
-            - Up and coming in their careers, but will suffer if they become mothers.
-        - Frustrations
-            - Getting on the housing ladder
-            - Progressing in career
-            - Burnout at  work/instability in careers.
-            - Lack of childcare options, if mothers
-
-#### Marketing Goals
+### Marketing Goals
 The site owner will market through her Facebook Page, [Paper Dreams](https://www.facebook.com/profile.php?id=100091661127883). The idea is to build a community there by displaying work and creating a community by providing free tutorials online and encourage site users to post their progress and results on the Facebook page. The artist is a local artist and sells at local markets where she can prominently display the site link. The intention would to get a domain name matching the name of the business so it is memorable.
 
 The marketing goals are to:
@@ -52,12 +96,9 @@ The marketing goals are to:
 - Build brand awareness through an online presence. On a real site much effort would be put into the creation and use of a logo, but I didn't have resources for this mock-project. However, the colour scheme and the style of the site creates a memorable aesthetic.
 - Generating leads. Emails can be collected through the MailChimp newsletter signup and via the contact form opt-in to the newsletter. 
 - Engaging customers and followers. The tutorials page and the Facebook page gives people reasons to keep coming back o the site and engaging directly with the artist.
-- Driving sales with email marketing. The eventual newsletter can be used to let people know where she will be exhibiting work. Future features could include a blog page for the purpose of such annoucements and news.
+- Driving sales with email marketing. The eventual newsletter can be used to let people know where she will be exhibiting work. Future features could include a blog page for the purpose of such announcements and news.
 
-
-#### SEO & Analytic
-
-USE WORDTRACKER.COM FREE TRIAL!!!!!!!!!!!!!
+### SEO & Analytic
 
 1. Keyword Search
 
@@ -82,46 +123,16 @@ USE WORDTRACKER.COM FREE TRIAL!!!!!!!!!!!!!
 
 2. On page optimization
 
-    **Home page**
-    - Page titles
-    - Meta descriptions
-    - Headers
-    - Content
+    If this were a genuine business, it would make sense for the artist to use her name as the domain name and then change the site title to Paper Dreams by "Artist Name". Factors taken into account include relevant headings, meta tags, optimizing images for faster loading, making sure the site is mobile friendly. 
 
-    If this were a genuine business, it would make sense for the artist to use her name as the domain name and then change the site title to Paper Dreams by "Artist Name".
-
-    
-    **Products page**
-    - Page titles
-    - Meta descriptions
-    - Headers
-    - Content
-
-    **Events page**
-    - Page titles
-    - Meta descriptions
-    - Headers
-    - Content
-    
-    **Learn page**
-    - Page titles
-    - Meta descriptions
-    - Headers
-    - Content
-    
-    **Learn page**
-    - Page titles
-    - Meta descriptions
-    - Headers
-    - Content
 
 3. Off-page optimization
 
     If this  were a real site, the business should seek to engage with other artists and website owners by writing guest blogs, or by asking them to link to this site for its resources (the tutorials blog), events or by reviewing our site and art works. An obvious place to start would be papiermache.co.uk which is a platfrom for papier mache artists. By posting there regularly, you quickly become part of a community and if you post projects there, your project will be the first or one of the first visitors to the site will see. Many of these artists have their own websites and community connections and are generous with help and advice.
-
+    
 4. Technical optimization
 
-    - Page loads fast
+    - Page loads fast, images are converted to webp
     - Mobile friendly
     - Easy to navigate
 
@@ -129,59 +140,52 @@ USE WORDTRACKER.COM FREE TRIAL!!!!!!!!!!!!!
 
     - Text is highly relevant to page purpose. No superflous text.
     - Non commercial content aims to retain visitors/create repeat visitors
+    
+6. Meta tags
 
-6. Google Analytics 
+    The various pages on this site leave little room for SEO keywords as there are few titles and subtitles, howwever there is ample opportunity in the product descriptions.
 
-####
+    - Meta descriptions - I have put unique page descriptions on every content page: Homepage, Contact, Privacy, Delivery, Products and Tutorials. Google will not crawl through the pages that require user sign in. The meta tags needed to be placed in the extra_meta block as the presence of a tag in base.html would produces a duplication and error.
+
+    - Meta keywords: I read [Google does not use the keywords meta tag in web ranking](https://developers.google.com/search/blog/2009/09/google-does-not-use-keywords-meta-tag) on "Google Search Central Blog" on  developers.google.com and have therefore not used them. I was surprised to see this information was presented in 2009.
+
+
+7. Evidence of being a trusted site
+
+    The project includes a privacy policy to meet GDPR rules. There is also a contact page, and a delivery and returns policy This  helps customoer confidence, and improve SEO.
+
 
 ## Website Design
 ### The Strategy Plane
 The goals of the site are similar to that of Etsy and NotOnTheHighStreet. This site aims to offer users unique items to bring a bit of joy into their lives.  The site owner does not wish to have a profile on these sites, because they wish to display works not for sale as well as to provide tutorials. While the site will be online, and can be thought of as having a global reach, the site owner is also very much involved in the community, and wishes to have an exclusive site.
 
-#### Site-Owner Goals
-This is a website for an artist to sell their artwork under the name "Paper Dreams". The overall goals of the website are to:
-
-1. Present the artist's work in an attractive way.
-2. Give visibility to other artists who's work will be shown on the events page of the website. 
-3. Inspire people to create and share their own works of art.
-4. Gain insight on which products customers like.
-5. Increase sales potential with online presence.
-6. To track customer sales to make tax reporting easier.
-7. To engage with customers and the artistic community via a tutorials page and the site's links to her Facebook page.
-8. To offer exclusive opportunities to registered users, such as free tickets to exhibitions.
-
-### Site Visitor Goals
-1. To discover unique artwork that can not be found in shops.
-2. To be able to see clearly what is available for sale.
-3. To be able to make a purchase quickly and easily.
-4. To have visible, clear information about shipping and returns polciies.
-5. To make and leave reviews.
-6. To be able to easily contact the shop with questions.
-7. To add/delete items from a wishlist.
-8. For some, to learn how to make their own artworks
-9. To understand how my personal information will be used. 
- 
 
 ### Emotional Factors
 It is the artist's hope that her artworks will help site visitors reimagine their surroundings. The site should be easy and intutive to navigate so as not to detract from the works themselves. An attractive website will add to the value of the work as the same care as creating the art will go into the presentation of it via the website. Even if the customer is not ready to buy, it is the hope of the site owner that the customer will like the experience of the site so much that they will return repeatedly to look and browse.  
 
 The reviews page is also meant to be something of a community page where customers can leave their thoughts about their purchases and also upload photos to show how they are displaying the product at home or in their workplace. The idea is that it will inspire prospective customers, and encourage conversation. 
 
-### User Stories
+### User Stories & Project Management
+On GitHub, user stories were defined as issues with tick-box tasks and acceptance criteria. 
 
-CAN I LINK TO MY BOARD ON GITHUB?
+Looking back at the project, I realize I did not write down enough of the fine detail that I can now see in other people's readme files. Also, for some of the user stories, I found it more efficient to break down the user story into a set of tasks within the user story. 
 
+
+The project was developed using Agile Methodology as presented in Code Institute modules. User stories and milestones were created on GitHub's project boards. Each user story was defined and given a status including "must have" (for minimum viable product), "should have" (functionality that would make the site work better but isn't absolutely necessary to launch the site) and "could have" (features that would be nice to include). Some of these items were transitioned to "won't have" as the time demands demanded prioritization of the must and should haves. 
+
+GitHub's Milestones were initially used for the project iterations, but I found them awkward to set up and created a similar categorie which I've called "steps" on the board. While we were encouraged to drag issues along a kanban board, I found it neater to organize my work on a ![table view](docs/agile/project-table-view.JPG).
+
+The project board is at this [link](https://github.com/users/leah-jala/projects/8).
 
 ## The Scope Plane
 
 Considering the goals above, the following requirements were identified.
 
-
 ### "Must have" - Minimum Requirements
 - A homepage which gives an overview of the purpose of the site, a clear call to action (shop button) and information about who is behind it.
 - An intuitive navigation bar and a footer that leads customers to all the information they need to get in touch, review shipping and returns policies and browse products.
 - A cleanly presented products page with an image, title and price for each item.
-- A product detail page, with customization where appropriate (e.g. print size)
+- A product detail page
 - Customers should receive success/confirmation messages when adding products and throughout the checkout process.
 - A checkout page that can be used without registration.
 - A checkout page that can be used as a signed in user. 
@@ -191,18 +195,19 @@ Considering the goals above, the following requirements were identified.
 - After payment, the customer should receive a confirmation email, including an order number and the products ordered. 
 - A registered customer must be able to access their order history.
 - A contact page that allows customer to submit questions via a form. 
-- An events page that allows the ower to use a form to enter information about upcoming events such as an exhibition or a course.
-- A learn page for the artist to be able to present tutorials as a blog, with images.
-- Site users should be able to comment on tutorials/blog entries and upload photos of their work. 
-- Site users should be able to filter tutorials by title or theme (e.g. There might be more than one mask-making tutorial)
+- A tutorials page for the artist to be able to present tutorials as a blog, with images.
 
 
 ### "Should have" - Intended Requirements
 - The ability to add items to a wish list. 
-- The to keep a tally of the number of times an item was added to someone's wishlist.
 - Customers should be able to leave a review, including photos. If there is not enough time, customers could be encouraged to do this on Facebook.
 - It should be possible to search for reviews by item title.
 - The reviews should be imported into the products page. For example, if an item has received reviews, there should be a link the reviews page, set that item's id. 
+
+### "Could have" - Desired functionality that is not essential
+- Site users should be able to comment on tutorials/blog entries and upload photos of their work. 
+- Site users should be able to filter tutorials by title or theme (e.g. There might be more than one mask-making tutorial)
+- An events page that allows the ower to use a form to enter information about upcoming events such as an exhibition or a course.
 
 ### Contraints
 The major constrainst is the timeline for completing the project. 
@@ -215,11 +220,12 @@ As this is an e-commerce site, the major objective is to sell artworks. The cust
 
 - **Discovery/Awareness:**  The customer is likely to hear about or find the website via word of mouth, search engines or social media. The site owner will not be buying advertising space.
     - User Action - asks a friend if they know any sites, uses keyword searches to find sites.
-    - Emotion - initially curious. Happy.
-    - Touch points - directly visit the site (word of mouth/recommendation), google result.
-- Consideration: Looks at multiple artworks before making a decision
-    - User Action - Compares several sites
-    - Touchpoints - homepage if given by friend, or directly landing on product page, product detail page, or blog page after Google search.
+      - Emotion - initially curious. Happy.
+        - Touch points - directly visit the site (word of mouth/recommendation), google result.
+       - Consideration: Looks at multiple artworks before making a decision
+       - User Action - Compares several sites
+     - Touchpoints - homepage if given by friend, or directly landing on product page
+- **Product detail page, or tutorials page** after Google search.
     - Emotions - If the site works as the user expects, they would be largely indifferent about the site itself, but if it requires too many clicks or if is hard to find what they are looking at they might get annoyed and leave the site.
     - Pain points:
         - Website is boring.
@@ -233,7 +239,7 @@ As this is an e-commerce site, the major objective is to sell artworks. The cust
         - Product page should allow category filtering and a search field.
         - The inclusion of free information, like tutorials, and ways to get involved, for example exhibitions, should add interest and build a sense of community.
         - Create wishlist so user's can easily save items they are interested in to a list.
-- Purchase:
+- **Selection and checkout**:
     - User actions: 
         - selects products, adds it to the bag, fills in form, enters card details, confirms payment.
     ![Checkout Journey](docs/website/pdCheckout.png)
@@ -257,7 +263,7 @@ As this is an e-commerce site, the major objective is to sell artworks. The cust
         - Checkout doesn't support all card types.
     - Solutions:
         - Clarify with symbols which cards are accepted.
-- Onboarding:
+- **Delivery**:
     - User Action: Customer receives item.
     - Pain Points: 
         - Item not delivered quickly.
@@ -267,57 +273,72 @@ As this is an e-commerce site, the major objective is to sell artworks. The cust
         - Provide clear returns policy
         - Make footer sticky so returns and shipping policy always visiable.
         - Provide contact page to make it easy for customer to report problems.
-- Advocacy: 
+- **Advocacy via Facebook page**: 
     - User Action
-        - Gives a great review on site or facebook page.
-        - Gives a poor review if checkout experience is bad.
+        - Leaves a great comment on facebook page.
+        - Leaves a bad comment on facebook page if experience is bad.
         - Gives a poor review if customer service is poor following delivery problems, or unanswered questions. 
-        - Recommends tutorials and exhibitions to friends interested in art.
+        - Recommends tutorials and exhibitions to friends interested in art. Links through to their own page
     - Touchpoints:
-    - Customer reviews page.
+        - Contact page
+        - Facebook page
     - Painpoints as mentioned above in user actions section.
     - Solutions:
         - Include shipping tracking field in custom model and trigger an email when product is marked as fulfilled.
-        - Give incentives for customers to give reviews to better understand customer journey and make improvements to the website. 
-        - Include links in the confirmation email to encourage to come to exhibitions or follow the tutorials.
         - Make it easy to share products
-        - Post tutorials frequently and keep events page for as long as it is regularly updated. Giving customers a reason to keep returning to the site for interesting activities and learning should create advocates for the website and company.
+        - Post tutorials frequently, giving customers a reason to keep returning to the site for interesting activities and learning should create advocates for the website and company.
 
 ## The Skeleton Plane
 
 ### Large Screen Wireframes
+The homepage should look artsy and not like a commercial site. It should appeal to those looking for something unique and handmade.
 
-![Homepage](docs/website/pdHomepage.JPG)
-![Products Page](docs/website/pdProductsPage.JPG)
-![Product Details Page](docs/website/pdProductDetail.JPG.JPG)
-![Product Details - Add to Care](docs/website/pdAddtoCart.JPG)
-![Checkout](docs/website/pdCheckout.JPG)
-![Checkout Success](docs/website/pdCheckoutSuccess.JPG)
-![Email Confirmattion](docs/website/pdEmailConf.JPG)
-![Reviews](docs/website/pdReview.JPG)
-![Learn](docs/website/pdLearn.JPG)`
-![Contact Form](docs/website/pdContact.JPG)
-![My Profile](docs/website/pdMyProfile.JPG)
+![Homepage](docs/wireframes/wf-home.JPG)
+
+There is a benefit of the products pages being familiar/universal. I believe it gives confidence that owner has invested in professional web development, with the expected site security.
+![Products Page](docs/wireframes/wf-products.JPG)
+![Product Details Page](docs/wireframes/wf-product-detail.JPG)
+
+The checkout pages are very similar to what users would expect
+![Checkout](docs/wireframes/wf-checkout.JPG)
+![Checkout Success](docs/wireframes/wf-checkout-success.JPG)
+
 
 
 ## The Surface Plane
 
 ### Branding
+The branding on this mock site is acheived mainly through a colour palette. I did not have resources to create a professional logo. This would obviously be important and then used on email headers, throughout the site and on facebook pages and another other communication off the website.
 #### Fonts
 As many of the items on the site are fun and aim to add a bit of spice and fun into people's environment, the site user wanted a font that reflected this. The site name/logo will uses Henny Penny, 
 ![Font Pairing](docs/website/fontPairing.JPG)
 
 #### Colour palette
+I took some inspiration from the 2016 and 2017 [W3 Schools color palettes](https://www.w3schools.com/colors/colors_palettes.asp), however in the end choose my own combination of colors. 
+- Fonts/Text - black
+- Header highlights/Button hover: #dc3545
+- Background: #e2ebdb
+
+I wanted colors that were unique and artsy, but not a distraction to the artwork itself. The small highlights to the page add a bit of interest without being overwhelming or distracting. 
+
 ### Interaction
 ### Accessibility
+Effort has been taking to create a site with color contrast, semantic html for compatibility with assistive technologys and the ability to logically tab through a site, the use of aria-lables and image alts.
 
-## Installed packages / Requirements
+## Installed packages
 This project was built with Python3 and Django 3.2. The following packages were installed.
 Use pip install + app name, then add to settings. 
 
-- [Pillow](https://pillow.readthedocs.io/en/stable/) - supports images in Django
-- [djmoney](https://django-money.readthedocs.io/en/latest/) - handles money values and currencies
-- [django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - handles authentication and site registration
+- [boto3](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html) - Supports Amazon web services
+- [ckeditor](https://django-ckeditor.readthedocs.io/en/latest/) - Provides richtext fields, WYSIWYG editing and image management. 
+- [django3.2](https://docs.djangoproject.com/en/dev/releases/3.2/) - a LTS version of django offering stability and security.
+- [django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - Handles authentication and site registration
+- django-countries - A Django library that provides a comprehensive list of countries for use in your application.
+- django-crispy-forms - A Django utility that helps create attractive forms with minimal coding.
+- gunicorn - A Python WSGI HTTP server that allows you to run Django applications.
+-[Pillow](https://pypi.org/project/Pillow/) - A python library for working with digital images
+- oauthlib (Allauth)- A Python library that provides a set of OAuth and OAuth2 client and server tools.
+- [Stripe](https://docs.dj-stripe.dev/en/master/) - Python library to create an interface with the Stripe payment platform.
 
 ## Technologies and resources
 
@@ -367,7 +388,7 @@ Language Validators and format helpers
 
 # Credits
 
-# Boutique Ado walkthrough
+## Boutique Ado walkthrough
 This tutorial was used as model for the products page, products detail page and shopping bag features. In an attempt to do it on my own I've created my own "scroll back to top" button and code, but when I revisited what was in the tutorial, the tutorial seemed to have a better solution. I've leaving my attempt in the project as it is my own work. 
 - My Account and shopping bag feature of header
 - Understanding how filterning works
