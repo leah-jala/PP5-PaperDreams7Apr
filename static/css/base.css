@@ -74,7 +74,7 @@ a.dropdown-item.active {
 .btn-outline-black:active,
 .btn-outline-black:focus {
     background: black;
-    color: white !important;
+    color: #e96c74 !important;
 }
 
 .update-link,
@@ -88,13 +88,13 @@ a.dropdown-item.active {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #fff;
-    color: black;
-    border: 2px solid black;
+    background: #e96c74;
+    color: white;
+    border: 2px solid #e96c74;
 }
 
 .btn-outline-black:hover .icon i {
-    color: white;
+    color: #e96c74;
 }
 
 .text-black {
