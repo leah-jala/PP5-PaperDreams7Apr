@@ -2,6 +2,11 @@
 {% load static %}
 {% load bag_tools %}
 
+{% block extra_meta %}
+  <meta name="description"
+  content="Shop for unique papier-mache masks, artwork, original paintings, or try a free tutorial. ">
+{% endblock %}
+
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}

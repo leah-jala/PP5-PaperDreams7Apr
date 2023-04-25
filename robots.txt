@@ -1,4 +1,7 @@
 User-agent: *
 Disallow: /accounts/
 Disallow: /bag/
+Disallow: /checkout/
+Disallow: /profiles/
+Disallow: /wishlist/
 Sitemap: https://paper-dreams-uk.herokuapp.com/sitemap.xml

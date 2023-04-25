@@ -2,6 +2,11 @@
 {% load static %}
 {% load bag_tools %}
 
+{% block extra_meta %}
+  <meta name="description"
+  content="Unique, affordable artworks including masks, decor and fun items for all ages. ">
+{% endblock %}
+
 {% block extra_title%}{{product.name}}{% endblock %}
 
 {% block extra_css %}
