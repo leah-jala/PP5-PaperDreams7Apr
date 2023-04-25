@@ -1,1 +1,1 @@
-Paper Dreamns Confirmation for Order Number {{ order.order_number }}
+Paper Dreams Confirmation for Order Number {{ order.order_number }}
