@@ -24,7 +24,7 @@ h2 {
 
 
 {% block content %}
-<div class="container text-center">
+<div class="container mx-auto">
   <div class="row">
     <div class="col-12">
       {% if request.user.is_authenticated %}
@@ -65,9 +65,11 @@ h2 {
       </div>
     </div>
   {% endfor %}
-  <a href="{% url 'products' %}" class="btn btn-black rounded-0 mt-3">
-    <span class="text-uppercase">Back to Shop</span>
-  </a>
+  <div class="text-center">
+    <a href="{% url 'products' %}" class="btn btn-black rounded-0 mt-3">
+      <span class="text-uppercase text">Back to Shop</span>
+    </a>  
+  </div>
 
 </div>
 {% endblock %}
