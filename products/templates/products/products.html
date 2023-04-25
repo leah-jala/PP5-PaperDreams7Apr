@@ -115,21 +115,21 @@
                                 <div class="my-2">
                                     {% if user.is_authenticated %}
                                         {% if product in wishlist.products.all %}
-                                        <i class="fas fa-heart text-danger"></i>
-                                        <a href="{% url 'view_wishlist' %}" class="text-decoration-none text-dark small">
-                                            On your wishlist
+                                        <a href="{% url 'view_wishlist' %}" class="text-decoration-none text-dark small text-dark">
+                                            <i class="fas fa-heart text-danger"></i>
+                                            <span class="small">On your wishlist</span>
                                         </a>
                                         {% else %}
                                             <form id="add_to_wishlist_{{ product.id }}" action="{% url 'add_to_wishlist' product.id %}" method="POST" style="display: inline;">
                                                 {% csrf_token %}
-                                                <a href="#" onclick="document.getElementById('add_to_wishlist_{{ product.id }}').submit();" class="small">
+                                                <a href="#" onclick="document.getElementById('add_to_wishlist_{{ product.id }}').submit();" class="small text-dark">
                                                     <i class="far fa-heart text-danger"></i>
                                                     <span class="small">Add to wishlist</span>
                                                 </a>
                                             </form>
                                         {% endif %}
                                     {% else %}
-                                        <a href="{% url 'account_login' %}?next={{ request.path }}" class="small">
+                                        <a href="{% url 'account_login' %}?next={{ request.path }}" class="small text-dark">
                                             <i class="far fa-heart text-danger"></i>
                                             <span class="small">Login/Register to add to wishlist</span>
                                         </a>
