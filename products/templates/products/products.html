@@ -170,26 +170,25 @@
 {% block postloadjs %}
 {{ block.super }}
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
     // Set active category link 
-    let urlParams = new URLSearchParams(window.location.search);
-    let categoryParam = urlParams.get('category');
+    var urlParams = new URLSearchParams(window.location.search);
+    var categoryParam = urlParams.get('category');
 
     if (categoryParam) {
         $('#category-links .btn').removeClass('btn-secondary').addClass('btn-outline-secondary');
         $('#all-artwork').removeClass('btn-secondary').addClass('btn-outline-secondary');
-        $(`#category-links .btn[href*="${categoryParam}"]`).removeClass('btn-outline-secondary').addClass(
+        $('#category-links .btn[href*="' + categoryParam + '"]').removeClass('btn-outline-secondary').addClass(
             'btn-secondary');
     } else {
         $('#category-links .btn[href="{% url "products" %}"]').removeClass('btn-outline-secondary')
             .addClass('btn-secondary');
-        $(`#all-artwork`).removeClass('btn-outline-secondary').addClass(
+        $('#all-artwork').removeClass('btn-outline-secondary').addClass(
             'btn-secondary');
     }
 
     // Handle visibility of back-to-top button
-
-    $(window).scroll(function () {
+    $(window).scroll(function() {
         if ($(this).scrollTop() > 100) {
             $('.back-to-top').fadeIn();
         } else {
@@ -197,7 +196,7 @@
         }
     });
 
-    $('.back-to-top').click(function () {
+    $('.back-to-top').click(function() {
         $('html, body').animate({
             scrollTop: 0
         }, 800);
@@ -205,7 +204,7 @@
     });
 
     // Handle sorting of product list in select box
-    $('#sort-selector').change(function () {
+    $('#sort-selector').change(function() {
         var selector = $(this);
         var currentUrl = new URL(window.location);
 
@@ -224,7 +223,7 @@
 
             window.location.replace(currentUrl);
         }
-    })
+    });
 });
 </script>
 {% endblock %}
