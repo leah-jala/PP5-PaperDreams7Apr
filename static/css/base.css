@@ -113,6 +113,7 @@ a.dropdown-item.active {
     position: fixed;
     top: 72px;
     right: 15px;
+    margin-right: 50px;
     z-index: 99999999999;
 }
 
