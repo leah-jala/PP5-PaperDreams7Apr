@@ -170,12 +170,50 @@ On GitHub, user stories were defined as issues with tick-box tasks and acceptanc
 
 Looking back at the project, I realize I did not write down enough of the fine detail that I can now see in other people's readme files. Also, for some of the user stories, I found it more efficient to break down the user story into a set of tasks within the user story. 
 
+I should have created a separate level of developer stories. I did something like this for the project set-up, but didn't carry it through the rest of the apps. As I was sitting with a spreadsheet of general requirments, both based on the project requirement's as well as a to do list. It didn't occur to me to include as user stories something like adding a "Page Not Found" or a Procfile as a specific "user" story.  I could have been much more granular. I think this also comes from working alone as opposed to with a team among whom tasks are shared and a higher level of specifity is required. 
 
 The project was developed using Agile Methodology as presented in Code Institute modules. User stories and milestones were created on GitHub's project boards. Each user story was defined and given a status including "must have" (for minimum viable product), "should have" (functionality that would make the site work better but isn't absolutely necessary to launch the site) and "could have" (features that would be nice to include). Some of these items were transitioned to "won't have" as the time demands demanded prioritization of the must and should haves. 
 
 GitHub's Milestones were initially used for the project iterations, but I found them awkward to set up and created a similar categorie which I've called "steps" on the board. While we were encouraged to drag issues along a kanban board, I found it neater to organize my work on a ![table view](docs/agile/project-table-view.JPG).
 
 The project board is at this [link](https://github.com/users/leah-jala/projects/8).
+
+#### User Stories
+
+Project Set Up
+- As a developer, I need to create a django project, so that I can build the site apps.
+- As a developer, I want to deploy my project early, so that I can avoid problems later in the project. (In practice I did this closer to the end of the project.)
+- As a site owner, I need my customers to be able to sign in securely to the website so that they can make purchases or comment on blogs. (This was an example of a user story where I have grouped together tasks)
+![user story example](docs/website/user-story-allauth.JPG)
+- As a developer, I need to create a project level template, to contain the common elements of the site.
+- As a site owner, I want an attractive homepage so that my site users wiill explore the site.
+
+Base
+
+Contact Page
+- As a website visitor, I want to be able to fill out a form on the contact page to send a message to the website owner.
+- As a website visitor, I want to be able to easily find the contact page so that I can get in touch with the website owner.
+- As a website visitor, I would like a an email confirmation after I submit the contact form, so I can review the message I sent later.
+
+Pages App
+- As a site owner, I need to present policies on privacy and delivery to customers and information about the company, so customers know we are a legitimate company looking after their consumer rights.
+![user story example- pages](docs/website/user-story-pages.JPG)
+
+Site wide
+- As a site user I want to be able to search the website so I can find products I've looked at before.
+- As a site owner, I want my customers to receive notifications to give them confirmation things are working.
+- As a site user, I need a navbar to easily navigate the site and orient myself.
+- As a site owner all the navbar links must work right so users can navigate my site.
+- As a site user I want the site to have a footer so I know how to contact and stay in touch with the company.
+
+
+
+
+
+
+
+
+Project Set Up
 
 ## The Scope Plane
 
@@ -299,10 +337,9 @@ There is a benefit of the products pages being familiar/universal. I believe it 
 ![Products Page](docs/wireframes/wf-products.JPG)
 ![Product Details Page](docs/wireframes/wf-product-detail.JPG)
 
-The checkout pages are very similar to what users would expect
+The checkout pages are very similar to what users would expect. I had hoped to make the checkout pages a bit more sophisticated but in practice didn't have time. 
 ![Checkout](docs/wireframes/wf-checkout.JPG)
 ![Checkout Success](docs/wireframes/wf-checkout-success.JPG)
-
 
 
 ## The Surface Plane
