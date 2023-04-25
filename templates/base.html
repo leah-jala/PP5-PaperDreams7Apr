@@ -156,7 +156,7 @@
                   {% if request.user.is_authenticated %}
                   <p class="my-0">My Account</p>
                   {% else %}
-                  <p class="my-0">Login/Register</p>
+                  <p class="my-0">Sign In/Register</p>
                   {% endif %}
                 </div>
               </a>
@@ -170,10 +170,10 @@
                 <a href="{% url 'user_tutorials' %}" class="dropdown-item">Tutorials Management</a>
                 {% endif %}
                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Sign Out</a>
                 {% else %}
                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item">Sign In</a>
                 {% endif %}
               </div>
             </li>
