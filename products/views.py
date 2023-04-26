@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import (
+    render, redirect, 
+    reverse, get_object_or_404)
 from .models import Product, Category
 from .forms import ProductForm
 from django.contrib import messages

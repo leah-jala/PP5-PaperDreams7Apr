@@ -178,42 +178,6 @@ GitHub's Milestones were initially used for the project iterations, but I found 
 
 The project board is at this [link](https://github.com/users/leah-jala/projects/8).
 
-#### User Stories
-
-Project Set Up
-- As a developer, I need to create a django project, so that I can build the site apps.
-- As a developer, I want to deploy my project early, so that I can avoid problems later in the project. (In practice I did this closer to the end of the project.)
-- As a site owner, I need my customers to be able to sign in securely to the website so that they can make purchases or comment on blogs. (This was an example of a user story where I have grouped together tasks)
-![user story example](docs/website/user-story-allauth.JPG)
-- As a developer, I need to create a project level template, to contain the common elements of the site.
-- As a site owner, I want an attractive homepage so that my site users wiill explore the site.
-
-Base
-
-Contact Page
-- As a website visitor, I want to be able to fill out a form on the contact page to send a message to the website owner.
-- As a website visitor, I want to be able to easily find the contact page so that I can get in touch with the website owner.
-- As a website visitor, I would like a an email confirmation after I submit the contact form, so I can review the message I sent later.
-
-Pages App
-- As a site owner, I need to present policies on privacy and delivery to customers and information about the company, so customers know we are a legitimate company looking after their consumer rights.
-![user story example- pages](docs/website/user-story-pages.JPG)
-
-Site wide
-- As a site user I want to be able to search the website so I can find products I've looked at before.
-- As a site owner, I want my customers to receive notifications to give them confirmation things are working.
-- As a site user, I need a navbar to easily navigate the site and orient myself.
-- As a site owner all the navbar links must work right so users can navigate my site.
-- As a site user I want the site to have a footer so I know how to contact and stay in touch with the company.
-
-
-
-
-
-
-
-
-Project Set Up
 
 ## The Scope Plane
 
@@ -247,22 +211,93 @@ Considering the goals above, the following requirements were identified.
 - Site users should be able to filter tutorials by title or theme (e.g. There might be more than one mask-making tutorial)
 - An events page that allows the ower to use a form to enter information about upcoming events such as an exhibition or a course.
 
+### User Stories
+
+Project Set Up
+- As a developer, I need to create a django project, so that I can build the site apps.
+- As a developer, I want to deploy my project early, so that I can avoid problems later in the project. (In practice I did this closer to the end of the project.)
+- As a site owner, I need my customers to be able to sign in securely to the website so that they can make purchases or comment on blogs. (This was an example of a user story where I have grouped together tasks)
+![user story example](docs/website/user-story-allauth.JPG)
+- As a developer, I need to create a project level template, to contain the common elements of the site.
+- As a site owner, I want an attractive homepage so that my site users wiill explore the site.
+
+Base
+
+Contact Page
+- As a website visitor, I want to be able to fill out a form on the contact page to send a message to the website owner.
+- As a website visitor, I want to be able to easily find the contact page so that I can get in touch with the website owner.
+- As a website visitor, I would like a an email confirmation after I submit the contact form, so I can review the message I sent later.
+
+Homepage
+- As a developer, I need to set up a home app so I can build the index.html page.
+
+Pages App
+- As a site owner, I need to present policies on privacy and delivery to customers and information about the company, so customers know we are a legitimate company looking after their consumer rights.
+![user story example- pages](docs/website/user-story-pages.JPG)
+
+Site wide
+- As a site user I want to be able to search the website so I can find products I've looked at before.
+- As a site owner, I want my customers to receive notifications to give them confirmation things are working.
+- As a site user, I need a navbar to easily navigate the site and orient myself.
+- As a site owner all the navbar links must work right so users can navigate my site.
+- As a site user I want the site to have a footer so I know how to contact and stay in touch with the company.
+- As a site owner I need to make sure my site can be found by search engines so I will have as much site traffic as possible.
+
+
+Products
+- As a site visitor, I want to search for products by keyword, so I can find items that match my interests quickly.
+- As site user I want to be able to view the artwork by category so I can narrow down my selection
+- As a site user, I need to be able to see a list of products so I can know the price and specific information such as size.
+- As a site visitor, I want to view a list of products, so I can see the items available for purchase.
+
+I should have included user stories here for Product Management.
+
+Bag
+- As a site user, I need to be able to add items I wish to purchase to a list, so I can see a summary of those items and the total cost.
+- As a site user, I want to edit the shopping basket, so I can get the right quantity of each item.
+- As a site user, I need to be able to add items I wish to purchase to a list, so I can see a summary of those items and the total cost.
+
+
+Checkout
+- As a site user, I want a simple checkout process so I can check out quickly and confidently.
+- As a site user I want to be able to anonymously enter my payment information, so that I don't have to have a user account.
+- As a site user, I want to receive an email confirmation/receipt, so that I have proof of purchase.
+- As a site owner I need the the delivery charge to update automatically so "users are charged the correct amount".
+- As a developer, I need to handle payments so our database is always up-to-date with payment confirmations.
+
+Profiles
+- As a site owner, I want users to be able to create a profile so they can view their order history and sign up for site information.
+- As a site user, I want to be able to see my personal information, and review my orders, so I know what information the company holds.
+- As a site user, I want to be be able to update my personal information so I my delivery and contact details are up to date.
+- As a site user, I want to be able to go on my profile and see my order information.
+
+Tutorials
+- As a site user, I'd like a "how to section" of the website, so I can learn how to create my own artwork.
+- As a superuser, I want a user friendly form to upload tutorials.
+- As a Site owner I want to be about to edit my posts to make corrections, additions, etc.
+- As a site owner, I want to be able to delete old posts when they are no longer needed.
+
+Wishlist
+- As a site user, I would like to be able to add and save items to a wishlist, so that I can can keep shopping and go back and review them later.
+- As a site user I want to be able to remove an item from my wishlist when I am no longer interested.
+- As a site user, I want to see if I have already added an item to my wishlist, so that I don't have to open the product detail page again.
+
 ### Contraints
 The major constrainst is the timeline for completing the project. 
 
 ## The Structure Plane
 ### Planning
-As this is an e-commerce site, the major objective is to sell artworks. The customer journey from the perspective of making a purchase is described below. The elements of the site related to exhibitions and tutorials have the objective of building advocacy for the company, enabling it to build a following and retain customer interest beyond the intitial point of sale.  
+As this is an e-commerce site, the major objective is to sell artworks. The customer journey from the perspective of making a purchase is described below. The elements of the site related to tutorials have the objective of building advocacy for the company, enabling it to build a following and retain customer interest beyond the intitial point of sale.  
 
 #### The Customer Journey
 
 - **Discovery/Awareness:**  The customer is likely to hear about or find the website via word of mouth, search engines or social media. The site owner will not be buying advertising space.
     - User Action - asks a friend if they know any sites, uses keyword searches to find sites.
-      - Emotion - initially curious. Happy.
+        - Emotion - initially curious. Happy.
         - Touch points - directly visit the site (word of mouth/recommendation), google result.
-       - Consideration: Looks at multiple artworks before making a decision
-       - User Action - Compares several sites
-     - Touchpoints - homepage if given by friend, or directly landing on product page
+        - Consideration: Looks at multiple artworks before making a decision
+    - User Action - Compares several sites
+        - Touchpoints - homepage if given by friend, or directly landing on product page
 - **Product detail page, or tutorials page** after Google search.
     - Emotions - If the site works as the user expects, they would be largely indifferent about the site itself, but if it requires too many clicks or if is hard to find what they are looking at they might get annoyed and leave the site.
     - Pain points:
@@ -361,6 +396,58 @@ I wanted colors that were unique and artsy, but not a distraction to the artwork
 ### Interaction
 ### Accessibility
 Effort has been taking to create a site with color contrast, semantic html for compatibility with assistive technologys and the ability to logically tab through a site, the use of aria-lables and image alts.
+
+## Site Features
+
+### Navbar
+- The navbar contains the website name, and links to all pages on the site, apart from those related to the checkout once you only see once completing a transaction.
+- Website name is a link that brings users back to the homepage.
+- Nav bar collapses on small screens.
+- Home: returns users to the homepage
+- About: brings users to a page about the company.
+- Contact: brings user's to a contact form.
+- Tutorials: Takes users to a list of available tutorials. There is at present only one.
+- Shop: A dropdown menu allowing users to go to a page with all artwork, or to go to one of the categories.
+- Search: This allows customers to search products. As this is an art website and will never have 100s of artworks for sale, it is not as vital as it would be for a larger store in the sense that the field should be ever present. I have offered the functionality as an icon and popup form. 
+- Wishlist for signed in users. 
+    - If nothing is on the wishlist the heart is an outline
+    - If a product is on the wishlist, the heart displays read
+- Wishlist icon does not display for user's who are not signed in
+-Login/Register - This displays in the navbar for unauthenticated users. The dropdown options are to Register or login
+- My Account- if the user is logged in and not a superuser of staff member, they will see
+    - My Profile
+    - Logout
+    if the authenticated user is a staff member, they will additioanlly see
+    - Tutorials Management
+    if the authenticated user is a superuser, they will additionally see
+    - Admin: link to admin panel
+    - Product Management
+
+### Footer
+- Link to contact page
+- Link to delivery and returns page
+- Link to privacy policy page
+- Social media links
+- Mail Chimp sign up form 
+
+### Homepage
+### About Page
+### Tutorials 
+### Tutorials Management
+### Shop
+### Products Management
+### Search Utility
+### Wishlist
+### My Profile
+### Shopping Bag
+### Checkout
+### MailChimp Newsletter
+### Delivery and Returns
+### Privacy
+
+## Future features
+- Search field should be altered for fuzzy logic.
+- Checkout page: If a form is filled in when the user sees the link towards the bottom it should keep the information through the login.
 
 ## Installed packages
 This project was built with Python3 and Django 3.2. The following packages were installed.

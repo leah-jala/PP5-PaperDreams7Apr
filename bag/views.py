@@ -1,4 +1,7 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import (
+    render, redirect, reverse,
+    HttpResponse, get_object_or_404,
+    )
 from django.contrib import messages
 from products.models import Product
 
@@ -32,15 +35,17 @@ def add_to_bag(request, item_id):
     available_qty = product.quantity
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
-
+    message = (f"Only {available_qty} items are "
+               f"available for {product.name}.")
 
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
         if bag[item_id] > available_qty:
             bag[item_id] = available_qty
-            messages.error(request, f"Only {available_qty} items are available for {product.name}.")
+            messages.error(request, message)
         else:
-            messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
+            messages.success(
+                request, f'Updated {product.name} quantity to {bag[item_id]}')
     else:
         bag[item_id] = quantity
         messages.success(request, f'Added {product.name} to your bag')
@@ -59,7 +64,8 @@ def adjust_bag(request, item_id):
     if item_id in bag:
         if quantity > 0:
             bag[item_id] = quantity
-            messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
+            messages.success(
+                request, f'Updated {product.name} quantity to {bag[item_id]}')
         else:
             bag.pop(item_id)
             messages.success(request, f'Removed {product.name} from your bag')
@@ -70,7 +76,6 @@ def adjust_bag(request, item_id):
     return redirect(reverse('view_bag'))
 
 
-
 def remove_from_bag(request, item_id):
     """Remove the item from the shopping bag"""
 
@@ -79,7 +84,6 @@ def remove_from_bag(request, item_id):
         bag = request.session.get('bag', {})
         bag.pop(item_id)
         messages.success(request, f'Removed {product.name} from your bag')
-
 
         request.session['bag'] = bag
         return HttpResponse(status=200)

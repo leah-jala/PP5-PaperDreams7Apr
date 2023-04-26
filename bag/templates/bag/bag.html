@@ -3,8 +3,8 @@
 {% load bag_tools %}
 
 {% block extra_meta %}
-  <meta name="description"
-  content="Shop for unique papier-mache masks, artwork, original paintings, or try a free tutorial. ">
+<meta name="description"
+    content="Shop for unique papier-mache masks, artwork, original paintings, or try a free tutorial. ">
 {% endblock %}
 
 {% block extra_css %}
@@ -33,7 +33,7 @@
                                 <div class="bag-header">
                                     <div class="row d-flex justify-content-between align-items-center">
                                         <div class="col-md-1 col-lg-1 col-xl-1">
-                                            
+
                                         </div>
                                         <div class="col-md-3 col-lg-3 col-xl-3">
                                             <p>Name</p>
@@ -55,9 +55,11 @@
                                 <div class="row mb-0 d-flex justify-content-between align-items-start">
                                     <div class="col-md-2 col-lg-2 col-xl-2">
                                         {% if item.product.image %}
-                                            <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                        <img class="img-fluid rounded" src="{{ item.product.image.url }}"
+                                            alt="{{ item.product.name }}">
                                         {% else %}
-                                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                        <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png"
+                                            alt="{{ item.product.name }}">
                                         {% endif %}
                                     </div>
                                     <div class="col-md-3 col-lg-2 col-xl-2">
@@ -68,27 +70,30 @@
                                         <h6 class="mb-0">£{{ item.product.price }}</h6>
                                     </div>
                                     <div class="col-md-3 col-lg-3 col-xl-3 d-flex ">
-                                        <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                                        <form class="form update-form" method="POST"
+                                            action="{% url 'adjust_bag' item.item_id %}">
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <button class="decrement-qty btn btn-sm btn-black rounded-0" 
-                                                            data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                        <button class="decrement-qty btn btn-sm btn-black rounded-0"
+                                                            data-item_id="{{ item.item_id }}"
+                                                            id="decrement-qty_{{ item.item_id }}">
                                                             <span>
                                                                 <i class="fas fa-minus fa-sm"></i>
                                                             </span>
                                                         </button>
                                                     </div>
-                                                    <input class="form-control form-control-sm qty_input text-center" type="number"
-                                                        name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                                        data-item_id="{{ item.item_id }}"
+                                                    <input class="form-control form-control-sm qty_input text-center"
+                                                        type="number" name="quantity" value="{{ item.quantity }}"
+                                                        min="1" max="99" data-item_id="{{ item.item_id }}"
                                                         data-available_qty="{{ item.product.quantity }}"
                                                         data-qty_in_bag="{{ item.quantity }}"
                                                         id="id_qty_{{ item.item_id }}">
                                                     <div class="input-group-append">
                                                         <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                                            data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                            data-item_id="{{ item.item_id }}"
+                                                            id="increment-qty_{{ item.item_id }}">
                                                             <span>
                                                                 <i class="fas fa-plus fa-sm"></i>
                                                             </span>
@@ -98,16 +103,19 @@
                                             </div>
                                             <div class="row my-1 justify-content-center">
                                                 <a class="update-link text-info mr-2"><small>Update</small></a>
-                                                <a class="remove-item text-danger" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                                                <a class="remove-item text-danger"
+                                                    id="remove_{{ item.item_id }}"><small>Remove</small></a>
                                             </div>
-                                        </form>                                        
+                                        </form>
                                     </div>
                                     <div class="col-md-3 col-lg-2 col-xl-2 d-flex">
                                         <p class="my-0">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
                                     </div>
                                 </div>
                                 <div class="col-12 mt-2 text-right">
-                                    <p class="text-muted"><small>Available: {{ item.product.quantity }} {% if request.session.bag %}({{ request.session.bag|get_item_qty:item.product.id }} in bag){% endif %}</small></p>
+                                    <p class="text-muted"><small>Available: {{ item.product.quantity }}
+                                            {% if request.session.bag %}({{ request.session.bag|get_item_qty:item.product.id }}
+                                            in bag){% endif %}</small></p>
                                 </div>
                                 <hr class="my-4">
                                 {% endfor %}
@@ -146,9 +154,8 @@
                                     <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-sm same-size-btn">
                                         <span class="icons">
                                             <i class="fas fa-lock cart-icon"></i>
-                                        </span> 
+                                        </span>
                                         <span class="text-uppercase"> Secure Checkout</span>
-
                                     </a>
                                 </div>
                             </div>
@@ -178,25 +185,27 @@
 
 
 {% block postloadjs %}
-    {{ block.super }}
-    {% include 'bag/includes/quantity_input_script.html' %}
+{{ block.super }}
+{% include 'bag/includes/quantity_input_script.html' %}
 
-    <script>
-        // Update quantity on click
-        $('.update-link').click(function(e) {
-            var form = $(this).closest('.update-form');
-            form.submit();
-        })
+<script>
+    // Update quantity on click
+    $('.update-link').click(function (e) {
+        var form = $(this).closest('.update-form');
+        form.submit();
+    })
 
-        $('.remove-item').click(function(e) {
-            var csrfToken = "{{ csrf_token }}";
-            var itemId = $(this).attr('id').split('remove_')[1];
-            var url = `/bag/remove/${itemId}/`;
+    $('.remove-item').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}/`;
 
-            $.post(url, {'csrfmiddlewaretoken': csrfToken})
-            .done(function() {
+        $.post(url, {
+                'csrfmiddlewaretoken': csrfToken
+            })
+            .done(function () {
                 location.reload();
             });
-        });
-    </script>
+    });
+</script>
 {% endblock %}

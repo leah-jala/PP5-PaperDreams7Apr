@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import ContactForm
 
+
 def contact(request):
     """
     Display a contact form and handle form submissions.
@@ -10,7 +11,10 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Thank you for your message! We will be in touch soon.')
+            messages.success(
+                request,
+                'Thank you for your message! We will be in touch soon.'
+                )
             return redirect('contact')
     else:
         form = ContactForm()
