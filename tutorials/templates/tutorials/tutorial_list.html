@@ -43,7 +43,7 @@
                     <p><strong>Duration:</strong> {{ tutorial.duration }}</p>
                     <p class="text-capitalize"><strong>Difficulty:</strong> {{ tutorial.difficulty_level }}</p>
                     <p><strong>Summary:</strong> {{ tutorial.summary }}</p>
-                    <a href="{% url 'tutorial_detail' tutorial.pk %}" class="btn btn-black rounded-0">View
+                    <a href="{% url 'tutorial_detail' tutorial.pk %}" class="btn btn-black rounded-0 text-uppercase">View
                         Tutorial</a>
                         {% if request.user.is_staff %}
                         <a href="{% url 'user_tutorials' %}" class="btn btn-outline-black rounded-0">Tutorials Management</a>
