@@ -8,6 +8,7 @@ from .models import Order, OrderLineItem
 from products.models import Product
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
+from wishlist.models import Wishlist
 from bag.contexts import bag_contents
 
 import stripe
@@ -164,6 +165,16 @@ def checkout_success(request, order_number):
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
+
+        # Remove purchased products from the user's wishlist
+        try:
+            wishlist = Wishlist.objects.get(user=request.user)
+            for item in order.lineitems.all():
+                if item.product in wishlist.products.all():
+                    wishlist.products.remove(item.product)
+            wishlist.save()
+        except Wishlist.DoesNotExist:
+            pass
 
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
