@@ -61,7 +61,7 @@
 
 <body>
   <header class="container-fluid d-flex justify-content-center px-0">
-    <nav class="w-100 navbar navbar-expand-lg navbar-light">
+    <nav class="w-100 navbar navbar-expand-lg navbar-light fixed-top">
       <a class="navbar-brand" href="{% url 'home' %}">
         <h1>Paper Dreams</h1>
       </a>
@@ -218,10 +218,12 @@
 
   {% block page_header %}
   {% endblock %}
+  <main style="margin-top: 100px">
+    {% block content %}
+    {% endblock %}
+  </main>
 
-  {% block content %}
-  {% endblock %}
-  <footer class="mt-4">
+  <footer class="my-5">
     <ul class="nav justify-content-center border-bottom pb-2">
       <li class="nav-item"><a href="{% url 'contact' %}" rel="noopener nofollow"
           class="nav-link px-2 text-muted">Contact</a></li>

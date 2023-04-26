@@ -1,12 +1,11 @@
   .row {
-    margin-top: 75px;
+    margin-top: 20px;
   }
 
   .main-wrapper {
     display: flex;
     justify-content: center;
   }
-
 
   .main {
     display: flex;
@@ -101,10 +100,8 @@
 
   @media (max-width: 492px) {
     .container {
-      margin: 0 auto;
       padding: 0;
-      margin-bottom: 50px;
-
+      margin-bottom: 0 auto 70px;
     }
 
     .hexagon {
