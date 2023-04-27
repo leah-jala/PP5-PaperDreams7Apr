@@ -1,5 +1,5 @@
 .products-container {
-  margin-top: 50px;
+  margin-top: 100px;
 }
 .products-heading {
   font-weight: 700;
@@ -8,6 +8,7 @@
   margin: 20px 0 30px 0;
   border-left: 5px solid #e96c74;
   padding-left: 15px;
+  text-transform: uppercase;
   width: fit-content;
 }
 

@@ -19,7 +19,7 @@
         <h2>Product Description: {{ product.name }}</h2>
         <div id="delivery-banner" class="row text-center">
             <div class="col bg-black text-white">
-                <h4 class="my-2">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>
+                <h4 class="mt-2">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                <div class="image-container my-5">
+                <div class="image-container mb-5">
                     {% if product.image %}
                     <a href="{{ product.image.url }}" target="_blank">
                         <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
