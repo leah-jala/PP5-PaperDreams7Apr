@@ -14,10 +14,12 @@ content="A page for staff users to delete a tutorial. ">
 
 {% block content %}
 <div class="container">
-    <div>
-        <h2 class="tutorial-heading">Delete Tutorial</h2>
-        <p>Are you sure you want to delete the tutorial "{{ object.title }}"? 
-            This action cannot be undone.</p>
+    <div class="row mt-4">
+        <div>
+            <h2 class="tutorial-heading mb-5">Delete Tutorial</h2>
+            <p class="p-3">Are you sure you want to delete the tutorial "{{ object.title }}"? 
+                This action cannot be undone.</p>
+        </div>
     </div>
     <form method="post">
         {% csrf_token %}
