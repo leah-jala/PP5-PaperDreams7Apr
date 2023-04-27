@@ -16,7 +16,7 @@ content="Get creative with Paper Dream's free tutorials on masking-making and pa
 {% block extra_title%}Tutorials{% endblock %}
 
 {% block content %}
-<div class="container" style="margin-top: 100px">
+<div class="container">
   <div class="px-3">
     <h2 class="tutorial-heading mt-5">Tutorial Instructions</h2>
     <p>Detailed instructions for "{{ object.title }}" are below. Some tutorials are 
@@ -26,8 +26,6 @@ content="Get creative with Paper Dream's free tutorials on masking-making and pa
       along the way on our <a class="other-links" href="https://www.facebook.com/profile.php?id=100091661127883" 
       rel="noopener nofollow" target="_blank"  aria-label="Visit our Instagram page (opens in a new tab)">Facebook Page</a>. 
     </p>
-    
-  </a>
   </div>
   <div class="container d-flex flex-row flex-wrap justify-content-center">
     <div class="col-md-12 card mb-4 mt-3 tutorial">
@@ -49,7 +47,7 @@ content="Get creative with Paper Dream's free tutorials on masking-making and pa
           <div class="d-flex flex-wrap tutorial-links-container">
             {% for post in tutorial_posts %}
             <a href="#" class="tutorial-post-link mr-2 mb-2" data-week="{{ post.week_number }}">Week {{ post.week_number }} - {{ post.title }}</a>
-            {% if not forloop.last %}<span class="separator">|&nbsp</span>{% endif %}
+            {% if not forloop.last %}<span class="separator">|&nbsp;</span>{% endif %}
             {% endfor %}
           </div>                
         </div>

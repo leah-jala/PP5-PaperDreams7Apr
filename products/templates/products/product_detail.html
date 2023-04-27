@@ -23,7 +23,8 @@
             </div>
         </div>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
 
     {% block content %}
     <div class="container-fluid">
@@ -135,9 +136,9 @@
             </div>
         </div>
     </div>
-    {% endblock %}
+{% endblock %}
 
-    {% block postloadjs %}
-    {{ block.super }}
-    {% include 'products/includes/quantity_include_script.html' %}
-    {% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_include_script.html' %}
+{% endblock %}
