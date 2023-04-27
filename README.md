@@ -454,9 +454,11 @@ The user is able to hover over the photos which reveal a category they can click
 
 ### About Page
 This is a brief description of the company and artist, and could be developed further in the future. 
+
 ### Tutorials 
 - Tutorials List: When you click on tutorials you get a list of all tutorials available. At present there is only one.  This gives a brief overview of the time and skill level needed and a brief summary of the tutorial.
 -  When the user clicks "view" from the tutorials page, they are brought to the detail page. It defaults to the first tutorial available, but each tutorial available in the series appears as a link at the bottom of the summary. The active step in the tutorial is highlighted green. This will allow a new user to see the tutorial from it's starting point, whereas return users can quickly go back to where they left off, but also quickly look back at any instructions as needed.
+
 ### Tutorials Management
 There are front-end pages a staff user can use to manage their tutorials. The idea being that different people might be invited to contribute to the site, without needing full access to the site. A signed in user can see the following:
     - Instructions and a button to add an entirely new tutorial called, "Add a new tutorial"
@@ -468,6 +470,8 @@ There are front-end pages a staff user can use to manage their tutorials. The id
     ![edit tutorial](docs/website/edit-tutorial.JPG)
     - The add/edit tutorial and add tutorial posts pages look and function the same. 
     - The staff user is also provided a button from the main tutorials page (as would be navigated to by any user) so that if they see something that needs a correction, they can easily get to the Manage Tutorials page without have to use the My Account dropdown. 
+
+The tutorials TutorialPost model makes use of django's 'ResizedImageField". With this, I was able to create parameters for the photo uploads, sizing the pixel size (400), the quality (75%, reducing file size), the directory, the image format (webp) and whether or not the image is a required field. I discovered this late in the project, otherwise I would have used it on the equivalent products model.
 
 ### Shop, including wishlist
 The shop is based on what most every e-commerce site looks like, including Boutique Ado on which this is based. This was chosen as I believe it is what people expect to see and be familiar with. I think it is with reason that every major site uses this model of presentation. 
@@ -639,8 +643,6 @@ Products App:
         - Primary Key: id (automatically created by Django)
         - ForeignKey: category (one-to-many relationship with Category)
 
-
-
 Profiles App:
     a. UserProfile Model
     - Primary Key: user (one-to-one relationship with User)
@@ -678,6 +680,7 @@ Wishlist App:
 - I realized late that the email is not editable on the profiles page, and would like to correct this, but with some authentication process.
 - It would be good to include customer reviews on the detail page, as there is space for that, and then to have a link on the products page to show a review is available. 
 - In the checkout, it would be better if the countries field was set to the UK (home country) by default.
+- Use django ResizedImageField throughout the project and explore other image management tools.
 
 ## Installed packages
 This project was built with Python3 and Django 3.2. The following packages were installed.
