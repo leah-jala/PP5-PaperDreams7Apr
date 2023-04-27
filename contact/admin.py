@@ -4,6 +4,9 @@ from .models import ContactForm
 
 @admin.register(ContactForm)
 class ContactFormAdmin(admin.ModelAdmin):
+    """
+    Customizes the display of the model in the admin panel
+    """
     list_display = [
         'sent_date',
         'last_name',

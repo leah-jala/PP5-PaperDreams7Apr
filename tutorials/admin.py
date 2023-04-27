@@ -9,6 +9,10 @@ class TutorialCategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Tutorial)
 class TutorialAdmin(admin.ModelAdmin):
+    """
+    Customize the display of TutorialCategory instances
+    in the Django admin panel.
+    """
     list_display = (
         'title',
         'instructor',
@@ -22,6 +26,10 @@ class TutorialAdmin(admin.ModelAdmin):
 
 @admin.register(TutorialPost)
 class TutorialPostAdmin(admin.ModelAdmin):
+    """
+    Customize the display of Tutorial instances in
+    the Django admin interface.
+    """
     list_display = (
         'title',
         'instructor',
