@@ -3,6 +3,10 @@ from .models import ContactForm
 
 
 class ContactForm(forms.ModelForm):
+    """
+    Customizes the display and functionality of
+    the ContactForm model.
+    """
     class Meta:
         model = ContactForm
         fields = [

@@ -3,6 +3,9 @@ from datetime import date
 
 
 class ContactForm(models.Model):
+    """
+    Model to store information about a contact form submitted by a user.
+    """
     first_name = models.CharField(max_length=50, verbose_name="First Name*")
     last_name = models.CharField(
         max_length=50,
