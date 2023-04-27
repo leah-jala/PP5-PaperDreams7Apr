@@ -1,7 +1,12 @@
 from django.contrib import admin
 from .models import Wishlist
 
+
 class WishlistAdmin(admin.ModelAdmin):
+    """
+    Django admin configuration for the Wishlist model.
+
+    """
     list_display = ('user', 'formatted_date_added', 'product_list')
     readonly_fields = ('date_added',)
 
@@ -14,5 +19,6 @@ class WishlistAdmin(admin.ModelAdmin):
         return obj.date_added.strftime("%b %d, %Y %H:%M:%S")
 
     formatted_date_added.short_description = "Date added"
+
 
 admin.site.register(Wishlist, WishlistAdmin)
