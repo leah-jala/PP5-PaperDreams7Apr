@@ -13,7 +13,8 @@ def contact(request):
             form.save()
             messages.success(
                 request,
-                'Thank you for your message! We will be in touch soon.'
+                'Thank you for your message!
+                'We will be in touch soon.'
                 )
             return redirect('contact')
     else:
