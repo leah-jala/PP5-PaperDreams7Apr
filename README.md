@@ -363,8 +363,8 @@ As this is an e-commerce site, the major objective is to sell artworks. The cust
 
 ## The Skeleton Plane
 
-### Large Screen Wireframes
-The homepage should look artsy and not like a commercial site. It should appeal to those looking for something unique and handmade.
+### Wireframes
+The homepage should look artsy and not like a commercial site. It should appeal to those looking for something unique and handmade. I have included some of my wireframes from the most important pages.
 
 ![Homepage](docs/wireframes/wf-home.JPG)
 
@@ -372,10 +372,25 @@ There is a benefit of the products pages being familiar/universal. I believe it 
 ![Products Page](docs/wireframes/wf-products.JPG)
 ![Product Details Page](docs/wireframes/wf-product-detail.JPG)
 
+My profile
+![my profile](docs/wireframes/wf-profile.JPG)
+
 The checkout pages are very similar to what users would expect. I had hoped to make the checkout pages a bit more sophisticated but in practice didn't have time. 
 ![Checkout](docs/wireframes/wf-checkout.JPG)
 ![Checkout Success](docs/wireframes/wf-checkout-success.JPG)
 
+Checkout email confirmation
+![email conf](docs/wireframes/wf-email.JPG)
+
+Tutorials
+![tutorial](docs/wireframes/wf-tutorial.JPG)
+
+Wishlist
+![wishlist](docs/wireframes/wishlist)
+
+
+#### Changes to wireframes
+The wireframes were a useful guideline, however, I later decided to do different things with the Tutorials and Wishlist pages.  I didn't like the card format, but found rows were neater and easier to go through. It was a minor change to the page layout. The tutorials app represents a bigger change as I decided that I didn't want to have a blog formate as I wanted to keep the posts together with the tutorial overview, which I thought was much better UX. Now users can scroll through a list of avaiable tutorials, but when the click on it, they will always have everything they need together in one view with the possibility to click on links to the different posts/steps in the tutorial.
 
 ## The Surface Plane
 
@@ -401,6 +416,7 @@ Effort has been taking to create a site with color contrast, semantic html for c
 
 ### Navbar
 - The navbar contains the website name, and links to all pages on the site, apart from those related to the checkout once you only see once completing a transaction.
+- The navbar is "sticky" so users can always see their wishlist and shopping bag status. 
 - Website name is a link that brings users back to the homepage.
 - Nav bar collapses on small screens.
 - Home: returns users to the homepage
@@ -413,7 +429,7 @@ Effort has been taking to create a site with color contrast, semantic html for c
     - If nothing is on the wishlist the heart is an outline
     - If a product is on the wishlist, the heart displays read
 - Wishlist icon does not display for user's who are not signed in
--Login/Register - This displays in the navbar for unauthenticated users. The dropdown options are to Register or login
+-Sign in/Register - This displays in the navbar for unauthenticated users. The dropdown options are to Register or login
 - My Account- if the user is logged in and not a superuser of staff member, they will see
     - My Profile
     - Logout
@@ -424,30 +440,244 @@ Effort has been taking to create a site with color contrast, semantic html for c
     - Product Management
 
 ### Footer
-- Link to contact page
+- Link to contact page, that allows the user to submit a form and signup for the newsletter.
 - Link to delivery and returns page
 - Link to privacy policy page
 - Social media links
-- Mail Chimp sign up form 
+- Mail Chimp sign up form - This took quite a lot of effort to convert into the horizontal shape it is in now. I could not find a ready made option on Mail Chimp to do this.
 
 ### Homepage
+
+As this is intended as an artist's page, I wanted something  "artsy", mainly meaning I didn't want it to look like every other commercial site out there with a large hero and a shop button. I wanted people to spend time looking at the images and hovering over them. I wanted the introduction to this site to evoke, "wow, that's different". I looked at a lot of websites and they just all seemed the same. I saw sign at a high street estate agents making use of hexagons that really caught my eye, and decided to see if I could just something with this. 
+
+The user is able to hover over the photos which reveal a category they can click on including all the product categories and the tututorials page. 
+
 ### About Page
+This is a brief description of the company and artist, and could be developed further in the future. 
 ### Tutorials 
+- Tutorials List: When you click on tutorials you get a list of all tutorials available. At present there is only one.  This gives a brief overview of the time and skill level needed and a brief summary of the tutorial.
+-  When the user clicks "view" from the tutorials page, they are brought to the detail page. It defaults to the first tutorial available, but each tutorial available in the series appears as a link at the bottom of the summary. The active step in the tutorial is highlighted green. This will allow a new user to see the tutorial from it's starting point, whereas return users can quickly go back to where they left off, but also quickly look back at any instructions as needed.
 ### Tutorials Management
-### Shop
+There are front-end pages a staff user can use to manage their tutorials. The idea being that different people might be invited to contribute to the site, without needing full access to the site. A signed in user can see the following:
+    - Instructions and a button to add an entirely new tutorial called, "Add a new tutorial"
+    - A box with any existing tutorials, with the same appearance as on the tutorials  page, giving familiarity.  There are view, edit and delete buttons for the the overall tutorial, set to the top. Then, clearly beneath, there are edit and delete buttons for the individual posts. 
+    ![Tutorials Management](docs/website/manage-tutorials.JPG)
+    - If someone clicks delete, they are brought to a confirmation screen asking if they really meant to delete and that the action can't be undone.
+    ![delete tutorial](docs/website/delete-tutorial.JPG)
+    - If the user chooses to edit their work, they are brought to a user friendly screen with formatting tools and an image upload. 
+    ![edit tutorial](docs/website/edit-tutorial.JPG)
+    - The add/edit tutorial and add tutorial posts pages look and function the same. 
+    - The staff user is also provided a button from the main tutorials page (as would be navigated to by any user) so that if they see something that needs a correction, they can easily get to the Manage Tutorials page without have to use the My Account dropdown. 
+
+### Shop, including wishlist
+The shop is based on what most every e-commerce site looks like, including Boutique Ado on which this is based. This was chosen as I believe it is what people expect to see and be familiar with. I think it is with reason that every major site uses this model of presentation. 
+
+#### Quantity Feature 
+
+To distinguish this project from Boutique Ado, I have added a quantity to the model, and I have also added a wishlist feature, which is a separate app in the project. 
+
+Product page features
+![products page](docs/website/products-page.JPG)
+- The products are organized as series of cards that dyanmically stack for smaller screens.
+- Key informmation is available, allow customers to see an impage, the price, and the category, with the options to click on a category or to add the item to their wish list. 
+- The buttoms above the cards confirm what category the user is viewing, allowing them to also go to another category.
+- There is a sorting feature which allows the customer to sort by price category and name. 
+
+
+Product detail page features.
+    - A customer can not add more to their basket than is available in the database. 
+    - On the product detail page, the customer can see how many products are available in the shop and in parentheses, they can see how many are in their bag.
+    - Only after their purchase will the new calculation of store quantity be shown. 
+    ![product detail](docs/website/product-detail.JPG)
+    - In the example, the user has added one cobra. When they go back to the cobra, they will not be able to add more than 2.
+    - users need to be signed in to use the wishlist. Users who are not signed or not registered are provided a link to do so, so that they can use the wishlist. 
+
+![product page signed out](docs/website/product-page-signedout.JPG)
+
+### Wishlist App
+- When the user is signed in the wishlist icon appears in the navbar
+
+![wishlist on navbar](docs/website/wishlist-nav.JPG)
+
+- When an item is on the wishlist, the heart is filled in red as shown.
+- When there are no items on the wishlist, it appears as an outline.
+- The same is true on the products and products detail pages. 
+
+![empty wishlist](docs/website/empty-wishlist.JPG)
+
+- The user receives a success message after adding an item to the wishlist
+
+![added to wishlist](docs/website/added-wishlist.JPG)
+
+- The user is then able to click on the wishlist from the products and products detail page, or by clicking the icon on the navbar. Once clicked, the wishlist page opens.
+
+![wishlist page](docs/website/wishlist-page.JPG)
+
+- On this page the user and click the view page where they can see the detail and add it to their bag, or they can remove the item. 
+- Once the item is removed, that item will return to the state of having a heart outline.
+    - If there are still items on the wishlist, the navbar icon stays lit
+    - If the wishlist is emptied, the navbar returns to an outline. 
+- If I user buys an item on their wishlist, that item is removed from the wishlist. This is coded into the checkout view. 
+- If a user tries to add a product that is on the wishlist, they receive an message that the item is already in their bag, and it is not added to the wishlist. The intention is to help users if they didn't realization they had previously added it to the basket, when they had meant to put it on their wishlist. They are instructed to remove it from the bag and then add it to the wishlist.
+- If an user adds an item to the wishlist, then decides to put the item in their shopping bag, the heart stays lit. I felt it would take away from the fun of the purchase to see the heart empty after adding the artwork to the bag. 
+
+
 ### Products Management
+- Products can be managed by the superuser from the frontend. 
+- A link is made available for superusers in the navbar under My Account. You can see all the options for superusers below as well and the contact form. 
+
+![contact page and my account menu](docs/website/contact-page.JPG)
+
+Note: Superusers get links to the admin panel, tutorials management, products management, in additional to what a normal user sees. Staff users can not see the products management nor the admin panel.
+
+- The contact form allows users to see genuine information about the location of the buyer and will hopefully server to add confidence. I personally do not like to only have a contact form with no real details, but I also like to be able to use a form as a first preference over an email address so I have more confidence my message will be received. 
+
 ### Search Utility
-### Wishlist
+There is a search field in the navbar. This has already been described above in the navbar section. 
+
+![search field](docs/website/search-bar.JPG)
+
 ### My Profile
-### Shopping Bag
-### Checkout
+The profile section allows signed in users to see their default delivery and order history. I will not go into great detail about it as it is modeled after Boutique Ado, which is well known to the assessors. The page has been built dynamically with Bootstrap rather than using tables. 
+
+### Shopping Bag & Checkout
+These sections are modeled after Boutique Ado and therefore I will not detail it. It is fully functional. Clicking on the shopping icond on the shopping icon brings you to the bag page where item quantities can be adjusted. The added feature of product availability is on this page. 
+
+![shopping bag](docs/website/bag-page.JPG)
+
+- Secure checkout
+    - This page can be assessed from the toast/message or from the bag page. 
+
+![checkout](docs/website/checkout.JPG)
+- Missing fields, such as name, or address fields, are handled by the form.
+
+![missing fields](docs/website/missing-field.JPG)
+
+- The customer then receives a confirmation.
+
+![confirmation](docs/website/confirmation.JPG)
+
+- The confirmation page then becomes available as an order history page on the customer's profile page. When an order link is clicked they get a message to let them know they are looking at a past order.
+
+![profile](docs/website/profile.JPG)
+
+- The customer similarly receives a confirmation email.
+
+![confirmation email](docs/website/conf-email.JPG)
+
+Webhook handler
+
+- The transaction is also managed at the backend by a webhook handler. The handle_payment_intent_succeeded() method is responsible for processing a payment that has been successfully processed by Stripe. The method retrieves information related to the payment intent, such as the payment ID, the bag, and whether or not the customer wants to save their information. It then creates an order and associated order line items in the database based on the bag information. The method also updates the user's profile information if the save_info field is set to True. If the order already exists in the database, the method sends a confirmation email to the customer and returns a success message. Otherwise, it creates a new order and sends a confirmation email to the customer. The two files, webhooks.py and webhook_handler.py are taken directly from Boutique Ado. 
+
+Below is confirmation that the webhook handler is working successfully.
+![webhooks](docs/website/stripe-webhooks.JPG)
+
 ### MailChimp Newsletter
+
+A MailChimp form has been included on the footer so users can quickly join the mailing list for the store newsletter. The user is asked to verify their email by mailchimp once added. 
+
+![Mail Chimp](docs/website/mailchimp.JPG)
+
 ### Delivery and Returns
+Delivery and returns information is available in the footer and spells out
+how items will be delivered to the customer and under what circumstances returns are accepted. 
+
 ### Privacy
+The privacy policy has been generated with the policy generator in the credits. It provides an account of GDPR adherence. In a real project, the company would of course need to have genuine policies in place, and appointed individual and be able to demonstrate adherence through regular practice.
+
+### Facebook Page
+This has been mentioned above in the marketing plan. This is an image of the page in case it is deleted by Facebook. This page repeats images from the site and it the post visible, it promotes the site's tutorials. The idea is to build community through the tutorials and drive people to the site this way.
+
+The page is promoted in the tutorials text, the footer and on the contact page.
+
+## Criteria for custom models
+
+### At least three original custom models
+
+Tutorials App
+
+1. TutorialCategory: a model to enable adding tutorial categories in the admin panel. It contains a name and a friendly name.
+2. Tutorial: a model to create tutorial content. It contains the instructor's user ID, title, category, difficulty level, duration, summary, equipment list, image, image alternative text, and created date.
+3. TutorialPost: a model to create tutorial posts associated with a tutorial. It contains the tutorial ID, instructor's user ID, week number, title, instructions, image, image alternative text, and posted date.
+
+Wishlist App
+
+4. Wishlist: This script defines a Wishlist model that allows customers to store their favorite artworks. The model contains a OneToOneField to the User model, which links the wishlist to the user who created it. The ManyToManyField links the Product model to the wishlist, allowing a user to add multiple products to their wishlist. This information is accessible via the admin panel, and I expect it would provide interesting insight regarding preferences.
+
+Contact App
+
+5. ContactForm: This model  stores information from a contact form submitted by a user. The model contains fields for the user's first name, last name, email, subject, message, whether or not they want to subscribe to a newsletter, and the date the form was submitted. This information is available in the django admin panel.
+
+
+## All database models, summarized
+
+I struggled to create a LucidChart then lost the work. I summarizing how the models are connected below.
+
+
+Checkout App:
+    a. Order Model
+    - Primary Key: order_number
+    - ForeignKey: user_profile (one-to-many relationship with UserProfile)
+    - ForeignKey: country (one-to-many relationship with django_countries.Country)
+
+    b. OrderLineItem Model
+    - Primary Key: (order, product) (composite key)
+    - ForeignKey: order (one-to-many relationship with Order)
+    - ForeignKey: product (one-to-many relationship with Product)
+
+Contact App:
+    a. ContactForm Model
+    - Primary Key: id (automatically created by Django)
+
+Products App:
+    a. Category Model
+    - Primary Key: id (automatically created by Django)
+
+    The Category model in the products app represents product categories in the store. Each category has a name and a friendly name.
+
+    b. Product Model
+        - Primary Key: id (automatically created by Django)
+        - ForeignKey: category (one-to-many relationship with Category)
+
+
+
+Profiles App:
+    a. UserProfile Model
+    - Primary Key: user (one-to-one relationship with User)
+    - ForeignKey: default_country (one-to-many relationship with django_countries.Country)
+
+Tutorials App:
+    a. TutorialCategory Model
+        - Primary Key: id (automatically created by Django)
+
+    b. Tutorial Model
+        - Primary Key: id (automatically created by Django)
+        - ForeignKey: instructor (one-to-many relationship with User)
+        - ForeignKey: category (one-to-many relationship with TutorialCategory)
+
+    c. TutorialPost Model
+        - Primary Key: id (automatically created by Django)
+        - ForeignKey: tutorial (one-to-many relationship with Tutorial)
+        - ForeignKey: instructor (one-to-many relationship with User)
+
+Wishlist App:
+    a. Wishlist Model
+    - Primary Key: user (one-to-one relationship with User)
+    - ManyToManyField: products (many-to-many relationship with Product)
+
+
+![Facebook community page](docs/website/fb-page.JPG)
 
 ## Future features
 - Search field should be altered for fuzzy logic.
-- Checkout page: If a form is filled in when the user sees the link towards the bottom it should keep the information through the login.
+- Checkout page: If a form is filled in when the user sees the link it should keep the information through the login. I have moved the links higher up the form to avoid a situation where a person only sees the link after filling in their information. 
+- If there were a lot more products in the store, it would make sense to add more categories for the sort by field, for example people interested in buy an artwork might like to look for specific colors. 
+- It would be good to add sharing functionality to the products and product details pages, so if someone sees a product they think a friend might like, they can immediate share it.
+- I would like a feature to allow someone to add a product from the products page, without having to click through the detail page. Someone might consider an item and return to later in the same or another session and not need to see the detail page.
+- I would like to be able to allow customers to sort by "New" or "Recently added" in the sort filter field.
+- I realized late that the email is not editable on the profiles page, and would like to correct this, but with some authentication process.
+- It would be good to include customer reviews on the detail page, as there is space for that, and then to have a link on the products page to show a review is available. 
+- In the checkout, it would be better if the countries field was set to the UK (home country) by default.
 
 ## Installed packages
 This project was built with Python3 and Django 3.2. The following packages were installed.
@@ -457,19 +687,33 @@ Use pip install + app name, then add to settings.
 - [ckeditor](https://django-ckeditor.readthedocs.io/en/latest/) - Provides richtext fields, WYSIWYG editing and image management. 
 - [django3.2](https://docs.djangoproject.com/en/dev/releases/3.2/) - a LTS version of django offering stability and security.
 - [django-allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) - Handles authentication and site registration
-- django-countries - A Django library that provides a comprehensive list of countries for use in your application.
-- django-crispy-forms - A Django utility that helps create attractive forms with minimal coding.
+- [Django countries](https://pypi.org/project/django-countries/) for countries dropdown list in checkout form
+- [Django Crisy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) for rendering and styling of forms
 - gunicorn - A Python WSGI HTTP server that allows you to run Django applications.
 -[Pillow](https://pypi.org/project/Pillow/) - A python library for working with digital images
 - oauthlib (Allauth)- A Python library that provides a set of OAuth and OAuth2 client and server tools.
 - [Stripe](https://docs.dj-stripe.dev/en/master/) - Python library to create an interface with the Stripe payment platform.
 
-## Technologies and resources
+### Other Technologies and resources
 
-Planning and resources
-- [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
-- Lucid Charts
-- Balsamiq Wireframes
+Languages
+- HTML
+- CSS
+- Javascript & Jquery
+- Python (with Django Framework)
+
+Libraries & Programmes
+- [SQLLite](https://www.sqlite.org/index.html) the local development database
+- [Django web framework](https://www.djangoproject.com/), to build the site
+- [Stripe](https://stripe.com/ie) for handling payments (test onlyh)
+- [Bootstrap v4.6.2](https://getbootstrap.com) for responsive page design
+- [jQuery](https://jquery.com/)
+- [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
+- [Mailchimp](https://mailchimp.com/) for the newsletter sign up form in the site footer
+- [Facebook](https://www.facebook.com/) to create the Facebook business page
+- [Am I Responsive](http://ami.responsivedesign.is/#) to generate the mockup image showing the project on different devices
+- [XML-Sitemaps.com](https://www.xml-sitemaps.com/) to generate the sitemap
+- [Privacy Policy Generator](https://www.privacypolicygenerator.info/)
 
 Fonts and Icons
 - [Google Fonts](https://fonts.google.com/)
@@ -477,87 +721,110 @@ Fonts and Icons
 - Favicon.io
 - Font Awesome
 
+Planning and resources
+- [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+- Lucid Charts (lost work)
+- [Balsamiq](https://balsamiq.com/) to design the wireframes
+
 Images
 - Cloud convert
 
 Version Control and editor
-- GitHub
-- GitPod
+- Git for version control, using the [Gitpod](https://www.gitpod.io/) terminal to commit to Git and push to GitHub, and facilitated by the Code Institute Full Template
+- [GitHub](https://github.com/) to store the project code
+    - including GitHub's project and milestone features for agile planning
+- GitPod editor
 
-Languages
-- HTML
-- CSS
-- Bootstrap
-- Javascript
-- Python
-- Django
-    - Crispy Forms
-    - Pillow
+Deployment resources
+- [Heroku](https://www.heroku.com/) to deploy the website
+- [Elephant SQL](https://www.elephantsql.com/) PostGres database for deployed site
+- [AWS](https://aws.amazon.com/) to host media and static files.
 
 SEO/Site maps
 - [Online sitemap generator](https://www.xml-sitemaps.com/)
 - [Wordtracker](https://www.wordtracker.com/) - USER FREE TRIAL!
 - [https://search.google.com/search-console/about](Register sitemap)
 
-Deployment resources
-- Heroku
-- ElephantSQL
-
 Language Validators and format helpers
-- W3C Markup Validation Service
-- W3C CSS Validation Service
-- JSHint
-- CI Python Linter
-- autopep8
+- [W3C HTML validator](https://validator.w3.org/) to validate the HTML code
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to validate the CSS code
+- [JSHint](https://jshint.com/) to check the quality of and check for errors in the JavaScript code
+- [Code Institute Python Linter](https://pep8ci.herokuapp.com/) checker to validate the Python code
+- [autopep8](https://pypi.org/project/autopep8/), A tool that automatically formats Python code to conform to the PEP 8 style guide
 
-# Credits
+## Testing
 
-## Boutique Ado walkthrough
+## Develoment, Version Control & Deployment
+- A repository was created using Code Institute's template, which sets up the environment for git version control.
+- Files were added to the staging area with git . 
+- Files were committed with git -m "commit message"
+- Libraries and frameworks were installed with pip3 install
+    - Installed packages were saved to requirements with pip3 freeze > requirements.text
+    - Committed changes were saved with pip3 install.
+
+## To install this project
+A list of dependencies for this project is listed above. If you need to install these requirements, 
+    - you need to first install Django with "django-admin startproject projectname . " 
+    - then use the following command, pip install -r requirements.txt
+- A .gitignore file, for sensitive data, was automatically created by Django
+    - create and add an env.py file to .gitignore for secret keys.
+- Add new apps with django manage.py startapp appname, remember to add this to installed apps in settings.
+- Migrate any new models with python3 manage.py makemigrations and python3 manage.py migrate
+
+## To deploy
+
+ADD THIS LATER
+
+## Credits
+
+### Special thanks
+Daisy McGirr, my mentor, has been a brilliant source of advice and support
+
+### Boutique Ado walkthrough
 This tutorial was used as model for the products page, products detail page and shopping bag features. In an attempt to do it on my own I've created my own "scroll back to top" button and code, but when I revisited what was in the tutorial, the tutorial seemed to have a better solution. I've leaving my attempt in the project as it is my own work. 
 - My Account and shopping bag feature of header
 - Understanding how filterning works
 - Sorting JS and the view it relies on.
 
-## General resources
+### General resources
 - [MDN Web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image) for help with background images, and their positioning.
-- Django documetation;
-    - [Django money](https://django-money.readthedocs.io/en/latest/)
+- Django documentation
 
-## Resources consulted to create the hexagon shapes
+### Resources consulted to create the hexagon shapes
 - [CSS Tricks](https://css-tricks.com/hexagons-and-beyond-flexible-responsive-grid-patterns-sans-media-queries/) 
 - [Temani Afif's Codepen](https://codepen.io/t_afif/pen/zYoZBOy) of a responsive hexagon grid
 - [kizu's public fiddles](http://jsfiddle.net/kizu/bhGn4/), found via StackOverflow.
 - [Darsain's Codpen](https://codepen.io/darsain/pen/DQKWqM) 
 
-## Media queries to handle hover properties
+### Media queries to handle hover properties
 - [Dealing with hover on mobile, Kevin Powell, Youtube](https://www.google.com/search?q=hover+effect+on+phone&oq=hover+effect+on+phone&aqs=chrome..69i57j0i22i30l2j0i390i650l5.7290j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_v3cfZODdPISZhbIPwaaSiAg_35)
 
-## Scroll to top button on products page
--[The Joomla Forum, How to scroll to the top smoothly, contributiion by "LikeStuff"](https://forum.joomla.org/viewtopic.php?f=706&t=971785)
+### Scroll to top button on products page
+- [The Joomla Forum, How to scroll to the top smoothly, contributiion by "LikeStuff"](https://forum.joomla.org/viewtopic.php?f=706&t=971785)
 - [Create Scroll Back to Top Button using jQuery and CSS](https://www.codexworld.com/back-to-top-button-using-jquery-css/#:~:text=Use%20the%20jQuery%20click%20event,to%20the%20top%20using%20jQuery.)
 
-## Wishlist
+### Wishlist
 - [Stackoverflow](https://stackoverflow.com/questions/73947103/django-add-to-wishlist?rq=1) - using the "get_or_create"
 
-## Returning user back to the page they came from
+### Returning user back to the page they came from
 - [How to redirect to a previous page in django](https://copyprogramming.com/howto/how-to-redirect-to-previous-page-in-django)
 
-## Shopping bag
-[Shopping bag Bootstrap/Html](https://mdbootstrap.com/docs/standard/extended/shopping-carts/) adapted from MDB
+### Shopping bag
+- [Shopping bag Bootstrap/Html](https://mdbootstrap.com/docs/standard/extended/shopping-carts/) adapted from MDB
 
 ## Toasts
-[Bootstrap Toasts](https://getbootstrap.com/docs/4.3/components/toasts/) - reviewed this but used the Boutique Ado html.  The tutorial had taken the toast html direct from Bootstrap and added some extra styling. For the sake of speed I have borrowed this.
+- [Bootstrap Toasts](https://getbootstrap.com/docs/4.3/components/toasts/) - reviewed this but used the Boutique Ado html.  The tutorial had taken the toast html direct from Bootstrap and added some extra styling. For the sake of speed I have borrowed this.
 
-## Contact Page
-[Contact Page](https://www.bootdey.com/snippets/view/contact-page-section#html)
+### Contact Page
+- [Contact Page](https://www.bootdey.com/snippets/view/contact-page-section#html)
 
-## MailChimp reformatting
+### MailChimp reformatting
 Adapted [MailChimp Signup Form - Horizontal](https://gist.github.com/avadhootkulkarni/dabbc679abb89791db1059e3e8212c97)
 Django Documentation
 - [Understanding Widgets](https://docs.djangoproject.com/en/4.2/ref/forms/widgets/)
 - [Privacy Policy Generator](https://www.privacypolicygenerator.info/)
 
-# Note regarding project development and commits
+## Note regarding project development and commits
 
 While developing this project, I had wanted to use djmoney with the intention of later implementing functionality that would recognize a user's locale and update the currency.
 I had to make many changes to my project to accommodate djmoney. In the end, it created problems that I could not overcome, related to adding products to the shopping basket and calculating the subtotals and totals. I thought I could uninstall djmoney, undo previous changes and carry on. Even though I had unstalled the package and altered the model, there continued to be a conflict and some presense of a djmoney related currency field. I tried deleting all my products from the database and getting rid of the field in the shell, but it didn't work and I decided I was making things worse with all the fixes I was trying to make. In the end, I started with a fresh repo. The consequence is that the commit history does not reflect the true development of the project. This means that in the early commits of this repo there are, for example, settings and fields including in html files, that don't make sense to be there as I had to minimize the amount of time I would lose by needing to begin with a fresh repo.
