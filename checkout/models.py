@@ -11,6 +11,11 @@ from profiles.models import UserProfile
 
 
 class Order(models.Model):
+    """
+    This is a model for customer orders, which stores customer order
+    information, including the user profile, contact information,
+    address and order details.
+    """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(
         UserProfile,
@@ -75,6 +80,10 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """
+    Represents the individual items of an order:
+    the specific produce and it's quantity.
+    """
     order = models.ForeignKey(
         Order,
         null=False,

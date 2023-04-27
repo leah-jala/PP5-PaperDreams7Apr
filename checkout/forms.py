@@ -3,6 +3,10 @@ from .models import Order
 
 
 class OrderForm(forms.ModelForm):
+    """
+    Customizes the display and functionality of
+    the OrderForm model.
+    """
     class Meta:
         model = Order
         fields = ('full_name', 'email', 'phone_number',
