@@ -101,7 +101,7 @@
   @media (max-width: 492px) {
     .container {
       padding: 0;
-      margin-bottom: 0 auto 70px;
+      margin: 0 auto 70px;
     }
 
     .hexagon {
