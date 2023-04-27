@@ -6,11 +6,6 @@
 content="Get creative with Paper Dream's free tutorials on masking-making and papier-mache projects ">
 {% endblock %}
 
-{% block extra_meta %}
-  <meta name="description"
-  content="The equipment and steps to take to make your own papier-mache artwork. ">
-{% endblock %}
-
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'tutorials/css/tutorials.css' %}">
 {% endblock %}
@@ -21,9 +16,9 @@ content="Get creative with Paper Dream's free tutorials on masking-making and pa
 {% block extra_title%}Tutorials{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container" style="margin-top: 100px">
   <div class="px-3">
-    <h2 class="tutorial-heading">Tutorial Instructions</h2>
+    <h2 class="tutorial-heading mt-5">Tutorial Instructions</h2>
     <p>Detailed instructions for "{{ object.title }}" are below. Some tutorials are 
       presented over several weeks. If you are returning to this tutorial, you can use
       the green links under the summary to jump to the week you are on, or simply look
