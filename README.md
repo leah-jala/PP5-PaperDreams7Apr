@@ -539,6 +539,9 @@ This tutorial was used as model for the products page, products detail page and 
 ## Wishlist
 - [Stackoverflow](https://stackoverflow.com/questions/73947103/django-add-to-wishlist?rq=1) - using the "get_or_create"
 
+## Returning user back to the page they came from
+- [How to redirect to a previous page in django](https://copyprogramming.com/howto/how-to-redirect-to-previous-page-in-django)
+
 ## Shopping bag
 [Shopping bag Bootstrap/Html](https://mdbootstrap.com/docs/standard/extended/shopping-carts/) adapted from MDB
 

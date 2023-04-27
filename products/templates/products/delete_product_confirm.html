@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_meta %}
+<meta name="description"
+content="Page to delete a  product from the website. ">
+{% endblock %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
 {% endblock %}

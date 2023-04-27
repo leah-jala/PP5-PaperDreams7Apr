@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_meta %}
+<meta name="description"
+content="A page for staff users to delete a tutorial post.">
+{% endblock %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'tutorials/css/tutorials.css' %}">
 {% endblock %}

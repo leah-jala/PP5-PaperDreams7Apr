@@ -5,7 +5,7 @@ from products.models import Product
 
 class Wishlist(models.Model):
     """
-    Wishlist model for storing the 
+    Wishlist model for storing the
     customer's favourite artworks.
     """
     user = models.OneToOneField(
