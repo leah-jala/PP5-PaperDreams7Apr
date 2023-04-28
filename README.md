@@ -1,45 +1,67 @@
 # Paper Dreams
 
-This is a website for a fiction company called, "Paper Dreams," Code Institute Portfolio Project 5. The artwork presented on the site has been created by Leah Janss Lafond, with all rights reserved.
+This is a website for a fictional company called, "Paper Dreams," as part of Code Institute Institutes Full Stack Developer Course (Portfolio Project 5). The artwork presented on the site has been created by Leah Janss Lafond, with all rights reserved.
 
-Paper Dreams is an ecommerce website for a paper-mache artist to sell a small collection of ever-changing masks, figurines and animal objects, paintings and prints and more. Customers can register with the site, which allows them to maintain an order history, a profile and a wishlist.
+Paper Dreams is an ecommerce website for a paper-mache artist to sell a small collection of ever-changing masks, figurines and animal objects, paintings and prints and more. Customers can register with the site, which allows them to maintain an order history, a profile and a wishlist. Staff users can manage tutorials from the frontend and superusers have additional frontend access to Product Management. Both of these management functionalities are available via the navigation bar's "My Account" dropdown for the respective signed in users, but links are availble throughout the ecommerce sections of the site to manage these areas. Superusers also have a frontend link to the django admin panel in "My Account". You can  the live site [here.](https://paper-dreams-uk.herokuapp.com/)
 
 ![Am I responsive](docs/website/amiresponsive.JPG)
-
-
-View the live site [here.](https://paper-dreams-uk.herokuapp.com/)
 
 ## Table of Contents
 ---
 - [Purpose and Goals](#purpose-and-goals)
+    - [The audience](#the-audience)
+    - [Broad User Goals](#broad-user-goals)
 - [E-commerce Business Model](#e-commerce-business-model)
 - [Marketing Goals](#marketing-goals)
-
-
+- [Overall Goals](#overall-goals)
+- [E-commerce Business Model](#e-commerce-business-model)
+- [Marketing Strategy](#marketing-strategy)
+    - [Marketing Goals](#marketing-goals)
+- [SEO & Analytic](#seo--analytic)
+- [Website Design](#website-design)
+    - [The Strategy Plane](#the-strategy-plane)
+        - [Emotional Factors](#emotional-factors)
+        - [User Stories & Project Management](#user-stories--project-management)
+        - [Agile Methodology](#agile-methodology)
+    - [The Scope Plane](#the-scope-plane)
+        - ["Must have" - Minimum Requirements](#must-have---minimum-requirements)
+        - ["Should have" - Intended Requirements](#should-have---intended-requirements)
+        - ["Could have" - Desired functionality that is not essential](#could-have---desired-functionality-that-is-not-essential)
+        - [User Stories](#user-stories)
+        - [Constraints](#contraints)
+    - [The Structure Plane](#the-structure-plane)
+    - [The Skeleton Plane](#the-skeleton-plane)
+    - [The Surface Plane](#the-surface-plane)
+        - [Branding](#branding)
+        - [Fonts](#fonts)
+        - [Colour Palette](#colour-palette)
+        - [Accessibility](#accessibility)
+- [Site Features](#site-features)
 
 # Purpose and Goals
-This purpose of this website is to all the site owner to sell her artwork online. The artist would like to build a community of followers, which she aims to do by making tutorials available online and creating a complimentary space on Facebook.
+This purpose of this website is to allow the site owner to showcase and sell her artwork online. The artist would like to build a community of followers, which she aims to do by making free tutorials available online and creating a complimentary page on Facebook.
+
 ## The audience
-Paper Dreams' audience is matches the Etsy Community whose audience is described as largely females between the ages of 18-35. Etsy estimates 86% of their buyers are female. Like Etsy, the site owner expects the audience to be young, female and interested in unique, original items with vibrant colour palettes. Etsy describes the buyer's behaviour and trends of which the following apply to Paper Dreams:
+Paper Dreams' audience is matches the Etsy Community whose audience is described as largely women between the ages of 18-35. Etsy estimates 86% of their buyers are female. Like Etsy, the site owner expects the audience to be young, female and interested in unique, original items with vibrant colour palettes. Etsy describes the buyer's behaviour and trends of which the following apply to Paper Dreams:
 
-They want to support small businesses. They use the hashtag #StandWithSmall. The site could also make use of this hashtag. Statusbrew lists some top trending small business hashtags. Top-Hashtags offers some useful ideas, moving away from the specific art scene to other interest areas of potential customers, such as #womanownedbusiness, #newbusiness, #supportsmallshops, #handcraftedgifts, #handmadecrafts, and #handcrafted"add item".
+    - They want to support small businesses. They use the hashtag #StandWithSmall. The site could also make use of this hashtag. Statusbrew lists some top trending small business hashtags. Top-Hashtags offers some useful ideas, moving away from the specific art scene to other interest areas of potential customers, such as #womanownedbusiness, #newbusiness, #supportsmallshops, #handcraftedgifts, #handmadecrafts, and #handcrafted"add item".
 
-They want to make their homes more stylish with unique bright items.
+    - They want to make their homes more stylish with unique bright items.
 
-The are interested in projects they can do from home. (Relates to tutorials/learn page)
+    - The are interested in projects they can do from home. (Relates to tutorials/learn page)
 
-The are looking for unique gifts for various occasions.
+    - The are looking for unique gifts for various occasions.
 
 For the purpose of this marketing strategy, we want to think about our customer in narrow terms in order to be able to create useful keywords for the site and and overall marketing strategy.
 
-- Age: broadly 20-35
-- Gender: identifying as female
+- Age: My real life experience is that my papier mache work appeals to a type of personality more than an age group. I have sold my work to people young and old, whose enthusiam is driven by the same factors: to have something unique you can't find in a normal high street that brings a bit a sence of playfulness and joy to everyday life.
+- Gender: mostly women. 
 - Online hangouts: 
-    - Most likely Instagram and Facebook users
+    - The younger generage is on Instagram, with middle-agers giving preference to Facebook. If I take this genuinely live, I will post to Instragram, which allows one to simultaneoulsy create posts on Facebook.
     - Likey to check accounts through the day, but most likely present in the evenings
 - Interests: 
-    - Social responsibility
-    - Sustainability
+    - Social responsibility & Sustainability.
+        Many of my projects are created with recycled materials, and this can be promoted. 
     - Enjoys browsing and shopping online
     - Listens to podcasts related to fashion, exercise, entrepreneurship, freelancing, cookery, health, lifestyle, goal-setting, mindfulness, and general well being
     - Reads blogs
@@ -53,16 +75,24 @@ For the purpose of this marketing strategy, we want to think about our customer 
         - Progressing in career
         - Burnout at  work/instability in careers.
         - Lack of childcare options, if mothers
-        - 
-## Broad User Goals
-- To find an browse available art.
-- To buy papier mache art
-- To learn the techniqes of mask-making and papier mache generally
 
-## Broad Site Owner Goals
-- To have an online point of sale for her artwork.
-- To be able to display her work online
-- To create a community of people interested in papier mache
+The artworks I produce allow the customer to have something unique and bespoke. While some of the items might be pricey, the are generally affordable and although the everyday person to have something truly unique, which is usually the preserver of rich people. 
+
+As a note: the prices attached to some of the items are off the top of my head so to speak and while I do create things with moulds and it is possible to print many masks off the same plaster mould, in reality I wouldn't do more than 3-4 of the same mask, and most of the figures would be one-offs. I have created quantities for the sake of demonstrating the functionality.
+        
+## Overall Goals
+
+Broad User Goals
+
+- To find an browse available art.
+- To buy something truly unique, which is likely to amount to a "guilty pleasure"
+- To learn about the techniqes of mask-making and papier mache generally. Many tutorials fall just short of being helpful, and I would like to offer something that allows people a route to a new hobby.
+
+Broad Site Owner Goals
+
+- To have an online point of sale for the artwork.
+- To be able to showcase her work online
+- To build a community of people interested in papier mache, who will hopefully share Facebook posts as well as the website.
 
 
 ## E-commerce Business Model
@@ -73,13 +103,12 @@ Given the above, and the target audience, the website should
 - The site should build customer confidence:
 	- The customer should get confirmation that all is well by receiving a confirmation page and email. 
 	- Customers who log in should be able to see their order history
-	- Customers should not be obliged to create a profile. Many customers don't want to save their details.
+	- Customers should not be obliged to create a profile. Many customers don't want to save their details, and get annoyed when they need to do this as a requirement.
 	- The customer should easily be able to find shipping and returns information. 
 	- The customer should easily be able to find a privacy policy.
-	- The customer should easily be able to find contact information.
-- Photos should be attractive, but they should also make
- clear these are handmade items by an individual.
-- While the artist won't initially have much to display, the site should allow for product filtering by category.
+	- The customer should easily be able to find contact information, adding to the credibility and legitimacy of the website as a genuine business.
+- Photos should be attractive - in practice I don't have access to my old professional photos and I've had to make do with what I could find. If I turn this into a genuine site post assessment, I will have professional photographs taken.
+- While the artist won't initially have much to display, the site should allow for product filtering by category for the future.
 - The site should have a search field so returning customers can find something they've seen before.
 - The site should have a wishlist so customers can save items they are interested in and return to review them at a later time.
 - The site owner wants the customer feel like they can get involved by trying a tutorial, or showing how they are displaying their artwork in their home.
@@ -88,7 +117,7 @@ Given the above, and the target audience, the website should
 The site owner is not interested in joining Etsy as she feels the platform is too crowded, and there is some suggestion it has declined. [TechPenny blames Etsy's algorithms](https://techpenny.com/typical-etsy-demographics-stats/) and the amount of time customers must spend on the platform only to get frustrated and leave after they don't find what they are looking form. By contrast, [Statista.com](https://www.statista.com/statistics/409375/etsy-active-buyers/) reported an 18% increase in sales. Reuter's reports Etsy has suffered related to [SVBs collapse with resulting delays processing sellers' payments](https://www.reuters.com/markets/etsy-other-e-commerce-companies-feel-squeeze-svb-collapse-2023-03-13/), with some sellers complaining Etsy lacked transparency. Notwithstanding these reports on the Etsy platform itself, there is a clear interest by consumers in handcrafted items created by small businesses. 
 
 ### Marketing Goals
-The site owner will market through her Facebook Page, [Paper Dreams](https://www.facebook.com/profile.php?id=100091661127883). The idea is to build a community there by displaying work and creating a community by providing free tutorials online and encourage site users to post their progress and results on the Facebook page. The artist is a local artist and sells at local markets where she can prominently display the site link. The intention would to get a domain name matching the name of the business so it is memorable.
+The site owner will market through her Facebook Page, [Paper Dreams](https://www.facebook.com/profile.php?id=100091661127883). The idea is to build a community there by displaying work and providing free tutorials online and encourage site users to post their progress and results on the Facebook page. The artist is a local artist and sells at local markets where she can prominently display the site link. The intention would to get a domain name matching the name of the business so it is memorable.
 
 The marketing goals are to:
 
@@ -143,11 +172,11 @@ The marketing goals are to:
     
 6. Meta tags
 
-    The various pages on this site leave little room for SEO keywords as there are few titles and subtitles, howwever there is ample opportunity in the product descriptions.
+    The various pages on this site leave little room for SEO keywords as there are few titles and subtitles, however there is ample opportunity in the product descriptions, which form the main content of the site. The tutorials also offer such a place.
 
-    - Meta descriptions - I have put unique page descriptions on every content page: Homepage, Contact, Privacy, Delivery, Products and Tutorials. Google will not crawl through the pages that require user sign in. The meta tags needed to be placed in the extra_meta block as the presence of a tag in base.html would produces a duplication and error.
+    - Meta descriptions - I have put unique page descriptions on every content page: Homepage, Contact, Privacy, Delivery, Products and Tutorials. Google will not crawl through the pages that require user sign in. Pages restricted to signed in user's have helpful meta descriptions to say what the page is for. The meta tags needed to be placed in the extra_meta block as the presence of a tag in base.html would produces a duplication and error.
 
-    - Meta keywords: I read [Google does not use the keywords meta tag in web ranking](https://developers.google.com/search/blog/2009/09/google-does-not-use-keywords-meta-tag) on "Google Search Central Blog" on  developers.google.com and have therefore not used them. I was surprised to see this information was presented in 2009.
+    - Meta keywords: I read [Google does not use the keywords meta tag in web ranking](https://developers.google.com/search/blog/2009/09/google-does-not-use-keywords-meta-tag) on "Google Search Central Blog" on  developers.google.com and have therefore not used them. I was surprised to see this information was already presented in 2009.
 
 
 7. Evidence of being a trusted site
@@ -160,30 +189,31 @@ The marketing goals are to:
 The goals of the site are similar to that of Etsy and NotOnTheHighStreet. This site aims to offer users unique items to bring a bit of joy into their lives.  The site owner does not wish to have a profile on these sites, because they wish to display works not for sale as well as to provide tutorials. While the site will be online, and can be thought of as having a global reach, the site owner is also very much involved in the community, and wishes to have an exclusive site.
 
 
-### Emotional Factors
-It is the artist's hope that her artworks will help site visitors reimagine their surroundings. The site should be easy and intutive to navigate so as not to detract from the works themselves. An attractive website will add to the value of the work as the same care as creating the art will go into the presentation of it via the website. Even if the customer is not ready to buy, it is the hope of the site owner that the customer will like the experience of the site so much that they will return repeatedly to look and browse.  
+#### Emotional Factors
+It is the artist's hope that her artworks will help site visitors reimagine their surroundings. The site should be easy and intutive to navigate so as not to detract from the works themselves. An attractive website will add to the value of the work, as the same care taken to create the art should go into the presentation of it via the website. Even if the customer is not ready to buy, it is the hope of the site owner that the customer will like the experience of the site so much that they will return repeatedly to look and browse.  
 
-The reviews page is also meant to be something of a community page where customers can leave their thoughts about their purchases and also upload photos to show how they are displaying the product at home or in their workplace. The idea is that it will inspire prospective customers, and encourage conversation. 
+As mentioned, the tutorials page is also meant to build community page and extends itself well to Facebook, where customers can share their own work, get support and also share posts to their friends and invite them to the page.
 
-### User Stories & Project Management
-On GitHub, user stories were defined as issues with tick-box tasks and acceptance criteria. 
+#### User Stories & Project Management
+GitHub projects, milestones and issues were used to manage this story. The user stories were defined as issues with tick-box tasks and acceptance criteria. 
 
-Looking back at the project, I realize I did not write down enough of the fine detail that I can now see in other people's readme files. Also, for some of the user stories, I found it more efficient to break down the user story into a set of tasks within the user story. 
+Looking back at the project, I realize I did not break them down enough into fine detail. For the sake of a project that one individual is doing on their own, it worked well. I liked having a piece of functionaly as a user story with multiple tasks written down with tick-boxes that I could leave open and tick off as I worked through. I can see how this might not be ideal working as part of a larger team. 
 
-I should have created a separate level of developer stories. I did something like this for the project set-up, but didn't carry it through the rest of the apps. As I was sitting with a spreadsheet of general requirments, both based on the project requirement's as well as a to do list. It didn't occur to me to include as user stories something like adding a "Page Not Found" or a Procfile as a specific "user" story.  I could have been much more granular. I think this also comes from working alone as opposed to with a team among whom tasks are shared and a higher level of specifity is required. 
+I should have created a separate level of developer stories. I did something like this for the project set-up, but didn't always carry it through the rest of the apps. As I was sitting with a spreadsheet of general requirments, both based on the project requirement's as well as a to do list. It didn't occur to me to include as user stories something like adding a "Page Not Found" or a Procfile as a specific "user" story.  I could have been much more granular with the user stories. As already mentioned, I think this is the result of working alone as opposed to with a team, among whom tasks are shared and a higher level of specifity is required for general management of a project.
 
+#### Agile Methodology
 The project was developed using Agile Methodology as presented in Code Institute modules. User stories and milestones were created on GitHub's project boards. Each user story was defined and given a status including "must have" (for minimum viable product), "should have" (functionality that would make the site work better but isn't absolutely necessary to launch the site) and "could have" (features that would be nice to include). Some of these items were transitioned to "won't have" as the time demands demanded prioritization of the must and should haves. 
 
-GitHub's Milestones were initially used for the project iterations, but I found them awkward to set up and created a similar categorie which I've called "steps" on the board. While we were encouraged to drag issues along a kanban board, I found it neater to organize my work on a ![table view](docs/agile/project-table-view.JPG).
+GitHub's Milestones were initially used for the project iterations, but I found them awkward to set up and created a similar categories which I've called "steps" on the board. While we were encouraged to drag issues along a kanban board, I found it neater to organize my work on a ![table view](docs/agile/project-table-view.JPG).
 
 The project board is at this [link](https://github.com/users/leah-jala/projects/8).
 
 
-## The Scope Plane
+### The Scope Plane
 
 Considering the goals above, the following requirements were identified.
 
-### "Must have" - Minimum Requirements
+#### "Must have" - Minimum Requirements
 - A homepage which gives an overview of the purpose of the site, a clear call to action (shop button) and information about who is behind it.
 - An intuitive navigation bar and a footer that leads customers to all the information they need to get in touch, review shipping and returns policies and browse products.
 - A cleanly presented products page with an image, title and price for each item.
@@ -199,19 +229,18 @@ Considering the goals above, the following requirements were identified.
 - A contact page that allows customer to submit questions via a form. 
 - A tutorials page for the artist to be able to present tutorials as a blog, with images.
 
+From the point of view of the site owner, it was important to me that customers can not buy products that aren't available in the database. I found this more important that having frontend Product and Tutorials Management access the admin interface can be controlled, WYSIWYG editors can be added to it, and it is easy to use. Having said that, the immediacy of edit and delete links through the site for signed in users have a clear benefit and should be there, but if I were forced to give priority for one over the other, the frontend management would come second. It avoids having to disappoint customers as well as eliminates the task of manually monitoring the databse.
 
-### "Should have" - Intended Requirements
+#### "Should have" - Intended Requirements
 - The ability to add items to a wish list. 
-- Customers should be able to leave a review, including photos. If there is not enough time, customers could be encouraged to do this on Facebook.
-- It should be possible to search for reviews by item title.
-- The reviews should be imported into the products page. For example, if an item has received reviews, there should be a link the reviews page, set that item's id. 
+- It should be possible to search for products by item title.
 
-### "Could have" - Desired functionality that is not essential
+#### "Could have" - Desired functionality that is not essential
 - Site users should be able to comment on tutorials/blog entries and upload photos of their work. 
 - Site users should be able to filter tutorials by title or theme (e.g. There might be more than one mask-making tutorial)
 - An events page that allows the ower to use a form to enter information about upcoming events such as an exhibition or a course.
 
-### User Stories
+#### User Stories
 
 Project Set Up
 - As a developer, I need to create a django project, so that I can build the site apps.
@@ -219,9 +248,8 @@ Project Set Up
 - As a site owner, I need my customers to be able to sign in securely to the website so that they can make purchases or comment on blogs. (This was an example of a user story where I have grouped together tasks)
 ![user story example](docs/website/user-story-allauth.JPG)
 - As a developer, I need to create a project level template, to contain the common elements of the site.
-- As a site owner, I want an attractive homepage so that my site users wiill explore the site.
+- As a site owner, I want an attractive homepage so that my site users will explore the site.
 
-Base
 
 Contact Page
 - As a website visitor, I want to be able to fill out a form on the contact page to send a message to the website owner.
@@ -283,10 +311,10 @@ Wishlist
 - As a site user, I want to see if I have already added an item to my wishlist, so that I don't have to open the product detail page again.
 
 ### Contraints
-The major constrainst is the timeline for completing the project. 
+The major constrainst is the timeline for completing the project.
 
-## The Structure Plane
-### Planning
+### The Structure Plane
+#### Planning
 As this is an e-commerce site, the major objective is to sell artworks. The customer journey from the perspective of making a purchase is described below. The elements of the site related to tutorials have the objective of building advocacy for the company, enabling it to build a following and retain customer interest beyond the intitial point of sale.  
 
 #### The Customer Journey
@@ -315,7 +343,7 @@ As this is an e-commerce site, the major objective is to sell artworks. The cust
 - **Selection and checkout**:
     - User actions: 
         - selects products, adds it to the bag, fills in form, enters card details, confirms payment.
-    ![Checkout Journey](docs/website/pdCheckout.png)
+![Checkout Journey](docs/website/checkout.JPG)
     - Touch points:
         - **Products page**
         - **Products detail** page/Add to cart/bag
@@ -324,7 +352,7 @@ As this is an e-commerce site, the major objective is to sell artworks. The cust
         - **Log in** (if not already), or simply continute to payment field
         - Enter card detail into field - send to Stripe 
         - Adjust bag, or complete order
-        - Get success, with order summary or failure message
+        - Get success message, with order summary or failure message
         - Get confirmation email.
     - Emotions: 
         - Happy if the process is fast, smooth and takes little time to complete.
@@ -332,7 +360,7 @@ As this is an e-commerce site, the major objective is to sell artworks. The cust
         - Happy if they can call upon shipping details already entered in the past and purchase quicker. 
         - Angry if faced with a lot of error messages, forms that are unclear, a payment field that is not clear about what cards it accepts.
     - Pain points;
-        - Form is so restrictive that it is hard to get through it without a lot of errors.
+        - Form is so restrictive that it is hard to get through it without a lot of errors and repeated attempts to submit the form.
         - Checkout doesn't support all card types.
     - Solutions:
         - Clarify with symbols which cards are accepted.
@@ -342,6 +370,7 @@ As this is an e-commerce site, the major objective is to sell artworks. The cust
         - Item not delivered quickly.
         - Item damaged.
     - Solutions:
+        - Sold out items never appear as available on the website.
         - Provide clear shipping and returns policies/information. 
         - Provide clear returns policy
         - Make footer sticky so returns and shipping policy always visiable.
@@ -386,21 +415,21 @@ Tutorials
 ![tutorial](docs/wireframes/wf-tutorial.JPG)
 
 Wishlist
-![wishlist](docs/wireframes/wishlist)
+![wishlist](docs/wireframes/wf-wishlist.JPG)
 
 
 #### Changes to wireframes
-The wireframes were a useful guideline, however, I later decided to do different things with the Tutorials and Wishlist pages.  I didn't like the card format, but found rows were neater and easier to go through. It was a minor change to the page layout. The tutorials app represents a bigger change as I decided that I didn't want to have a blog formate as I wanted to keep the posts together with the tutorial overview, which I thought was much better UX. Now users can scroll through a list of avaiable tutorials, but when the click on it, they will always have everything they need together in one view with the possibility to click on links to the different posts/steps in the tutorial.
+The wireframes were a useful guideline, however, I later decided to do different things with the Tutorials and Wishlist pages.  I didn't like the card format of the wishlist, but found rows were neater and easier to go through as a user. It was a minor change to the page layout. The tutorials app represents a bigger change as I decided that I didn't want to present them in a blog format. I wanted to keep the posts together with the tutorial overview, which I thought was much better UX. Now users can scroll through a list of avaiable tutorials, but when they click on one, they will always have everything they need together in one view with the possibility to click on links to the different posts/steps in the tutorial.
 
-## The Surface Plane
+### The Surface Plane
 
-### Branding
+#### Branding
 The branding on this mock site is acheived mainly through a colour palette. I did not have resources to create a professional logo. This would obviously be important and then used on email headers, throughout the site and on facebook pages and another other communication off the website.
 #### Fonts
 As many of the items on the site are fun and aim to add a bit of spice and fun into people's environment, the site user wanted a font that reflected this. The site name/logo will uses Henny Penny, 
 ![Font Pairing](docs/website/fontPairing.JPG)
 
-#### Colour palette
+#### Colour Palette
 I took some inspiration from the 2016 and 2017 [W3 Schools color palettes](https://www.w3schools.com/colors/colors_palettes.asp), however in the end choose my own combination of colors. 
 - Fonts/Text - black
 - Header highlights/Button hover: #dc3545
@@ -408,8 +437,7 @@ I took some inspiration from the 2016 and 2017 [W3 Schools color palettes](https
 
 I wanted colors that were unique and artsy, but not a distraction to the artwork itself. The small highlights to the page add a bit of interest without being overwhelming or distracting. 
 
-### Interaction
-### Accessibility
+#### Accessibility
 Effort has been taking to create a site with color contrast, semantic html for compatibility with assistive technologys and the ability to logically tab through a site, the use of aria-lables and image alts.
 
 ## Site Features
@@ -491,12 +519,14 @@ Product page features
 Product detail page features.
     - A customer can not add more to their basket than is available in the database. 
     - On the product detail page, the customer can see how many products are available in the shop and in parentheses, they can see how many are in their bag.
-    - Only after their purchase will the new calculation of store quantity be shown. 
-    ![product detail](docs/website/product-detail.JPG)
+
+- Only after their purchase will the new calculation of store quantity be shown. 
+![product detail](docs/website/product-detail.JPG)
+
     - In the example, the user has added one cobra. When they go back to the cobra, they will not be able to add more than 2.
     - users need to be signed in to use the wishlist. Users who are not signed or not registered are provided a link to do so, so that they can use the wishlist. 
-
-![product page signed out](docs/website/product-page-signedout.JPG)
+    
+    ![product page signed out](docs/website/product-page-signedout.JPG)
 
 ### Wishlist App
 - When the user is signed in the wishlist icon appears in the navbar
@@ -534,10 +564,10 @@ Product detail page features.
 
 Note: Superusers get links to the admin panel, tutorials management, products management, in additional to what a normal user sees. Staff users can not see the products management nor the admin panel.
 
-- The contact form allows users to see genuine information about the location of the buyer and will hopefully server to add confidence. I personally do not like to only have a contact form with no real details, but I also like to be able to use a form as a first preference over an email address so I have more confidence my message will be received. 
+- The contact form allows users to see genuine information about the location of the seller and will hopefully server to add confidence. I personally do not like to only have a contact form with no real details, but I also like to be able to use a form as a first preference over an email address so I have more confidence my message will be received. 
 
 ### Search Utility
-There is a search field in the navbar. This has already been described above in the navbar section. 
+There is a search field in the navbar. This has already been described above in the navbar section. I felt that the shop would never be so large as to need a constantly present form field, but that it had a purpose on the site. The form field on large screens, in my opinion, took away from the character of the site, so it appears as a clickable icon on all screens. 
 
 ![search field](docs/website/search-bar.JPG)
 
@@ -594,7 +624,9 @@ This has been mentioned above in the marketing plan. This is an image of the pag
 
 The page is promoted in the tutorials text, the footer and on the contact page.
 
-## Criteria for custom models
+![Facebook community page](docs/website/fb-page.JPG)
+
+## Criterion for custom models
 
 ### At least three original custom models
 
@@ -619,58 +651,56 @@ I struggled to create a LucidChart then lost the work. I summarizing how the mod
 
 
 Checkout App:
-    a. Order Model
-    - Primary Key: order_number
-    - ForeignKey: user_profile (one-to-many relationship with UserProfile)
-    - ForeignKey: country (one-to-many relationship with django_countries.Country)
 
-    b. OrderLineItem Model
-    - Primary Key: (order, product) (composite key)
-    - ForeignKey: order (one-to-many relationship with Order)
-    - ForeignKey: product (one-to-many relationship with Product)
+a. Order Model
+- Primary Key: order_number
+- ForeignKey: user_profile (one-to-many relationship with UserProfile)
+- ForeignKey: country (one-to-many relationship with django_countries.Country)
+b. OrderLineItem Model
+- Primary Key: (order, product) (composite key)
+- ForeignKey: order (one-to-many relationship with Order)
+- ForeignKey: product (one-to-many relationship with Product)
 
 Contact App:
-    a. ContactForm Model
-    - Primary Key: id (automatically created by Django)
+a. ContactForm Model
+- Primary Key: id (automatically created by Django)
 
 Products App:
-    a. Category Model
-    - Primary Key: id (automatically created by Django)
+a. Category Model
+- Primary Key: id (automatically created by Django)
 
-    The Category model in the products app represents product categories in the store. Each category has a name and a friendly name.
+The Category model in the products app represents product categories in the store. Each category has a name and a friendly name.
 
-    b. Product Model
-        - Primary Key: id (automatically created by Django)
-        - ForeignKey: category (one-to-many relationship with Category)
+b. Product Model
+- Primary Key: id (automatically created by Django)
+- ForeignKey: category (one-to-many relationship with Category)
 
 Profiles App:
-    a. UserProfile Model
-    - Primary Key: user (one-to-one relationship with User)
-    - ForeignKey: default_country (one-to-many relationship with django_countries.Country)
+a. UserProfile Model
+- Primary Key: user (one-to-one relationship with User)
+- ForeignKey: default_country (one-to-many relationship with django_countries.Country)
 
 Tutorials App:
-    a. TutorialCategory Model
-        - Primary Key: id (automatically created by Django)
-
-    b. Tutorial Model
-        - Primary Key: id (automatically created by Django)
-        - ForeignKey: instructor (one-to-many relationship with User)
-        - ForeignKey: category (one-to-many relationship with TutorialCategory)
-
-    c. TutorialPost Model
-        - Primary Key: id (automatically created by Django)
-        - ForeignKey: tutorial (one-to-many relationship with Tutorial)
-        - ForeignKey: instructor (one-to-many relationship with User)
+a. TutorialCategory Model
+- Primary Key: id (automatically created by Django)
+b. Tutorial Model
+- Primary Key: id (automatically created by Django)
+- ForeignKey: instructor (one-to-many relationship with User)
+- ForeignKey: category (one-to-many relationship with TutorialCategory)
+c. TutorialPost Model
+- Primary Key: id (automatically created by Django)
+- ForeignKey: tutorial (one-to-many relationship with Tutorial)
+- ForeignKey: instructor (one-to-many relationship with User)
 
 Wishlist App:
-    a. Wishlist Model
-    - Primary Key: user (one-to-one relationship with User)
-    - ManyToManyField: products (many-to-many relationship with Product)
+a. Wishlist Model
+- Primary Key: user (one-to-one relationship with User)
+- ManyToManyField: products (many-to-many relationship with Product)
 
-
-![Facebook community page](docs/website/fb-page.JPG)
 
 ## Future features
+- I would add icons above the Stripe field for the major credit cards accepted for additional confirmation to the customer.
+- Once an item is sold out, I would like it to be automatically taken off the products list and moved to a gallery page where customers can view past works, with search and sorting, in addition to anything current I want to show (like commissioned items that will not be sold). Like this, I would have a portfolio page. I would also like customers to be able to click through, comment and also add pictures of their artwork as they are displaying it in their homes. Also, I would like them to have a link to click to enquire about have a previously sold item made. There is a limit to how fast an artist can create work, so the gallery would show a greater body of work and what is possible if the customer is willing to wait.
 - Search field should be altered for fuzzy logic.
 - Checkout page: If a form is filled in when the user sees the link it should keep the information through the login. I have moved the links higher up the form to avoid a situation where a person only sees the link after filling in their information. 
 - If there were a lot more products in the store, it would make sense to add more categories for the sort by field, for example people interested in buy an artwork might like to look for specific colors. 
@@ -756,6 +786,9 @@ Language Validators and format helpers
 - [autopep8](https://pypi.org/project/autopep8/), A tool that automatically formats Python code to conform to the PEP 8 style guide
 
 ## Testing
+
+
+
 
 ## Develoment, Version Control & Deployment
 - A repository was created using Code Institute's template, which sets up the environment for git version control.
