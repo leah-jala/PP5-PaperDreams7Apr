@@ -788,9 +788,26 @@ Use pip install + app name, then add to settings.
 
 ## Testing
 
+## Site navigation and functionality
+To test this website navigated through each link and tested the functionality on each page, including adding add, editing and deleting tutorials and products. All the projects on the website and existing tutorials were added using the front end management features.
+
+1. Tested each link and button as a "signed out" user.
+2. Tested each link and button as a "staff" user.
+3. Tested each link and button as a "superuser".
+
+I recorded if the navigation link took the user to the right page with either "yes", or where relevant recorded the behaviour. This can be seen in the "Site Connections" tab of the spreadsheet.
+
+![Test HTML](docs/testing/ss-site-connections1.JPG)
+![Test HTML](docs/testing/ss-site-connections2.JPG)
+![Test HTML](docs/testing/ss-site-connections3.JPG)
+
+## HTML validation
+I used the [WC3 Markup Validation Service](https://validator.w3.org/) to test the HTML of all pages. Screen shots of the results are included in the spreadsheet. 
 
 ### Unresolved problems
-
+I got errors on three pages:
+1. Tutorial Detail: The validator found p element errors that come from the form entry. I tried going into the form from both the front end for and the admin panel and deleting all the new paragraphs and added them again, but this made no difference. I could not find a way to fix this problem which seems to stem from the djrichtextfield.
+2. add_product - 
 ## Develoment, Version Control & Deployment
 - A repository was created using Code Institute's template, which sets up the environment for git version control.
 - Files were added to the staging area with git . 

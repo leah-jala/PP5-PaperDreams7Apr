@@ -40,6 +40,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+    image_alt = models.CharField(max_length=100, null=False, blank=True)
     quantity = models.PositiveIntegerField(default=0)
 
     def __str__(self):
