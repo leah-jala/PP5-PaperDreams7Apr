@@ -793,7 +793,7 @@ Use pip install + app name, then add to settings.
 
 Testing has been recorded in spreadsheet. A link to access relate documents is being provided to the assessors of this project. 
 
-## Site navigation and functionality
+### Site navigation and functionality
 To test this website, I navigated through each link and tested the functionality on each page, including adding, editing and deleting tutorials and products. All the projects on the website and existing tutorials were added using the front end management features.
 
 1. Tested each link and button as a "signed out" user.
@@ -806,7 +806,7 @@ I recorded if the navigation link took the user to the right page with either "y
 ![Test HTML](docs/testing/ss-site-connections2.JPG)
 ![Test HTML](docs/testing/ss-site-connections3.JPG)
 
-## HTML validation
+### HTML validation
 I used the [WC3 Markup Validation Service](https://validator.w3.org/) to test the HTML of all pages. 
 
 Screen shots of the results are at this links:
@@ -837,13 +837,13 @@ Screen shots of the results are at this links:
 
 Through testing, I realized that I had forgotten to add an "image alt" field to the product model, which as subsequently been added. Previoulsy, the alt was populated with the product name. Now it has a proper description. 
 
-### Unresolved errors
+#### Unresolved errors
 I got errors on three pages:
 1. Tutorial Detail: The validator found p element errors that come from the form entry. I tried going into the form from both the front end for and the admin panel and deleting all the new paragraphs and added them again, but this made no difference. I could not find a way to fix this problem which seems to stem from the djrichtextfield.
 2. add_product - The validator through up 3 errors, but I was unable to make any changes to these because there were not a part of the code that I wrote (as can be accessed by the html file or forms.py), but rather something caused by crispy form rendering. It seems to give an error because the image on the image upload has no "alt" but it wouldn't in this case. There is a problem with the p elments again, as described above. Lastly, it the validator calls for "type="text/javascript" to be removed from a script I did not write related to the image upload.
 3. edit_product - This page has the same problems as with the add_product page. Additionally it has a "duplicate attribute id" error, which is also from code I didn't write. It also seems to be a problem with the crispy form. It is not code I can access and change. 
 
-## CSS validation
+### CSS validation
 I've entered each css file into the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). I did not take screen shots for this section because every results page looked idential with no way of proving which page it related to. All pages passed, receiving the screen shown below, apart from the index.css file (refer to section below).
 
 ![css validation page example](docs/testing/css-validation.JPG)
@@ -852,7 +852,7 @@ Here is a screen shot from the spreadsheet on which I recorded my results.
 
 ![css testing on recorded on spreadsheet](docs/testing/ss-css.JPG)
 
-### Unresolved error
+#### Unresolved error
 The reason I am getting an error on this page is that the validator does not recognize the shape-outside attribute, which was used to create the hexagons. I spent a lot of time trying to find a way to keep the hexagon shape and behaviour, but did not succeed. I have done some research into this an found that this is most likely related to the fact that not all browsers are able to render it properly. I entered the shape-outside sample syntax, which must be valid, from [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside) and from [CSS Tricks](https://css-tricks.com/almanac/properties/s/shape-outside/), which also comes back as invalid. 
 
 I used caniuse.com to check the useability of the shape-outside attribute on older browsers. It affected some browsers with release dates ranging from 2012-2018. Otherwise, there didn't seem to be information about some browsers at all. 
@@ -877,6 +877,9 @@ In the spreadsheet, I marked the files which I needed to make some changes in gr
 ![python testing 2](docs/testing/ss-python2.JPG)
 
 ![python testing 3](docs/testing/ss-python3.JPG)
+
+### Chrome tools
+I opened the developer tools in Chrome and clicked on each page to check for any page errors and found none. I tried repeatedly to run Lighthouse within Chrome Developer Tools, but it stays frozen on the message "Auditing paper-dreams-uk-herokuapp.com". I've tried it on several different days in normal and in incognito mode and it simply doesn't work.  
 
 ## Develoment, Version Control & Deployment
 - A repository was created using Code Institute's template, which sets up the environment for git version control.
@@ -922,12 +925,14 @@ Allows users to add/remove items from the wishlist.
 
 ![wishlist js](docs/testing/wishlist-js.JPG)
 
-## Things to edit/correct in the future/Technical debt
+###  Things to edit/correct in the future/Technical debt
 When testing this site, I saw that the messages pop up a bit too far to the right at times, and there is inconsistently with the way the messages appear whether you add a product to the wishlist from the products or product detail page. I would like to thoroughly revisit the messaging on this site.
 
 I also intend to fix the templates to be more consistent. I had started this project with a sticky navar and a sticky footer. It created a lot of problems withe margins and need for media queries. I ended up abandoning both only to reintroduce the sticky nav as I felt it was particularly necessary having added the wishlist, but also due to the bag icon. This created another set of headaches with top margins. After this project is assessed, I will fix the footer and nav bar and reconstruct the templates for better consistency across the site. 
 
 I realized during testing that I forgot to move the javascript off the products page and into a static file. I needed to leave this and get on with finishing the readme file. I will have to move this later. 
+
+I realized too late that I have forgotten to convert my images from JPGs to webp.
 
 ## Forking or Cloning the project 
 
