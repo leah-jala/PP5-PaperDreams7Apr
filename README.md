@@ -196,7 +196,7 @@ It is the artist's hope that her artworks will help site visitors reimagine thei
 As mentioned, the tutorials page is also meant to build community page and extends itself well to Facebook, where customers can share their own work, get support and also share posts to their friends and invite them to the page.
 
 #### User Stories & Project Management
-GitHub projects, milestones and issues were used to manage this story. The user stories were defined as issues with tick-box tasks and acceptance criteria. 
+GitHub projects, milestones and issues were used to manage this story. The user stories were defined as issues with tick-box tasks and acceptance criteria. The project is available [here](https://github.com/users/leah-jala/projects/8).
 
 Looking back at the project, I realize I did not break them down enough into fine detail. For the sake of a project that one individual is doing on their own, it worked well. I liked having a piece of functionaly as a user story with multiple tasks written down with tick-boxes that I could leave open and tick off as I worked through. I can see how this might not be ideal working as part of a larger team. 
 
@@ -700,6 +700,7 @@ a. Wishlist Model
 
 
 ## Future features
+- I meant to create a view for a customer to delete their profile and forgot about it in spite of having that user story. 
 - I would add icons above the Stripe field for the major credit cards accepted for additional confirmation to the customer.
 - Once an item is sold out, I would like it to be automatically taken off the products list and moved to a gallery page where customers can view past works, with search and sorting, in addition to anything current I want to show (like commissioned items that will not be sold). Like this, I would have a portfolio page. I would also like customers to be able to click through, comment and also add pictures of their artwork as they are displaying it in their homes. Also, I would like them to have a link to click to enquire about have a previously sold item made. There is a limit to how fast an artist can create work, so the gallery would show a greater body of work and what is possible if the customer is willing to wait.
 - I would like to figure out how to make the site work like some that I have see where you can see how many products are in people's bags, and change my message under the product to only give a quantity when there are only a certain amount left in stock. So they could for example see that there are 5 items left and 3 of these are in other customer's bags.
@@ -809,8 +810,30 @@ I recorded if the navigation link took the user to the right page with either "y
 I used the [WC3 Markup Validation Service](https://validator.w3.org/) to test the HTML of all pages. 
 
 Screen shots of the results are at this links:
-Pages app
-[About Page](docs/testing/html-pages/about.JPG), [Add Tutorial Page](docs/testing/html-pages/add-tutorial.JPG), [Bag](docs/testing/html-pages/bag.JPG), [Checkout Page](docs/testing/html-pages/checkout.JPG), [Checkout Success page](docs/testing/html-pages/checkout-success.JPG), [Delete Product](docs/testing/html-pages/delete-product.JPG),  [Delete Tutorial](docs/testing/html-pages/delete-tutorial.JPG),  [Delete Tutorial Post](docs/testing/html-pages/delete-product.JPG), [Edit Product](docs/testing/html-pages/edit-product.JPG), [Edit Tutorial](docs/testing/html-pages/edit-tutorial.JPG), [Edit Tutorial Post](docs/testing/html-pages/edit-tutorial-post.JPG), [Homepage](docs/testing/html-pages/homepage.JPG), [Manage Tutorials](docs/testing/html-pages/manage-tutorials.JPG), [My Profile](docs/testing/html-pages/myprofile.JPG), [Products](docs/testing/html-pages/products.JPG), [Tutorial Detail](docs/testing/html-pages/tutorial-detail.JPG), [Tutorials](docs/testing/html-pages/tutorials.JPG), [Add Tutorialpost](docs/testing/html-pages/tutorials-add-post.JPG), [Wishlist](docs/testing/html-pages/wishlist.JPG)
+
+- Bag app: 
+    [Bag](docs/testing/html-pages/bag.JPG)
+
+- Checkout app:
+    [Checkout Page](docs/testing/html-pages/checkout.JPG), [Checkout Success page](docs/testing/html-pages/checkout-success.JPG)
+
+- Home app:
+    [Homepage](docs/testing/html-pages/homepage.JPG),
+
+- Contact app:
+    [Contact Page](docs/testing/html-pages/contact.JPG)
+
+- Pages app: [About Page](docs/testing/html-pages/about.JPG), [Delivery and Returns](docs/testing/html-pages/delivery.JPG), [Privacy Page](docs/testing/html-pages/privacy.JPG)
+
+- Profiles app: 
+    [My Profile](docs/testing/html-pages/myprofile.JPG)
+
+- Products app: [Products](docs/testing/html-pages/products.JPG), [Edit Product](docs/testing/html-pages/edit-product.JPG), [Delete Product](docs/testing/html-pages/delete-product.JPG)
+
+- Tutorials app:
+     [Tutorial Detail](docs/testing/html-pages/tutorial-detail.JPG), [Tutorials](docs/testing/html-pages/tutorials.JPG), [Manage Tutorials](docs/testing/html-pages/manage-tutorials.JPG), [Add Tutorial Page](docs/testing/html-pages/add-tutorial.JPG), [Edit Tutorial](docs/testing/html-pages/edit-tutorial.JPG), [Add Tutorial Post](docs/testing/html-pages/tutorials-add-post.JPG), [Edit Tutorial Post](docs/testing/html-pages/edit-tutorial-post.JPG), [Delete Tutorial Post](docs/testing/html-pages/delete-product.JPG), [Delete Tutorial](docs/testing/html-pages/delete-tutorial.JPG)
+
+- Wishlist app: [Wishlist](docs/testing/html-pages/wishlist.JPG)
 
 Through testing, I realized that I had forgotten to add an "image alt" field to the product model, which as subsequently been added. Previoulsy, the alt was populated with the product name. Now it has a proper description. 
 
