@@ -1,6 +1,6 @@
 # Paper Dreams
 
-This is a website for a fictional company called, "Paper Dreams," as part of Code Institute Institutes Full Stack Developer Course (Portfolio Project 5). The artwork presented on the site has been created by Leah Janss Lafond, with all rights reserved.
+This is a website for a fictional company called, "Paper Dreams," which has been developed as part of Code Institute Institute's Full Stack Developer Course (Portfolio Project 5). The artwork presented on the site is my own, with all rights reserved. The images are my own.
 
 Paper Dreams is an ecommerce website for a paper-mache artist to sell a small collection of ever-changing masks, figurines and animal objects, paintings and prints and more. Customers can register with the site, which allows them to maintain an order history, a profile and a wishlist. Staff users can manage tutorials from the frontend and superusers have additional frontend access to Product Management. Both of these management functionalities are available via the navigation bar's "My Account" dropdown for the respective signed in users, but links are availble throughout the ecommerce sections of the site to manage these areas. Superusers also have a frontend link to the django admin panel in "My Account". You can  the live site [here.](https://paper-dreams-uk.herokuapp.com/)
 
@@ -42,9 +42,10 @@ Paper Dreams is an ecommerce website for a paper-mache artist to sell a small co
 This purpose of this website is to allow the site owner to showcase and sell her artwork online. The artist would like to build a community of followers, which she aims to do by making free tutorials available online and creating a complimentary page on Facebook.
 
 ## The audience
-Paper Dreams' audience is matches the Etsy Community whose audience is described as largely women between the ages of 18-35. Etsy estimates 86% of their buyers are female. Like Etsy, the site owner expects the audience to be young, female and interested in unique, original items with vibrant colour palettes. Etsy describes the buyer's behaviour and trends of which the following apply to Paper Dreams:
+Paper Dreams' audience matches the Etsy Community, whose audience is described as largely women between the ages of 18-35. Etsy estimates 86% of their buyers are female. Like Etsy, the site owner expects the audience to be young, female and interested in unique, original items with vibrant colour palettes. Etsy describes the buyer's behaviour and trends of which the following apply to Paper Dreams:
 
-    - They want to support small businesses. They use the hashtag #StandWithSmall. The site could also make use of this hashtag. Statusbrew lists some top trending small business hashtags. Top-Hashtags offers some useful ideas, moving away from the specific art scene to other interest areas of potential customers, such as #womanownedbusiness, #newbusiness, #supportsmallshops, #handcraftedgifts, #handmadecrafts, and #handcrafted"add item".
+    - They want to support small businesses. They use the hashtag #StandWithSmall. The site could also make use of this hashtag. 
+    - [Statusbrew](https://statusbrew.com/insights/small-business-hashtags/) lists some top trending small business hashtags. Top-Hashtags offers some useful ideas, moving away from the specific art scene to other interest areas of potential customers, such as #womanownedbusiness, #newbusiness, #supportsmallshops, #handcraftedgifts, #handmadecrafts, and #handcrafted"add item".
 
     - They want to make their homes more stylish with unique bright items.
 
@@ -788,39 +789,265 @@ Language Validators and format helpers
 ## Testing
 
 
-
-
 ## Develoment, Version Control & Deployment
 - A repository was created using Code Institute's template, which sets up the environment for git version control.
 - Files were added to the staging area with git . 
+- This project uses Django 3.2, installed with pip3 install Django==3.2. This is a long-term support (LTS) version.
+- The project was create in Django with start  
 - Files were committed with git -m "commit message"
 - Libraries and frameworks were installed with pip3 install
     - Installed packages were saved to requirements with pip3 freeze > requirements.text
     - Committed changes were saved with pip3 install.
 
-## To install this project
-A list of dependencies for this project is listed above. If you need to install these requirements, 
-    - you need to first install Django with "django-admin startproject projectname . " 
-    - then use the following command, pip install -r requirements.txt
-- A .gitignore file, for sensitive data, was automatically created by Django
+## Forking the repository
+- Login to GitHub
+- Go to this repository
+- Locate and click the fork button
+- Create and env.py file, and install the requirements: pip install -r requirements.txt, then use the following command, pip install -r requirements.txt
     - create and add an env.py file to .gitignore for secret keys.
+    - add *.squlite3 to the env.py file, as this is not automatically included.
+- create a superuser  with "python3 manage.py create superuser"
 - Add new apps with django manage.py startapp appname, remember to add this to installed apps in settings.
-- Migrate any new models with python3 manage.py makemigrations and python3 manage.py migrate
+- Migrate models with "python3 manage.py makemigrations" and "python3 manage.py migrate"
+- run the server, "python3 manage.py runserver" to check settings. 
+
+## Cloning the repository
+- Login to GitHub
+- Go to this repository
+- Click the green code button and in the clone section copy the link
+- Go to your dev environment and create or change the directory to the location you want to add the cloned directory.
+- On the command line type "git clone" and the copied url from the above step.
+- Follow the steps above to create an env and gitignore file
+
+## The settings.py
+To help understand the settings file, in the initial set up of this project, the following actions were
+
+- Settings in this project have been edited during project set up to include allauth 0.41.1        
+    Authentication backends were added:
+    - 'django.contrib.auth.backends.ModelBackend',
+    - 'allauth.account.auth_backends.AuthenticationBackend',
+    Allauth apps to installed apps
+    - 'django.contrib.sites',
+    - 'allauth',
+    - 'allauth.account',
+    - 'allauth.account',
+    Authentication backends
+    - SITE_ID = 1
+- Allauth urls
+    - path('accounts/', include('allauth.urls')),
+    - from django.urls import path, include
+- Login with superuser details
+    - update domain name
+    - change the display name
+- Temporarily set up email to log to the console in settings
+    - EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    - DEFAULT_FROM_EMAIL = 'yoursitename@example.com'
+- Add account information
+    - ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+    - ACCOUNT_EMAIL_REQUIRED = True
+    - ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+    - ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+    - ACCOUNT_USERNAME_MIN_LENGTH = 4
+    - LOGIN_URL = '/accounts/login/'
+    - LOGIN_REDIRECT_URL = '/'
+- Go to accounts log in "/accounts/login/" and use the form and confirm the email manaully in the admin panel.
+- freeze requirements
+- setup templates directory for allauth templates
+    - mkdir templates
+    - mkdir templates/allauth
+- If using GitPod, access the templates like ths: 
+    -  enter pip show django-allauth, to get the location of the files, for me this was "/workspace/.pip-modules/lib/python3.8/site-packages"
+    - copy the files to the directory: based on teh above I needed to run "cp -r /home/gitpod/.pyenv/versions/3.8.11/lib/python3.8/site-packages/allauth/templates/* ./templates/allauth/"
+
+- Setting were also edited to include the storages, Crispy forms templates, Stripe payments, add custom apps, the djrichtextfield, Stripe and they were also changed to allow the project to run in the development environment after deployment.
+        if 'DATABASE_URL' in os.environ:
+            DATABASES = {
+                'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+            }
+        else:
+            DATABASES = {
+                'default': {
+                    'ENGINE': 'django.db.backends.sqlite3',
+                    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+                }
+            }
 
 ## To deploy
 
-ADD THIS LATER
+- Set up your database. This project uses ElephantSQL (elephantsql.com). You need to create an account, give it a name, select a plan (this project uses the TinyTurtle free plan), select a region, review and create an instance. Then copy the database url.
+- Set up Heroku. Create an account, if you don't have one. Give the app a name, choose a region and click the create app button. Then go to settings in this new app, open the config vars and add the database url you copied from the previous step.
+- connect the database to your local development web server
+    On the command line
+    -  pip3 install dj_database_url==0.5.0 psycopg2
+    -  pip freeze > requirements.txt
+    At the top of settings
+        -  import os
+        -  import dj_database_url
+    In the databases section settings, comment out the original settings and add your own database url:
+
+         # DATABASES = {
+         #     'default': {
+         #         'ENGINE': 'django.db.backends.sqlite3',
+         #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+         #     }
+         # }
+                    
+        DATABASES = {
+            'default': dj_database_url.parse('your-database-url-here')
+        }
+        !!!!!!!!!!!!!
+        DON'T PUSH THIS INFORMATION YET.
+        !!!!!!!!!!!!!
+
+        Confirm your database is connected:
+        -  python3 manage.py showmigrations
+        Migrate your database models
+        -  python3 manage.py migrate
+        If you are using fixtures (this project doesn't), load categories first then your products
+        -  python3 manage.py loaddata categories
+        -   python3 manage.py loaddata products
+        Create a new superuser for the new database
+        -  python3 manage.py createsuperuser
+        Delete your database variable and uncomment the above code again to connect to your sqlite3 database.
+- Go back to elephantsql, navigate to BROWSER, click the table queries button and select auth_user and click execute. You should be able to see your superuse which also confirms tables have been set up. 
+- Set up environment variable for database
+    - install gunicorn, pip3 install gunicorn, which acts as the webserver
+        - add the following to settings
+
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+        }
+    - Create a procfile - this tells heroku to create a web dyno to run gunicorn
+        - web: gunicorn paperdreams.wsgi:application
+    - Disable Collectstatic. You can do this directly in heroku settings or on the command line with "heroku config: set DISABLE_COLLECTSTATIC=1 -- app "your app"
+    - Add Heroku as an ALLOWED_HOST in settings, add local host as the 2nd argument so gitpod/your dev environment  will still work. 
+
+        ALLOWED_HOSTS = ['paper-dreams-uk.herokuapp.com', 'localhost']
+
+- Add, commit and push changes with "git push heroku main". You can also set connect heroku to your github repository from ther heroku website, which in my opinion is simpler. 
+
+Create an account to host your static files. This project uses AWS s3 (aws.amazon.com)
+- Create an AWS account, follow the instructions. This is a free usage limit, so a credit card is required.
+- Sign in
+Create a bucket
+- Search for s3 in the search bar.
+- Create a new "Bucket"
+- Click on the ACLs enbled option
+- Click on Bucket owner preferred
+- Select your closest region.
+- Uncheck block all public acccess
+- Create bucket
+Go to properties
+- Turn on static website hosting
+- Use the default values in the index and error document sections fo the form.
+On permissions tab
+- Paste in Cors configuration. 
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+Open up "Go to Bucket policy tab" in a new browser tab so you can easily go back and fetch the Amazon Resource Name (ARN)
+- Create a security policy with the policy generator - S3 Bucket policy. This sets up access for Heroku.
+    - Select "allow" next to Effect. 
+    - enter an "*" in principle field
+    - the action is "GetObject"
+    - pasted in your ARN
+    - click through and add the statement
+    - generate the policy
+    - copy this policy into the bucket policy editor, add "/*" to the end of the resource key
+    - save 
+- Go to ACL (access control list) tab, and set the public access to "everyone"
+
+- Create a user for access in IAM - Identity and Access Management
+    - Create Group
+        - Create a new group called "manage-yourappname"
+    - Create Access Policy
+        - Go to policies and create policy. 
+        - Go to JSON tab and import managed policy - search for s3 and import the s3 full access policy
+        - Get the bucket ARN from the bucket policy editor, then go back and pasted it in the resource line of the code. It's a list. Add the ARN.  eg 
+            "Resource": [
+                "arn:aws:s3:::thedetailsfromyourarn",
+                "arn:aws:s3:::thedetailsfromyourarn/*",
+            ]
+        - Review the policy and give it a name and description
+        - Create a policy
+        - Attach the policy to your newly created group. To attach the policy, on the sidebar clickUser Groups.Select your group, go to thepermissionstab, open theAdd permissionsdropdown, and clickAttachpolicies.Select the policy and clickAdd permissionsat the bottom.
+    - Assign the user to the group
+        - Go to users page and add a user.
+        - Give the user programmatic access
+        - Download the user's access key and secret key. You can only download this once. 
+
+-  Configure django
+
+    Install boto3 and django-storages on the command line and freeze requirements
+
+    In settings, add this under MEDIA_ROOT, and add AWS access and secret keys to your Heroku app's config vars. Also include the USE_AWS set to True. You can now remove the DISABLE_COLLECTSTATIC config var.
+
+    Create a custom_storages.py file. (see file in repo).
+
+    Tell browser it's ok to cache media files (AWS_S3_OBJECT_PARAMETERS below).
+
+
+    The final result in settings is below.
+
+    if 'USE_AWS' in os.environ:
+        # Cache control
+        AWS_S3_OBJECT_PARAMETERS = {
+            'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+            'CacheControl': 'max-age=94608000',
+            }
+
+            # Bucket Config
+            AWS_STORAGE_BUCKET_NAME = 'paper-dreams-uk'
+            AWS_S3_REGION_NAME = 'eu-west-2'
+            AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+            AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+            AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+            # Static and media files
+            STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+            STATICFILES_LOCATION = 'static'
+            DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+            MEDIAFILES_LOCATION = 'media'
+
+            # Override static and media URLs in production
+            STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+            MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/
+
+Add, commit and push the changes. 
+
+Go back to AWS S3 and create a media folder. Use the upload button and add your media files. Click next then manage public permissions give public read access then click upload.
+
+Go to django admin, got to email addressses and confirm the superuser email address. 
+
+Log into Stripe if you are using it and added the public and secret keys to your Heroku app's config vars. Make sure to add a new webhook endpoint in Stripe for your Heroku app url. Add the url with "/checkout/wh" and select receive all events and add the new endpoint. Reveal the webhook sign in secret and add this to the Heroku config vars, then test the webhook. 
 
 ## Credits
 
 ### Special thanks
-Daisy McGirr, my mentor, has been a brilliant source of advice and support
+Daisy McGirr, my mentor, has been a brilliant source of advice and support. I watched a few of her videos for insight on how to use the djrichtext field and create a model that sets parameters for images. 
+ - [Django Recipe Sharing Tutorial - videos 7-10](https://www.youtube.com/@IonaFrisbee)
 
 ### Boutique Ado walkthrough
-This tutorial was used as model for the products page, products detail page and shopping bag features. In an attempt to do it on my own I've created my own "scroll back to top" button and code, but when I revisited what was in the tutorial, the tutorial seemed to have a better solution. I've leaving my attempt in the project as it is my own work. 
-- My Account and shopping bag feature of header
-- Understanding how filterning works
-- Sorting JS and the view it relies on.
+- The products, bag and checkout apps are based on the Code Institute Boutique Ado walkthrough.
 
 ### General resources
 - [MDN Web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image) for help with background images, and their positioning.

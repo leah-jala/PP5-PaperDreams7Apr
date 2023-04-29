@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django_summernote',
     'djrichtextfield',
-    'wishlist',
 
     # Custom apps
     'home',
@@ -59,6 +58,8 @@ INSTALLED_APPS = [
     'pages',
     'tutorials',
     'profiles',
+    'wishlist',
+
 
     # Other
     'crispy_forms',
