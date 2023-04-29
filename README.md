@@ -702,6 +702,8 @@ a. Wishlist Model
 ## Future features
 - I would add icons above the Stripe field for the major credit cards accepted for additional confirmation to the customer.
 - Once an item is sold out, I would like it to be automatically taken off the products list and moved to a gallery page where customers can view past works, with search and sorting, in addition to anything current I want to show (like commissioned items that will not be sold). Like this, I would have a portfolio page. I would also like customers to be able to click through, comment and also add pictures of their artwork as they are displaying it in their homes. Also, I would like them to have a link to click to enquire about have a previously sold item made. There is a limit to how fast an artist can create work, so the gallery would show a greater body of work and what is possible if the customer is willing to wait.
+- I would like to figure out how to make the site work like some that I have see where you can see how many products are in people's bags, and change my message under the product to only give a quantity when there are only a certain amount left in stock. So they could for example see that there are 5 items left and 3 of these are in other customer's bags.
+- I would like a "Let me know when this is back in stock" feature for signed in users. 
 - Search field should be altered for fuzzy logic.
 - Checkout page: If a form is filled in when the user sees the link it should keep the information through the login. I have moved the links higher up the form to avoid a situation where a person only sees the link after filling in their information. 
 - If there were a lot more products in the store, it would make sense to add more categories for the sort by field, for example people interested in buy an artwork might like to look for specific colors. 
@@ -788,8 +790,10 @@ Use pip install + app name, then add to settings.
 
 ## Testing
 
+Testing has been recorded in spreadsheet. A link to access relate documents is being provided to the assessors of this project. 
+
 ## Site navigation and functionality
-To test this website navigated through each link and tested the functionality on each page, including adding add, editing and deleting tutorials and products. All the projects on the website and existing tutorials were added using the front end management features.
+To test this website, I navigated through each link and tested the functionality on each page, including adding, editing and deleting tutorials and products. All the projects on the website and existing tutorials were added using the front end management features.
 
 1. Tested each link and button as a "signed out" user.
 2. Tested each link and button as a "staff" user.
@@ -802,12 +806,55 @@ I recorded if the navigation link took the user to the right page with either "y
 ![Test HTML](docs/testing/ss-site-connections3.JPG)
 
 ## HTML validation
-I used the [WC3 Markup Validation Service](https://validator.w3.org/) to test the HTML of all pages. Screen shots of the results are included in the spreadsheet. 
+I used the [WC3 Markup Validation Service](https://validator.w3.org/) to test the HTML of all pages. 
 
-### Unresolved problems
+Screen shots of the results are at this links:
+Pages app
+[About Page](docs/testing/html-pages/about.JPG), [Add Tutorial Page](docs/testing/html-pages/add-tutorial.JPG), [Bag](docs/testing/html-pages/bag.JPG), [Checkout Page](docs/testing/html-pages/checkout.JPG), [Checkout Success page](docs/testing/html-pages/checkout-success.JPG), [Delete Product](docs/testing/html-pages/delete-product.JPG),  [Delete Tutorial](docs/testing/html-pages/delete-tutorial.JPG),  [Delete Tutorial Post](docs/testing/html-pages/delete-product.JPG), [Edit Product](docs/testing/html-pages/edit-product.JPG), [Edit Tutorial](docs/testing/html-pages/edit-tutorial.JPG), [Edit Tutorial Post](docs/testing/html-pages/edit-tutorial-post.JPG), [Homepage](docs/testing/html-pages/homepage.JPG), [Manage Tutorials](docs/testing/html-pages/manage-tutorials.JPG), [My Profile](docs/testing/html-pages/myprofile.JPG), [Products](docs/testing/html-pages/products.JPG), [Tutorial Detail](docs/testing/html-pages/tutorial-detail.JPG), [Tutorials](docs/testing/html-pages/tutorials.JPG), [Add Tutorialpost](docs/testing/html-pages/tutorials-add-post.JPG), [Wishlist](docs/testing/html-pages/wishlist.JPG)
+
+Through testing, I realized that I had forgotten to add an "image alt" field to the product model, which as subsequently been added. Previoulsy, the alt was populated with the product name. Now it has a proper description. 
+
+### Unresolved errors
 I got errors on three pages:
 1. Tutorial Detail: The validator found p element errors that come from the form entry. I tried going into the form from both the front end for and the admin panel and deleting all the new paragraphs and added them again, but this made no difference. I could not find a way to fix this problem which seems to stem from the djrichtextfield.
-2. add_product - 
+2. add_product - The validator through up 3 errors, but I was unable to make any changes to these because there were not a part of the code that I wrote (as can be accessed by the html file or forms.py), but rather something caused by crispy form rendering. It seems to give an error because the image on the image upload has no "alt" but it wouldn't in this case. There is a problem with the p elments again, as described above. Lastly, it the validator calls for "type="text/javascript" to be removed from a script I did not write related to the image upload.
+3. edit_product - This page has the same problems as with the add_product page. Additionally it has a "duplicate attribute id" error, which is also from code I didn't write. It also seems to be a problem with the crispy form. It is not code I can access and change. 
+
+## CSS validation
+I've entered each css file into the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). I did not take screen shots for this section because every results page looked idential with no way of proving which page it related to. All pages passed, receiving the screen shown below, apart from the index.css file (refer to section below).
+
+![css validation page example](docs/testing/css-validation.JPG)
+
+Here is a screen shot from the spreadsheet on which I recorded my results.
+
+![css testing on recorded on spreadsheet](docs/testing/ss-css.JPG)
+
+### Unresolved error
+The reason I am getting an error on this page is that the validator does not recognize the shape-outside attribute, which was used to create the hexagons. I spent a lot of time trying to find a way to keep the hexagon shape and behaviour, but did not succeed. I have done some research into this an found that this is most likely related to the fact that not all browsers are able to render it properly. I entered the shape-outside sample syntax, which must be valid, from [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside) and from [CSS Tricks](https://css-tricks.com/almanac/properties/s/shape-outside/), which also comes back as invalid. 
+
+I used caniuse.com to check the useability of the shape-outside attribute on older browsers. It affected some browsers with release dates ranging from 2012-2018. Otherwise, there didn't seem to be information about some browsers at all. 
+
+I tested by homepage on iPhone8, iPhone12, iPhoneXS, Android, Edge, firefox, Opera and Chrome. I put my site on Facebook 13 people replied - all could see the site. I got people from work to test it (6 more people) plus my parents and family (some of whom have cheap androids) and they could all see it. 
+
+I feel satisfied, even with this small sample, that the target audience for this website will be able to see the homepage, rendered properly. I realise it is not ideal to have page that is potentially a problem for older browsers, but the information I am putting out to the world is not vital, as it would be with a healthy or other government agency.  I considered doing a more traditional hero image with a button, but I spent a lot of time working on this page, in spite of borrowing some code it took me most of a weekend. I specifically didn't want a page that looks like every other ecommerce site. I have proven I can successfully create such a page in my previous project without errors. I hope that the problem with this attribute will be excused in the assessment of this project. 
+
+![caniuse.com](docs/testing/)
+
+### Python Validation
+
+In order to adhere to Pep8, I used [autopep8](https://gist.github.com/hygull/7db576c5d739e87832aa2341dbeb5242)) in my project and ran it throughout. At the end of my project, I ran it again on most files and then cut and paste the code into [Code Institute's Py Linter](
+https://pep8ci.herokuapp.com/). I found that in many instances, for example with strings, that autopep is unable to break up lines. I therefore needed to make a number of changes related to lines being too long. 
+
+I did not take screen shots but instead recorded the commit to which the change relates. When checking the files, I realized I had left out some docstrings and went back and double checked all the files and added them where necessary.
+
+In the spreadsheet, I marked the files which I needed to make some changes in green and what those changes were. The related commit is above the file name in a row shaded grey. All files are now valid.
+
+![python testing 1](docs/testing/ss-python1.JPG)
+
+![python testing 2](docs/testing/ss-python2.JPG)
+
+![python testing 3](docs/testing/ss-python3.JPG)
+
 ## Develoment, Version Control & Deployment
 - A repository was created using Code Institute's template, which sets up the environment for git version control.
 - Files were added to the staging area with git . 
@@ -817,6 +864,47 @@ I got errors on three pages:
 - Libraries and frameworks were installed with pip3 install
     - Installed packages were saved to requirements with pip3 freeze > requirements.text
     - Committed changes were saved with pip3 install.
+
+## Javascript validation
+Javascript across the site was validated with JSHint. Direcctives needed to be added to the Linter to inform it I was using ES6, and to tell JSHint that $ and Stripe are global variables. The prevents JSHint from raising unnecessary warnings.
+
+### Base page
+Navbar active class, MailChimp functionality, toasts. 
+
+![base js](docs/testing/base-js.JPG)
+
+### Products.html page JS in Products app
+The sort field (From Boutique Ado), active buttons and the back to top button.
+
+
+![products page js](docs/testing/product-js.JPG)
+
+### Quanity_include_script in Products app
+Controls behaviour of the increment/decrement buttons on products_detail page.
+From Boutique Ado
+
+![quantity includes script](docs/testing/quantity-include-script.JPG)
+
+### countryfield.js in Profiles app
+For the countries field on the profile form. From Boutique Ado.
+![countryfield.js](docs/testing/profiles-js.JPG)
+
+### Tutorials
+To create active links for the posts on the Tutorials Detail page.
+
+![tutorials js](docs/testing/tutorials.JPG)
+
+### Wishlist
+Allows users to add/remove items from the wishlist.
+
+![wishlist js](docs/testing/wishlist-js.JPG)
+
+## Things to edit/correct in the future/Technical debt
+When testing this site, I saw that the messages pop up a bit too far to the right at times, and there is inconsistently with the way the messages appear whether you add a product to the wishlist from the products or product detail page. I would like to thoroughly revisit the messaging on this site.
+
+I also intend to fix the templates to be more consistent. I had started this project with a sticky navar and a sticky footer. It created a lot of problems withe margins and need for media queries. I ended up abandoning both only to reintroduce the sticky nav as I felt it was particularly necessary having added the wishlist, but also due to the bag icon. This created another set of headaches with top margins. After this project is assessed, I will fix the footer and nav bar and reconstruct the templates for better consistency across the site. 
+
+I realized during testing that I forgot to move the javascript off the products page and into a static file. I needed to leave this and get on with finishing the readme file. I will have to move this later. 
 
 ## Forking or Cloning the project 
 
@@ -906,16 +994,19 @@ To help understand the settings file, in the initial set up of this project, the
         -  import dj_database_url
     In the databases section settings, comment out the original settings and add your own database url:
 
-         # DATABASES = {
-         #     'default': {
-         #         'ENGINE': 'django.db.backends.sqlite3',
-         #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-         #     }
-         # }
-                    
+         DATABASES = {
+
+              'default': {
+                  'ENGINE': 'django.db.backends.sqlite3',
+                  'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+              }
+          }
+          
         DATABASES = {
+
             'default': dj_database_url.parse('your-database-url-here')
         }
+
         !!!!!!!!!!!!!
         DON'T PUSH THIS INFORMATION YET.
         !!!!!!!!!!!!!
@@ -1113,11 +1204,4 @@ Django Documentation
 While developing this project, I had wanted to use djmoney with the intention of later implementing functionality that would recognize a user's locale and update the currency.
 I had to make many changes to my project to accommodate djmoney. In the end, it created problems that I could not overcome, related to adding products to the shopping basket and calculating the subtotals and totals. I thought I could uninstall djmoney, undo previous changes and carry on. Even though I had unstalled the package and altered the model, there continued to be a conflict and some presense of a djmoney related currency field. I tried deleting all my products from the database and getting rid of the field in the shell, but it didn't work and I decided I was making things worse with all the fixes I was trying to make. In the end, I started with a fresh repo. The consequence is that the commit history does not reflect the true development of the project. This means that in the early commits of this repo there are, for example, settings and fields including in html files, that don't make sense to be there as I had to minimize the amount of time I would lose by needing to begin with a fresh repo.
 
-Below, I include links to the commit history of the first version of this project
-
-- Commits 1-18 of this repo reflect me trying to get my project set up to the point I left off up, which is up to the point of the product_detail page.
-- Commits 19 - ? of this repo relate to the shopping bag page. I will reuse the javascript I wrote in first version.
-
-There are few differences between the first and second versions. I experimented by adding a title and header to the products_datail page that previously was not there. 
-
-Together these commits relate to comments 1-59 in the first repo [NEW-paperdreams](https://github.com/leah-jala/NEW-paperdreams/commits/main). These commits show the incremental development of the base and index files, the products page and the product detail page with related javascript, as well as early attempts to include a wishlist, and to use djmoney. It also reveals problems that I encountered, particularly with the active classes on the category buttons on the products page, in particular the "All Artworks" button. I also tried to include functionality that would prevent a user from adding more products than what is available in the database. It was not functioning correctly at the time of creating the new repo. The button would disable when the user reached the maximum avaiable products, but the user could add them multiple times. 
+These commits relate to comments 1-59 in the first repo [NEW-paperdreams](https://github.com/leah-jala/NEW-paperdreams/commits/main). These commits show the incremental development of the base and index files, the products page and the product detail page with related javascript, as well as early attempts to include a wishlist, and to use djmoney. It also reveals problems that I encountered, particularly with the active classes on the category buttons on the products page, in particular the "All Artworks" button. I also tried to include functionality that would prevent a user from adding more products than what is available in the database. It was not functioning correctly at the time of creating the new repo. The button would disable when the user reached the maximum avaiable products, but the user could add them multiple times. 
