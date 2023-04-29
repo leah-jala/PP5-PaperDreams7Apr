@@ -1180,6 +1180,8 @@ Log into Stripe if you are using it and added the public and secret keys to your
 
 ## Credits
 
+I've used two companion books,  "Django for Beginners" and "Django for Professionals", by Williams Vincent and the book "Python Crash Course, A Hands-On, Project-Based Introduction to Programming", by Eric Matthes and I've found [Code Wars](https://www.codewars.com/) valuable for building up skills.  
+
 ### Special thanks
 Daisy McGirr, my mentor, has been a brilliant source of advice and support. I watched a few of her videos for insight on how to use the djrichtext field and create a model that sets parameters for images. 
  - [Django Recipe Sharing Tutorial - videos 7-10](https://www.youtube.com/@IonaFrisbee)
