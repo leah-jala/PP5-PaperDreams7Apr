@@ -26,6 +26,7 @@ You can  the live site [here.](https://paper-dreams-uk.herokuapp.com/)
     - [The Structure Plane](#the-structure-plane)
     - [The Skeleton Plane](#the-skeleton-plane)
     - [The Surface Plane](#the-surface-plane)
+- [User Stories & Project Management](#user-stories--project-management)
 - [Site Features](#site-features)
 - [Custom Models](#custom-models)
 - [All database models, summarized](#all-database-models-summarized)
@@ -195,21 +196,6 @@ It is the artist's hope that her artworks will help site visitors reimagine thei
 
 As mentioned, the tutorials page is also meant to build community page and extends itself well to Facebook, where customers can share their own work, get support and also share posts to their friends and invite them to the page.
 
-#### User Stories & Project Management
-GitHub projects, milestones and issues were used to manage this story. The user stories were defined as issues with tick-box tasks and acceptance criteria. The project is available [here](https://github.com/users/leah-jala/projects/8).
-
-Looking back at the project, I realize I did not break them down enough into fine detail. For the sake of a project that one individual is doing on their own, it worked well. I liked having a piece of functionaly as a user story with multiple tasks written down with tick-boxes that I could leave open and tick off as I worked through. I can see how this might not be ideal working as part of a larger team. 
-
-I should have created a separate level of developer stories. I did something like this for the project set-up, but didn't always carry it through the rest of the apps. As I was sitting with a spreadsheet of general requirments, both based on the project requirement's as well as a to do list. It didn't occur to me to include as user stories something like adding a "Page Not Found" or a Procfile as a specific "user" story.  I could have been much more granular with the user stories. As already mentioned, I think this is the result of working alone as opposed to with a team, among whom tasks are shared and a higher level of specifity is required for general management of a project.
-
-#### Agile Methodology
-The project was developed using Agile Methodology as presented in Code Institute modules. User stories and milestones were created on GitHub's project boards. Each user story was defined and given a status including "must have" (for minimum viable product), "should have" (functionality that would make the site work better but isn't absolutely necessary to launch the site) and "could have" (features that would be nice to include). Some of these items were transitioned to "won't have" as the time demands demanded prioritization of the must and should haves. 
-
-GitHub's Milestones were initially used for the project iterations, but I found them awkward to set up and created a similar categories which I've called "steps" on the board. While we were encouraged to drag issues along a kanban board, I found it neater to organize my work on a ![table view](docs/agile/project-table-view.JPG).
-
-The project board is at this [link](https://github.com/users/leah-jala/projects/8).
-
-
 ### The Scope Plane
 
 Considering the goals above, the following requirements were identified.
@@ -241,7 +227,19 @@ From the point of view of the site owner, it was important to me that customers 
 - Site users should be able to filter tutorials by title or theme (e.g. There might be more than one mask-making tutorial)
 - An events page that allows the ower to use a form to enter information about upcoming events such as an exhibition or a course.
 
-#### User Stories
+## User Stories & Project Management
+GitHub projects, milestones and issues were used to manage this story. The user stories were defined as issues with tick-box tasks and acceptance criteria. The project is available [here](https://github.com/users/leah-jala/projects/8).
+
+Looking back at the project, I realize I did not break them down enough into fine detail. For the sake of a project that one individual is doing on their own, it worked well. I liked having a piece of functionaly as a user story with multiple tasks written down with tick-boxes that I could leave open and tick off as I worked through. I can see how this might not be ideal working as part of a larger team. 
+
+I should have created a separate level of developer stories. I did something like this for the project set-up, but didn't always carry it through the rest of the apps. As I was sitting with a spreadsheet of general requirments, both based on the project requirement's as well as a to do list. It didn't occur to me to include as user stories something like adding a "Page Not Found" or a Procfile as a specific "user" story.  I could have been much more granular with the user stories. As already mentioned, I think this is the result of working alone as opposed to with a team, among whom tasks are shared and a higher level of specifity is required for general management of a project.
+
+### Agile Methodology
+The project was developed using Agile Methodology as presented in Code Institute modules. User stories and milestones were created on GitHub's project boards. Each user story was defined and given a status including "must have" (for minimum viable product), "should have" (functionality that would make the site work better but isn't absolutely necessary to launch the site) and "could have" (features that would be nice to include). Some of these items were transitioned to "won't have" as the time demands demanded prioritization of the must and should haves. 
+
+GitHub's Milestones were initially used for the project iterations, but I found them awkward to set up and created a similar categories which I've called "steps" on the board. While we were encouraged to drag issues along a kanban board, I found it neater to organize my work on a ![table view](docs/agile/project-table-view.JPG).
+
+The project board is at this [link](https://github.com/users/leah-jala/projects/8).
 
 Project Set Up
 - As a developer, I need to create a django project, so that I can build the site apps.
@@ -1219,7 +1217,7 @@ Daisy McGirr, my mentor, has been a brilliant source of advice and support. I wa
 - [Bootstrap Toasts](https://getbootstrap.com/docs/4.3/components/toasts/) - reviewed this but used the Boutique Ado html.  The tutorial had taken the toast html direct from Bootstrap and added some extra styling. For the sake of speed I have borrowed this.
 
 ### Contact Page
-- [Contact Page](https://www.bootdey.com/snippets/view/contact-page-section#html)
+- [Contact Page](https://www.bootdey.com/snippets/view/contact-page-section#html). I adopted the use of the left border on headings from this contact page example to the rest of the site.
 
 ### MailChimp reformatting
 Adapted [MailChimp Signup Form - Horizontal](https://gist.github.com/avadhootkulkarni/dabbc679abb89791db1059e3e8212c97)
