@@ -22,6 +22,7 @@
             </div>
         </div>
     </div>
+</div>
 
     <div class="container-fluid">
         <div class="row">
@@ -75,7 +76,8 @@
                                     <div class="my-2">
                                         <p><small>Available: {{ product.quantity }}
                                                 {% if request.session.bag %}({{ request.session.bag|get_item_qty:product.id }}
-                                                in bag){% endif %}</small></p>
+                                                in bag){% endif %}</small>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +133,6 @@
             </div>
         </div>
     </div>
-</div>
 {% endblock %}
 
 {% block postloadjs %}

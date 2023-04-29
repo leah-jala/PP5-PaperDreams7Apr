@@ -2,7 +2,11 @@
 
 This is a website for a fictional company called, "Paper Dreams," which has been developed as part of Code Institute Institute's Full Stack Developer Course (Portfolio Project 5). The artwork presented on the site is my own, with all rights reserved. The images are my own.
 
-Paper Dreams is an ecommerce website for a paper-mache artist to sell a small collection of ever-changing masks, figurines and animal objects, paintings and prints and more. Customers can register with the site, which allows them to maintain an order history, a profile and a wishlist. Staff users can manage tutorials from the frontend and superusers have additional frontend access to Product Management. Both of these management functionalities are available via the navigation bar's "My Account" dropdown for the respective signed in users, but links are availble throughout the ecommerce sections of the site to manage these areas. Superusers also have a frontend link to the django admin panel in "My Account". You can  the live site [here.](https://paper-dreams-uk.herokuapp.com/)
+Paper Dreams is an ecommerce website for a paper-mache artist to sell a small collection of ever-changing masks, figurines and animal objects, paintings and prints and more. Customers can register with the site, which allows them to maintain an order history, a profile and a wishlist. Staff users can manage tutorials from the frontend and superusers have additional frontend access to Product Management. Both of these management functionalities are available via the navigation bar's "My Account" dropdown for the respective signed in users, but links are availble throughout the ecommerce sections of the site to manage these areas. Superusers also have a frontend link to the django admin panel in "My Account". 
+
+As a note: the prices attached to some of the items are random. While I do create things with moulds, and it is possible to print many masks off the same plaster mould, in reality I wouldn't do more than 3-4 of the same mask, and most of the figures would be one-offs. I have created larger quantities for to make the site easier to test.
+
+You can  the live site [here.](https://paper-dreams-uk.herokuapp.com/)
 
 ![Am I responsive](docs/website/amiresponsive.JPG)
 
@@ -19,24 +23,22 @@ Paper Dreams is an ecommerce website for a paper-mache artist to sell a small co
     - [Marketing Goals](#marketing-goals)
 - [SEO & Analytic](#seo--analytic)
 - [Website Design](#website-design)
-    - [The Strategy Plane](#the-strategy-plane)
-        - [Emotional Factors](#emotional-factors)
-        - [User Stories & Project Management](#user-stories--project-management)
-        - [Agile Methodology](#agile-methodology)
-    - [The Scope Plane](#the-scope-plane)
-        - ["Must have" - Minimum Requirements](#must-have---minimum-requirements)
-        - ["Should have" - Intended Requirements](#should-have---intended-requirements)
-        - ["Could have" - Desired functionality that is not essential](#could-have---desired-functionality-that-is-not-essential)
-        - [User Stories](#user-stories)
-        - [Constraints](#contraints)
     - [The Structure Plane](#the-structure-plane)
     - [The Skeleton Plane](#the-skeleton-plane)
     - [The Surface Plane](#the-surface-plane)
-        - [Branding](#branding)
-        - [Fonts](#fonts)
-        - [Colour Palette](#colour-palette)
-        - [Accessibility](#accessibility)
 - [Site Features](#site-features)
+- [Custom Models](#custom-models)
+- [All database models, summarized](#all-database-models-summarized)
+- [Future Features](#future-features)
+- [Installed Packages](#installed-packages)
+- [Technologies and Resources](#technologies-and-resources)
+- [Testing](#testing)
+- [Develoment, Version Control & Deployment](#develoment-version-control--deployment)
+- [Forking or Cloning the project](#forking-or-cloning-the-project)
+- [Deployment](#deployment)
+- [Credits](#credits)
+- [Note regarding project development and commits](#note-regarding-project-development-and-commits)
+
 
 # Purpose and Goals
 This purpose of this website is to allow the site owner to showcase and sell her artwork online. The artist would like to build a community of followers, which she aims to do by making free tutorials available online and creating a complimentary page on Facebook.
@@ -45,13 +47,14 @@ This purpose of this website is to allow the site owner to showcase and sell her
 Paper Dreams' audience matches the Etsy Community, whose audience is described as largely women between the ages of 18-35. Etsy estimates 86% of their buyers are female. Like Etsy, the site owner expects the audience to be young, female and interested in unique, original items with vibrant colour palettes. Etsy describes the buyer's behaviour and trends of which the following apply to Paper Dreams:
 
     - They want to support small businesses. They use the hashtag #StandWithSmall. The site could also make use of this hashtag. 
-    - [Statusbrew](https://statusbrew.com/insights/small-business-hashtags/) lists some top trending small business hashtags. Top-Hashtags offers some useful ideas, moving away from the specific art scene to other interest areas of potential customers, such as #womanownedbusiness, #newbusiness, #supportsmallshops, #handcraftedgifts, #handmadecrafts, and #handcrafted"add item".
 
     - They want to make their homes more stylish with unique bright items.
 
     - The are interested in projects they can do from home. (Relates to tutorials/learn page)
 
     - The are looking for unique gifts for various occasions.
+
+[Status Brew](https://statusbrew.com/insights/small-business-hashtags/) lists some top trending small business hashtags. Top-Hashtags offers some useful ideas, moving away from the specific art scene to other interest areas of potential customers, such as #womanownedbusiness, #newbusiness, #supportsmallshops, #handcraftedgifts, #handmadecrafts, and #handcrafted"add item".
 
 For the purpose of this marketing strategy, we want to think about our customer in narrow terms in order to be able to create useful keywords for the site and and overall marketing strategy.
 
@@ -77,20 +80,17 @@ For the purpose of this marketing strategy, we want to think about our customer 
         - Burnout at  work/instability in careers.
         - Lack of childcare options, if mothers
 
-The artworks I produce allow the customer to have something unique and bespoke. While some of the items might be pricey, the are generally affordable and although the everyday person to have something truly unique, which is usually the preserver of rich people. 
+The artworks I produce allow the customer to have something unique and bespoke. While some of the items might be pricey compared to design objects you can find in a departement store, the are affordable to most people and allows the everyday person to have something truly unique, which is usually the preserve of rich people. 
 
-As a note: the prices attached to some of the items are off the top of my head so to speak and while I do create things with moulds and it is possible to print many masks off the same plaster mould, in reality I wouldn't do more than 3-4 of the same mask, and most of the figures would be one-offs. I have created quantities for the sake of demonstrating the functionality.
         
 ## Overall Goals
 
 Broad User Goals
-
 - To find an browse available art.
 - To buy something truly unique, which is likely to amount to a "guilty pleasure"
 - To learn about the techniqes of mask-making and papier mache generally. Many tutorials fall just short of being helpful, and I would like to offer something that allows people a route to a new hobby.
 
 Broad Site Owner Goals
-
 - To have an online point of sale for the artwork.
 - To be able to showcase her work online
 - To build a community of people interested in papier mache, who will hopefully share Facebook posts as well as the website.
@@ -529,7 +529,7 @@ Product detail page features.
     
     ![product page signed out](docs/website/product-page-signedout.JPG)
 
-### Wishlist App
+#### Wishlist App
 - When the user is signed in the wishlist icon appears in the navbar
 
 ![wishlist on navbar](docs/website/wishlist-nav.JPG)
@@ -627,7 +627,7 @@ The page is promoted in the tutorials text, the footer and on the contact page.
 
 ![Facebook community page](docs/website/fb-page.JPG)
 
-## Criterion for custom models
+## Custom models
 
 ### At least three original custom models
 
@@ -728,15 +728,15 @@ Use pip install + app name, then add to settings.
 - oauthlib (Allauth)- A Python library that provides a set of OAuth and OAuth2 client and server tools.
 - [Stripe](https://docs.dj-stripe.dev/en/master/) - Python library to create an interface with the Stripe payment platform.
 
-### Other Technologies and resources
+## Technologies and resources
 
-Languages
+### Languages
 - HTML
 - CSS
 - Javascript & Jquery
 - Python (with Django Framework)
 
-Libraries & Programmes
+### Libraries & Programmes
 - [SQLLite](https://www.sqlite.org/index.html) the local development database
 - [Django web framework](https://www.djangoproject.com/), to build the site
 - [Stripe](https://stripe.com/ie) for handling payments (test onlyh)
@@ -749,37 +749,37 @@ Libraries & Programmes
 - [XML-Sitemaps.com](https://www.xml-sitemaps.com/) to generate the sitemap
 - [Privacy Policy Generator](https://www.privacypolicygenerator.info/)
 
-Fonts and Icons
+### Fonts and Icons
 - [Google Fonts](https://fonts.google.com/)
 - [Font Pairing, by Our Own Thing](http://www.ourownthing.co.uk/fontpairing/)
 - Favicon.io
 - Font Awesome
 
-Planning and resources
+### Planning and resources
 - [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
 - Lucid Charts (lost work)
 - [Balsamiq](https://balsamiq.com/) to design the wireframes
 
-Images
+### Images
 - Cloud convert
 
-Version Control and editor
+### Version Control and editor
 - Git for version control, using the [Gitpod](https://www.gitpod.io/) terminal to commit to Git and push to GitHub, and facilitated by the Code Institute Full Template
 - [GitHub](https://github.com/) to store the project code
     - including GitHub's project and milestone features for agile planning
 - GitPod editor
 
-Deployment resources
+### Deployment resources
 - [Heroku](https://www.heroku.com/) to deploy the website
 - [Elephant SQL](https://www.elephantsql.com/) PostGres database for deployed site
 - [AWS](https://aws.amazon.com/) to host media and static files.
 
-SEO/Site maps
+### SEO/Site maps
 - [Online sitemap generator](https://www.xml-sitemaps.com/)
 - [Wordtracker](https://www.wordtracker.com/) - USER FREE TRIAL!
 - [https://search.google.com/search-console/about](Register sitemap)
 
-Language Validators and format helpers
+### Language Validators and format helpers
 - [W3C HTML validator](https://validator.w3.org/) to validate the HTML code
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to validate the CSS code
 - [JSHint](https://jshint.com/) to check the quality of and check for errors in the JavaScript code
@@ -788,6 +788,8 @@ Language Validators and format helpers
 
 ## Testing
 
+
+### Unresolved problems
 
 ## Develoment, Version Control & Deployment
 - A repository was created using Code Institute's template, which sets up the environment for git version control.
@@ -799,7 +801,9 @@ Language Validators and format helpers
     - Installed packages were saved to requirements with pip3 freeze > requirements.text
     - Committed changes were saved with pip3 install.
 
-## Forking the repository
+## Forking or Cloning the project 
+
+### Forking the repository
 - Login to GitHub
 - Go to this repository
 - Locate and click the fork button
@@ -811,7 +815,7 @@ Language Validators and format helpers
 - Migrate models with "python3 manage.py makemigrations" and "python3 manage.py migrate"
 - run the server, "python3 manage.py runserver" to check settings. 
 
-## Cloning the repository
+### Cloning the repository
 - Login to GitHub
 - Go to this repository
 - Click the green code button and in the clone section copy the link
@@ -819,7 +823,7 @@ Language Validators and format helpers
 - On the command line type "git clone" and the copied url from the above step.
 - Follow the steps above to create an env and gitignore file
 
-## The settings.py
+### What's in the settings file?
 To help understand the settings file, in the initial set up of this project, the following actions were
 
 - Settings in this project have been edited during project set up to include allauth 0.41.1        
@@ -872,7 +876,7 @@ To help understand the settings file, in the initial set up of this project, the
                 }
             }
 
-## To deploy
+## Deployment
 
 - Set up your database. This project uses ElephantSQL (elephantsql.com). You need to create an account, give it a name, select a plan (this project uses the TinyTurtle free plan), select a region, review and create an instance. Then copy the database url.
 - Set up Heroku. Create an account, if you don't have one. Give the app a name, choose a region and click the create app button. Then go to settings in this new app, open the config vars and add the database url you copied from the previous step.
@@ -1075,7 +1079,7 @@ Daisy McGirr, my mentor, has been a brilliant source of advice and support. I wa
 ### Shopping bag
 - [Shopping bag Bootstrap/Html](https://mdbootstrap.com/docs/standard/extended/shopping-carts/) adapted from MDB
 
-## Toasts
+### Toasts
 - [Bootstrap Toasts](https://getbootstrap.com/docs/4.3/components/toasts/) - reviewed this but used the Boutique Ado html.  The tutorial had taken the toast html direct from Bootstrap and added some extra styling. For the sake of speed I have borrowed this.
 
 ### Contact Page
@@ -1100,8 +1104,3 @@ Below, I include links to the commit history of the first version of this projec
 There are few differences between the first and second versions. I experimented by adding a title and header to the products_datail page that previously was not there. 
 
 Together these commits relate to comments 1-59 in the first repo [NEW-paperdreams](https://github.com/leah-jala/NEW-paperdreams/commits/main). These commits show the incremental development of the base and index files, the products page and the product detail page with related javascript, as well as early attempts to include a wishlist, and to use djmoney. It also reveals problems that I encountered, particularly with the active classes on the category buttons on the products page, in particular the "All Artworks" button. I also tried to include functionality that would prevent a user from adding more products than what is available in the database. It was not functioning correctly at the time of creating the new repo. The button would disable when the user reached the maximum avaiable products, but the user could add them multiple times. 
-
-# Other Notes
-
-# Settings
-The setting "MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'" is not usually required, but it was in the case of this project due to using Git Pod, according the the Boutique Ado Tutorial.
